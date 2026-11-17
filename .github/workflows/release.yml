@@ -4,12 +4,17 @@ on:
   push:
     tags:
       - 'v*'
+    branches:
+      - main
+    paths:
+      - 'releases/v*.md'
 
 permissions:
   contents: read
 
 jobs:
   release:
+    if: github.ref_type == 'tag'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -32,4 +37,23 @@ jobs:
           full="dist/idea-atlas-$version.zip"
           test -f "$skill" && test -f "$full"
           gh release create "$GITHUB_REF_NAME" "$skill" "$full" \
-            --verify-tag --title "Idea Atlas $GITHUB_REF_NAME" --notes-from-tag
+            --verify-tag --title "Idea Atlas $GITHUB_REF_NAME" --notes-file "releases/$GITHUB_REF_NAME.md"
+
+  update-release-notes:
+    if: github.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Sync the current release description
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(python3 -c 'import json; print(json.load(open("MANIFEST.json"))["version"])')"
+          tag="v$version"
+          if gh release list --json tagName --limit 100 --jq '.[].tagName' | grep -Fxq -- "$tag"; then
+            gh release edit "$tag" --notes-file "releases/$tag.md"
+          fi
