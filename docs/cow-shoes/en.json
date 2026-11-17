@@ -1,0 +1,696 @@
+{
+  "language": "en",
+  "project": {
+    "title": "Running shoes for a cow. Who actually wears them?",
+    "subtitle": "Starting with the brief alone: 5 readings, 14 families, 18 ideas and 7 shortlisted candidates."
+  },
+  "readings": {
+    "R1": {
+      "name": "R1 A human joke: the cow is a motif",
+      "q": "If a person wears the shoes, where does the cow have to show up for the joke to work: in the sole, in the number of legs, or in the punchline?",
+      "premise": "Keep “a pair of shoes” and “cow”, but allow the cow to be imaginary. The buyer wants something that will make them or a friend laugh. The cow can be a motif, a leg count or a role to play.",
+      "audience": "Gift buyers aged 18–35, running clubs, families with children and kindergartens.",
+      "check": "Put renderings of C01’s split sole and C05’s four-shoe gift box on a preorder page. Collect sign-ups only, with no payment. After 48 hours, compare email sign-ups and price inquiries with “haha” reactions. If fewer than 3% ask the price and nobody asks where to buy it, the demand assumption behind R1 fails.",
+      "lenses": {
+        "material": {
+          "name": "material",
+          "q": "Could the two halves of a cow’s hoof become part of a human sole’s structure, beyond a printed motif?"
+        },
+        "role": {
+          "name": "role",
+          "q": "When two people play one cow, whose hands and feet move each of the four shoes?"
+        },
+        "service": {
+          "name": "service",
+          "q": "The brief says “a pair”, but a cow has four hooves. Could that mismatch determine how the shoes are packaged and priced?"
+        },
+        "action": {
+          "name": "action",
+          "q": "When you tie laces four times on four feet, does it feel like practice or punishment?"
+        }
+      }
+    },
+    "R2": {
+      "name": "R2 A working cow: shoes as protective gear",
+      "q": "What does a cow walking the milking lane two or three times a day need most: cushioning on that walk, or a pair of shoes?",
+      "premise": "Keep the real cow and relax the requirement to run. Cows walk and stand every day and may go lame, even if they never run a marathon. Assume the farm is the buyer. Would it pay to address lameness or slipping?",
+      "audience": "Farm owners, hoof trimmers, veterinarians and dairy managers.",
+      "check": "For two weeks on one farm, count lame cows and mark where slips occur. A phone and floor markings will do. If fewer than 2 cows are lame and slips cluster in 3 places or fewer, prioritize floor improvements or hoof blocks over R2’s shoes.",
+      "lenses": {
+        "material": {
+          "name": "material",
+          "q": "Could a soft, two-part boot relieve pressure like a rigid hoof block without pressing on the coronary band?"
+        },
+        "ritual": {
+          "name": "ritual",
+          "q": "Are the two or three daily trips to and from milking the only time worth wearing shoes?"
+        },
+        "service": {
+          "name": "service",
+          "q": "Would a farm actually pay for shoes, hoof trimming or a gait trace that helps screen for problems early?"
+        }
+      }
+    },
+    "R3": {
+      "name": "R3 A cow on show: shoes as content and admission",
+      "q": "If the cow only has to appear for 3 minutes, who buys the shoes: a brand, a curator or a ticket holder?",
+      "premise": "Keep a real cow in the picture, but relax the requirements for fit and durability. Assume the customer pays for attention or an experience.",
+      "audience": "Brand marketing teams, race and trade show organizers, farm tourism operators and curators.",
+      "check": "Test a composite image or a 15-second clip with a small audience. Measure how often people ask “Is that real?” or “Where is it?” If the conversation centers on animal cruelty rather than enjoyment, switch the live-cow version of R3 to a person in costume under R4.",
+      "lenses": {
+        "ritual": {
+          "name": "ritual",
+          "q": "At what point along a marathon route can the cow be photographed while the situation remains under control?"
+        },
+        "reversal": {
+          "name": "reversal",
+          "q": "Would “shoes made from a cow” make more sense than “shoes made for a cow”?"
+        },
+        "service": {
+          "name": "service",
+          "q": "How much extra would a visitor pay just to put shoes on a cow?"
+        }
+      }
+    },
+    "R4": {
+      "name": "R4 A person in costume: shoes as work gear",
+      "q": "When an actor plays the cow, which problem is harder: looking like a hoof or running for two hours?",
+      "premise": "Keep the look of a cow. Allow a human performer and shoes for human feet. Assume the user is a mascot performer or a costume maker deciding whether to change the shoes for the next costume.",
+      "audience": "Mascot performers, costume and prop makers, event and theme park operators.",
+      "check": "Have 1 experienced parade performer walk for 30 minutes in an off-the-shelf wide-fit running shoe with a printed shell. Ask whether they would pay for it themselves. If the answer is only “a little better than what I have” rather than “I want it now”, R4 is an incremental improvement.",
+      "lenses": {
+        "action": {
+          "name": "action",
+          "q": "How should the shoe balance weight and shed heat across two hours of running, jumping and turning in a parade?"
+        }
+      }
+    },
+    "R5": {
+      "name": "R5 The literal brief: running shoes for a real cow",
+      "q": "What keeps a running shoe on the hoof of an animal without a human-style ankle for 3 minutes?",
+      "premise": "Take the words literally: a real cow, actual running shoes and actual running. Relax the requirements for long wear and commercial viability. The immediate decision is simply whether the object can work physically.",
+      "audience": "Designers and makers, film and exhibition teams, and hoof researchers.",
+      "check": "Make one static EVA shell and try it on 1 calm cow for 3 minutes without walking. If two people have to restrain the cow or it keeps stamping, the literal direction stops at a prop for staged photos.",
+      "lenses": {
+        "material": {
+          "name": "material",
+          "q": "Without a heel or ankle to anchor it, should the fastening sit below the coronary band or behind the heel bulbs?"
+        },
+        "service": {
+          "name": "service",
+          "q": "Do we need a cow sizing system before we can make a second pair?"
+        }
+      }
+    }
+  },
+  "cards": {
+    "C01": {
+      "id": "C01",
+      "title": "Split-hoof running shoes for people",
+      "status": "live",
+      "statusReason": "A wearable prototype is feasible in two weeks. A blind test can show whether people recognize the prints as cow hoofprints, with a clear criterion for failure. Demand is still unproven, but testing can start with the materials on hand.",
+      "family": "F01 Hoof-inspired footwear",
+      "reading": "R1",
+      "insight": "If the cow is the punchline, the runner is human. Borrowing the two halves of a cloven hoof for the outsole is the most direct way to make R1 work without involving an animal.",
+      "role": "An expression of identity: a run leaves a trail worth sharing.",
+      "occasion": "City morning runs, trail runs and fun runs, especially on courses where mud, sand or a dusting of snow holds a print.",
+      "freq": "Running 1–3 times a week; a few outings per quarter as a special-event shoe.",
+      "current": "Wear split-toe or barefoot-style shoes, or ordinary running shoes. For a cow joke, write a caption or add a sticker.",
+      "relationship": "Running club members, spectators along the course and people following along on social media.",
+      "sub": "Ordinary running shoes and a cow-hoof sticker (under ¥20, 10 minutes). The sticker tells the joke once; after the run, nothing is left on the ground.",
+      "gap": "A sticker cannot leave a two-part hoofprint behind a runner. That single difference could turn a one-off caption into equipment people buy again.",
+      "promise": "Leave a two-part cow hoofprint wherever you run.",
+      "mechanism": "A 6–8 mm groove divides the forefoot outsole along its centerline. The halves hinge independently at push-off. A zero-drop heel and no heel cup give the impression its hoof shape; a compressible EVA midsole lets both halves make separate contact on hard ground.",
+      "how": "Put the shoes on → land on the forefoot → the central groove leaves a split in mud, sand or snow → look back at the prints → take a photo → someone asks, “What shoes are those?”",
+      "action": "Cut a groove in an existing zero-drop shoe and attach two independent outsole halves. Try 3 groove widths, run 200 m each on wet sand, light snow and mud, and compare impressions.",
+      "tradeoff": "The groove reduces torsional stiffness and push-off efficiency, making long distances more tiring. On asphalt the cow reference is just a shape; it needs a surface that takes a print.",
+      "proof": "Proposed: Over 200 m of wet sand, 3 blind reviewers independently identify ≥80% of the prints as cloven hoofprints. A 10 km test run produces no discomfort in the sole of the foot or the ankle.",
+      "kill": "Make 1 prototype pair in two weeks. Have 5 runners each cover 200 m of wet sand. Stop if blind reviewers judge the prints of ≥3 runners to be ordinary shoeprints, or if any 1 runner develops sole or ankle pain within 10 km.",
+      "claim": "A two-part outsole can turn the cow motif into a visible trail and stand up to an actual 10 km run.",
+      "evidence": "yellow",
+      "evidenceNotes": "Demand: Grey. Nothing supplied shows anyone wants a shoe that leaves cow prints, and U1 names no buyer. Mechanism: Yellow. U1 explicitly specifies running shoes and a cow, which partly supports the design language. A split outsole and zero drop are feasible on general shoemaking grounds, outside the supplied material. The effect of independent halves on stability has not been tested.",
+      "short": {
+        "rank": 1,
+        "why": "The only card that fits the literal brief, identifies a buyer and can be tested in-house within two weeks. It offers the most learning for the lowest cost of failure.",
+        "risk": "It may just be an ugly shoe: off the mud it becomes a gimmick, with no repeat purchases.",
+        "test": "Blind review of impressions from 5 runners × 3 surfaces × 200 m, all within the same week."
+      }
+    },
+    "C02": {
+      "id": "C02",
+      "title": "Hoof-print city slides",
+      "status": "variant",
+      "statusReason": "A low-cost summer variant of C01. It shares the two-part outsole and changes only the upper, so it belongs to the same direction.",
+      "family": "F01 Hoof-inspired footwear",
+      "reading": "R1",
+      "insight": "Does the same shape still work in a cheaper, more accessible category? This version could reduce the cost of testing C01.",
+      "role": "An everyday commuter shoe with a joke built in.",
+      "occasion": "Summer shopping trips, music festivals and the beach.",
+      "freq": "Several times a week.",
+      "current": "Hand-paint a pair of wide-toe slides, or wear ordinary slides.",
+      "relationship": "Friends on the outing and passersby.",
+      "sub": "Hand-paint ready-made wide-toe slides with acrylics (30 minutes, under ¥60). The paint starts wearing off after a few steps, and the sole has no split.",
+      "gap": "It shares C01’s single unmet need: leaving a print. The thinner sole and smaller contact patch could actually make that harder.",
+      "promise": "Leave cow hoofprints even at a walk.",
+      "mechanism": "Reuse C01’s two-part outsole. Use a 40 mm webbing strap for the upper, with a cross strap near the arch to keep it in place.",
+      "how": "Wear them out → step onto sand or wet ground → leave a two-part print → take a photo.",
+      "action": "Reuse the outsole and prototype an upper with one wide strap and one cross strap. Make 3 pairs covering sizes 38–44.",
+      "tradeoff": "Slides offer little support and can be uncomfortable on long walks. Their sand prints are shallower than those of running shoes.",
+      "proof": "Proposed: Blind reviewers identify ≥70% of sand prints as split prints (n=3 pairs, 20 steps per pair).",
+      "kill": "Use the same impression test as C01. If C01 fails, drop this variant without spending on a separate test.",
+      "claim": "The same two-part outsole still reads as a hoof on a low-cut shoe.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. It comes from C01 and has no independent evidence. Mechanism: Grey. Thin soles and webbing are established, but the visibility of the split on a low-cut shoe has not been tested.",
+      "links": "C01"
+    },
+    "C03": {
+      "id": "C03",
+      "title": "Two-person running cow costume with four real shoes",
+      "status": "live",
+      "statusReason": "The occasions are clear: fun runs, team events and entrance processions. One costume can be made and run 200 m on a track in two weeks. A fall or a cow no one recognizes would be an observable failure.",
+      "family": "F02 People on four legs",
+      "reading": "R1",
+      "insight": "When people play the cow in R1, the decisive feature is the number of moving legs. Change “a pair” to “four shoes” and the running in the brief becomes something the costume actually does.",
+      "role": "A team ritual that briefly turns two people into one running cow.",
+      "occasion": "Company fun runs, color runs, school sports days and wedding entrances.",
+      "freq": "1–2 times per team per year.",
+      "current": "Rent a two-person cow costume with one wearer in front and one behind, each wearing their own trainers. Only two of the four costume legs move as it runs, and photos give the game away.",
+      "relationship": "The front and back runners, their teammates, spectators and photographers.",
+      "sub": "Rent a two-person cow costume and wear your own running shoes (¥300–800 per day). The two empty front legs tie to the waist and swing wildly, and the human shoes show.",
+      "gap": "A conventional costume has four hollow legs but only two actually run. Four real shoes make a running cow believable and help the front and back performers match cadence.",
+      "promise": "Two people, four legs, four shoes running together.",
+      "mechanism": "The front performer bends forward and wears forehoof shoes on their hands, with internal grips for the fingers and nonslip tread. The back performer stands upright in hind-hoof running shoes, with the costume legs wrapped around the calves. An adjustable waist section aligns shoulder height so all four hooves hit the ground in a 1-2-1-2 rhythm.",
+      "how": "Climb inside → front performer puts on hand shoes → back performer puts on hind-hoof shoes → take three practice steps together → start running → hear four hooves → take a finish-line photo.",
+      "action": "Use a ready-made two-person costume and two pairs of hand shoes (EVA shells and running-shoe soles) to build one set. Try three waist lengths and film 30 seconds of a 200 m track run.",
+      "tradeoff": "The front performer crawls, tires quickly and has limited visibility. The costume suits 1–3 km fun events and cannot be used for competitive racing.",
+      "proof": "Proposed: Show a 30-second video to 10 passersby. ≥7 spontaneously describe a cow running rather than two people running. No trips over 200 m.",
+      "kill": "Build 1 costume in two weeks and run 200 m three times. Stop if there is ≥1 trip or hand-shoe slip, or if fewer than 5/10 blind reviewers see a cow.",
+      "claim": "Four real shoes could turn a two-person cosplay costume into a performance piece people can actually run in.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. No event organizers supplied evidence that team events or fun runs would pay. Mechanism: Grey. Hand shoes and an adjustable waist are simple props to make, but recognizing a cow is a question of perception and needs a blind video test.",
+      "short": {
+        "rank": 6,
+        "why": "The number of moving legs makes it distinctive on video, and no animal is needed.",
+        "risk": "Crawling could put buyers off. The costume could sit unused after one event.",
+        "test": "Show 10 people a 30-second video without explaining it. Ask, “What did you see?”"
+      }
+    },
+    "C04": {
+      "id": "C04",
+      "title": "Four-legged calf costume for one child",
+      "status": "variant",
+      "statusReason": "A scaled-down, one-person version of C03. Human hands and feet still make four hooves. The size and physical demands are reduced, so it remains a variant of the same idea.",
+      "family": "F02 People on four legs",
+      "reading": "R1",
+      "insight": "With one wearer, using four hooves becomes a balance problem. This tests the smallest number of people the design can work with.",
+      "role": "A dress-up costume for children’s sports days and birthdays.",
+      "occasion": "Preschool sports days, birthday parties and family videos.",
+      "freq": "1–3 times per school term.",
+      "current": "Buy a ready-made animal onesie and wear the child’s own shoes.",
+      "relationship": "Children, parents and teachers.",
+      "sub": "A ready-made calf onesie and the child’s own trainers (¥80–150). It has just two legs and offers no four-hoof effect.",
+      "gap": "The gap is the same as C03: the leg count. With one wearer, coordination gives way to balance. A child has to walk on their hands, which raises the bar.",
+      "promise": "One child can be a calf with four hooves.",
+      "mechanism": "Use the same hand shoes and hind-hoof shoes, shorten the waist and widen the palm pads. A removable skateboard-style support under the front contact area takes pressure off the wrists.",
+      "how": "Put it on → walk on hands and feet for 20 m → stand and hang the hand shoes at the waist → take a photo.",
+      "action": "Make 1 set sized for 110–130 cm. Have 3 children each walk 20 m and record wrist discomfort and falls.",
+      "tradeoff": "Children bear weight on their wrists, raising safety and liability concerns. Parents may feel it looks like punishment.",
+      "proof": "Proposed: 3 children aged 6–8 each walk 20 m without falling and rate the fun ≥4/5.",
+      "kill": "Test alongside C03. If any child falls or reports wrist pain, stop immediately and do not generalize the results.",
+      "claim": "A child can manage the four-legged movement alone and find that the fun outweighs the discomfort.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. Mechanism: Grey. Weight on the wrists is a known risk and remains untested.",
+      "links": "C03"
+    },
+    "C05": {
+      "id": "C05",
+      "title": "Miniature running shoes, four to a box",
+      "status": "live",
+      "statusReason": "It has the lowest cost. Fifty boxes can be made in two weeks, and failure is observable: will anyone pay for a set of four? The same test shows whether the “one pair, four hooves” joke lands.",
+      "family": "F03 Miniature gift boxes",
+      "reading": "R1",
+      "insight": "The brief asks for a pair, but a cow has four hooves. Making that contradiction the pack size (4 shoes per box) gives the gift a reason to stand out on the shelf.",
+      "role": "A desk gift with a punchline: “a pair for a cow” becomes “a cow has four feet, so it needs two pairs.”",
+      "occasion": "An unboxing gift for a friend or colleague, a company party raffle or a gift with purchase.",
+      "freq": "Once.",
+      "current": "Give a Year of the Ox figurine, dairy-themed merchandise or funny socks, or 3D-print a single tiny shoe.",
+      "relationship": "Gift giver, recipient and office colleagues.",
+      "sub": "A ready-made miniature sneaker key ring (¥10–30) and a handwritten card take 10 minutes. One shoe cannot tell the four-feet joke and is awkward to display on a desk.",
+      "gap": "The joke needs four identical shoes lined up together. A single key ring has neither the punchline nor a cow sizing chart to read.",
+      "promise": "One pair won’t do. A cow has four feet.",
+      "mechanism": "Four matching 1:6 miniature running shoes, about 4 cm long, with removable magnetic insoles. The box gives cow sizes N1–N6 and advises wearing all four together. Turn it over to make a display stand.",
+      "how": "Open the box → count the feet → discover four shoes → turn the box over and read the sizing chart → display or give away → take a photo.",
+      "action": "Adapt the color and shape of an existing 1:6 sneaker mold: an original wide last, no laces and a two-part sole. Make 50 boxes and film a 30-second unboxing.",
+      "tradeoff": "A one-off purchase with little repeat business. Copying a real sneaker brand could infringe its rights, and there is a low ceiling on price.",
+      "proof": "Proposed: In a 50-box trial, ≥40% watch the unboxing video to the end, ≥8% click through to the purchase page and ≥5 comments ask unprompted where to buy.",
+      "kill": "Within two weeks, offer 50 boxes and a 30-second video to two gift communities. Stop if purchase-page clicks are <3% and nobody asks the price.",
+      "claim": "The four-pack joke makes people more willing to pay than a single pair does.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. No evidence on gift price bands or repeat purchase. Mechanism: Grey. Molding miniature shoes is established manufacturing knowledge outside the material supplied. Whether people get the joke about four has never been tested.",
+      "short": {
+        "rank": 2,
+        "why": "The lowest unit cost and the shortest buying decision. Two weeks could produce a real signal about willingness to pay.",
+        "risk": "The joke might work just once, with no second purchase.",
+        "test": "Offer 50 boxes and an unboxing video. Count clicks and see whether anyone asks the price in the comments."
+      }
+    },
+    "C06": {
+      "id": "C06",
+      "title": "Golden Hoof blind-box chase edition",
+      "status": "variant",
+      "statusReason": "A different way to sell C05. The object and buyer are the same; collecting adds a motive to buy again.",
+      "family": "F03 Miniature gift boxes",
+      "reading": "R1",
+      "insight": "Split a joke about four shoes into four separate draws and see whether it holds up to repetition.",
+      "role": "Small repeat purchases driven by collecting.",
+      "occasion": "Designer toy shops, online blind-box sales and livestreams.",
+      "freq": "Multiple purchases.",
+      "current": "Buy the complete C05 set outright.",
+      "relationship": "Collectors, shopkeepers and livestream viewers.",
+      "sub": "Buy the four-pack outright (C05). There is no missing piece to chase.",
+      "gap": "It adds no new unmet need, just more transactions. Splitting the set could weaken the joke about four feet.",
+      "promise": "One in twelve is a golden hoof.",
+      "mechanism": "Each blind box contains one shoe from 12 colorways plus 1 golden-hoof variant and includes a cow size card. Collect four shoes and redeem a display stand.",
+      "how": "Draw a box → open it → check the size → collect the set → redeem the stand.",
+      "action": "Start with just 6 colors and 1 golden hoof. Trial 100 single shoes before expanding distribution.",
+      "tradeoff": "The low price makes shipping a large share of the cost. Blind boxes also raise ethical concerns about a gambling-like experience for minors.",
+      "proof": "Proposed: A repeat-purchase rate ≥25%, defined as the same buyer purchasing ≥2 times within 30 days.",
+      "kill": "If C05 fails its first round, skip a separate test. If it passes, test repeat purchases with 100 individual shoes. Stop below 10%.",
+      "claim": "The joke can survive selling the shoes individually.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. Mechanism: Grey. Blind boxes are established, but their appeal could conflict with the four-feet punchline.",
+      "links": "C05"
+    },
+    "C07": {
+      "id": "C07",
+      "title": "Four-hoof calf for learning to tie shoes",
+      "status": "live",
+      "statusReason": "Learning to tie laces gives this the clearest practical task. The mechanism can be tested with 3 children within two weeks. It works independently of the joke, and the parent is the identified payer.",
+      "family": "F04 Shoelace teaching aids",
+      "reading": "R1",
+      "insight": "If putting shoes on a cow is really about teaching a person to put on shoes, four feet give the learner four repetitions. This is the only R1 idea that could go straight onto an educational toy shelf without relying on the joke.",
+      "role": "A fine-motor teaching aid that turns tying a lace into caring for a calf.",
+      "occasion": "Home practice for ages 3–6 and practical-life activity areas in preschool.",
+      "freq": "2–5 times a week for 1–3 months.",
+      "current": "Use a cardboard lacing board or threading toy. Much of the time the parent just does the tying.",
+      "relationship": "Child, parent and preschool teacher.",
+      "sub": "A printed practice card and a shoelace (¥1). The child tries it twice and puts it aside because there is no one to look after.",
+      "gap": "A practice board gives the child no one to care for. Four feet invite four tries each session; a calf waiting to go for a run gives the child a reason to keep at it.",
+      "promise": "Your calf has four feet. Help it fasten all four shoes.",
+      "mechanism": "A 30 cm plush calf with 4 removable sneakers. Stiffer tongues, thicker laces and eyelets enlarged by 2 mm aid handling. Each shoe adds a level: hook-and-loop strap → single knot → bow → double knot. A “go outside” pull ring on the calf’s back only moves when all four are fastened.",
+      "how": "Pick up the calf → choose a foot → work through the levels → finish all four → pull the ring on its back to “go for a run.”",
+      "action": "Prototype with one 30 cm plush calf and 4 oversized shoes. Let 3 four-year-olds play for 3 consecutive days and count how many bows they tie independently.",
+      "tradeoff": "Four shoes add cost and bulk. A calf might appeal less to a three-year-old than a dinosaur or unicorn, so the colors would have to help.",
+      "proof": "Proposed: Over 3 days, 3 four-year-olds go from 0 bows tied independently on a single shoe to ≥3. Parents are willing to pay ≥¥129 per set.",
+      "kill": "Test 1 prototype with 3 children within two weeks. If nobody comes back to play unprompted on day 2, or none of the four-year-olds ties a bow within 10 minutes, drop the four-shoe design and go back to a single practice shoe.",
+      "claim": "Four feet turn repetitive practice into a caring task that can hold interest longer than a practice board.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. No input from parents or early childhood educators. Willingness to pay for fine-motor toys is a common-sense assumption. Mechanism: Grey. Lacing aids are an established category, based on maker knowledge outside the supplied material. Four shoes have not been shown to increase persistence.",
+      "short": {
+        "rank": 3,
+        "why": "The only card with a defined practical task and no dependence on an animal. Testing needs just three children and three days.",
+        "risk": "Children might treat the calf as a stuffed animal rather than a teaching aid. One purchase is enough for a parent.",
+        "test": "Have 3 four-year-olds play for 3 consecutive days. Count unprompted returns to play and tasks completed independently."
+      }
+    },
+    "C08": {
+      "id": "C08",
+      "title": "A recovery “running shoe” for lame cattle",
+      "status": "needs-evidence",
+      "statusReason": "Cushioning and raising one claw make sense in veterinary terms, but nothing supplied shows that a soft shell will stay on for 72 hours in a manure-soiled barn without pressing on the coronary band. Check this before investing.",
+      "family": "F05 Hoof protection for lame cattle",
+      "reading": "R2",
+      "insight": "If “for a cow” means a real cow, a running shoe first has to be a medical aid. The moment a cow most needs weight taken off a foot is when it struggles to walk. That turns the joke into a clinical question.",
+      "role": "A recovery aid to take weight off a cow’s painful leg so it can reach the milking parlor under its own power.",
+      "occasion": "The 1–3 weeks of treatment after lameness is diagnosed.",
+      "freq": "Walking 2–3 times daily for 1–3 weeks.",
+      "current": "Glue on a rigid wooden or resin hoof block to raise the healthy claw and unload the affected one (to be verified), or house the cow separately to limit walking.",
+      "relationship": "Farm owner, hoof trimmer and veterinarian.",
+      "sub": "A glued-on block and a hoof trimmer’s visit (¥50–150 per visit, by appointment; to be verified). A hard block is more slippery on wet ground, and unloading the claw does not cushion impact.",
+      "gap": "Current practice redistributes weight but does not address impact at each step. A soft shoe that stays on and cushions the step might shorten recovery; this is precisely the unproven claim.",
+      "promise": "Make each step a little less painful for a lame cow.",
+      "mechanism": "A dual-density EVA midsole is soft at the front and firm at the heel. A replaceable wedge takes the place of a hoof block. Two halves of the shell open to fit the hoof. Its upper edge stops 5 mm below the coronary band to avoid pressure on the blood vessels.",
+      "how": "Trim → measure → choose a shell → fasten the halves → insert the wedge → lead the cow 20 m and observe its gait → remove daily and inspect the coronary band.",
+      "action": "3D-scan the affected hoof of one lame cow to make the shell. Have 5 lame cows wear it for 72 hours and check just two things: whether it comes off and whether it leaves pressure marks at the coronary band.",
+      "tradeoff": "Manure and moisture soak the shoe, cows may chew it, and cleaning and disinfection are difficult. It costs more per animal than a hoof block and requires a hoof trimmer’s help.",
+      "proof": "Proposed: ≤10% of shoes come off during 72 hours of wear (n=5), with 0 cases of pressure marks or broken skin at the coronary band. Within 2 weeks, ≥3/5 cows improve by ≥1 gait-score grade.",
+      "kill": "Within two weeks, trial 72 hours of wear on 5 lame cows. Stop if shoes come off ≥2 animals, any animal develops a pressure mark or broken skin at the coronary band, or fitting takes 2 people more than 5 minutes.",
+      "claim": "A soft, two-part shoe can take over some of a hard hoof block’s function without causing secondary injury.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. No figures on lameness, treatment costs or farm willingness to adopt. Mechanism: Grey. Cushioning plus elevation is a plausible hypothesis. Manure exposure, chewing and pressure on the coronary band are all untested failure modes. No outside product is cited as evidence here."
+    },
+    "C09": {
+      "id": "C09",
+      "title": "Nonslip hoof covers for the milking parlor",
+      "status": "needs-evidence",
+      "statusReason": "The need for grip may be real, but nothing supplied addresses the feasibility or hygiene of fitting and removing covers 2–3 times daily on manure-soiled floors. The answer may lie in the floor. Map where slips occur first.",
+      "family": "F06 Barn slip prevention",
+      "reading": "R2",
+      "insight": "The twice-daily round trip offers a regular window. A shoe put on and taken off at set times is more like workwear; that shapes its form and price.",
+      "role": "A consumable for grip on the 30 m walk from a cow’s stall to the milking parlor.",
+      "occasion": "Every milking round trip, 2–3 times a day.",
+      "freq": "2–3 times a day, year-round.",
+      "current": "Groove the floor, lay rubber mats, spread sawdust or move the cows more slowly (to be verified).",
+      "relationship": "Milking staff, farm owner and hoof trimmer.",
+      "sub": "Grooves or rubber mats need a sizable one-time investment; sawdust costs almost nothing. The former require a shutdown for installation, and the latter needs daily replenishment.",
+      "gap": "If slips cluster at a few corners and doorways, treating those spots is an order of magnitude cheaper than putting shoes on every cow. That alternative would end this concept.",
+      "promise": "Keep your footing on that step around the corner.",
+      "mechanism": "A rubber cover encloses only the sole and uses four drainage grooves. An elastic opening sits below the coronary band. Wear it only in the passage; remove it before entering the parlor and hang it on a rack.",
+      "how": "Fit before milking → walk to the parlor → milk → remove on leaving the parlor → hang on a rack to dry.",
+      "action": "Record slip locations for two weeks using floor marks and a phone. Then decide between footwear and nonslip mats at specific spots. Limit shoe prototypes to 5 pairs.",
+      "tradeoff": "Fitting and removal time multiplies by the herd size. Carrying manure into the parlor creates a hygiene risk. Cows may resist repeated fitting.",
+      "proof": "Proposed: With a baseline of ≥2 slips per week during observation, covers reduce slips to ≤1 per week. Fitting and removal take ≤20 seconds per cow.",
+      "kill": "Record slips in one barn for two weeks. If ≥80% happen at ≤3 fixed spots, or fitting and removal take >60 seconds per cow, drop this card and improve grip at the trouble spots.",
+      "claim": "Whether wearable gear can prevent barn slips depends on how widely the slips are distributed.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: Grey. No slip rate, floor material data or farm records. Mechanism: Grey. Rubber covers are a simple way to add grip. Willingness to be fitted four times daily and the hygiene risk remain untested. Floor improvements are the real competition."
+    },
+    "C10": {
+      "id": "C10",
+      "title": "Gait-sensing “running shoe”",
+      "status": "live",
+      "statusReason": "In-shoe inertial sensors and pressure pads are well established for measuring stride asymmetry in people. Three prototypes and 20 cows would be enough for one blinded comparison in two weeks. The product is the data, and the failure criteria are clear.",
+      "family": "F07 Gait measurement",
+      "reading": "R2",
+      "insight": "If the value of the shoe is what it records, a cow need only wear it for 20 m. The buyer pays for a judgment on the cow’s gait. This is the only R2 idea that gets around a cow’s reluctance to wear shoes for long.",
+      "role": "A measuring device that turns “this cow looks a little lame” into a curve that can be compared over time.",
+      "occasion": "A routine weekly walk down a passageway, or an assessment before breeding or drying off.",
+      "freq": "Once a week, 20 m per walk.",
+      "current": "A vet watches the cow walk, gives it a subjective score from 1 to 5, and inspects its hooves, drawing on experience. Collar pedometers measure activity alone (to be verified).",
+      "relationship": "Veterinarians, hoof trimmers, farm managers.",
+      "sub": "Alternative: slow-motion phone video and a manual score once a week (¥0). The scorer cannot see half-grade differences, and scores vary from one person to the next.",
+      "gap": "People do not reliably distinguish adjacent grades. If a shoe could measure a 5% difference in stance time between the left and right hooves, it might flag a problem 1–2 weeks earlier. The video cannot do that.",
+      "promise": "After a 20 m walk, see which leg the cow is favoring.",
+      "mechanism": "Each half of the sole has a thin-film pressure sensor. A 6-axis inertial measurement unit (IMU) and the pressure sensors sample at 100 Hz and send data by Bluetooth to a reader in the passageway. Outputs include the left-to-right stance-time ratio, a stride-symmetry index, and changes from baseline over time.",
+      "how": "Fit one shoe on the affected side → walk the cow through the 20 m passageway weekly → upload automatically → flag a curve that departs from baseline → have the hoof trimmer check it.",
+      "action": "Use off-the-shelf IMUs and cut slots in the soles to make 3 prototypes. Compare their readings with a vet’s blinded scores for 20 cows to see whether they distinguish grade 1 from grade 2.",
+      "tradeoff": "The device costs a lot per cow. The data are worthless if nobody reviews them. Cleaning, disinfection, charging, and preventing loss create ongoing work.",
+      "proof": "Proposed: agreement with a vet’s blinded scores, κ ≥ 0.6 (n = 20). Successful data capture on ≥90% of individual 20 m walks.",
+      "kill": "Within two weeks, use 3 prototypes and 20 cows for one blinded comparison. Stop if κ < 0.4 or if more than 5 of the 20 recordings fail.",
+      "claim": "In-shoe pressure readings and an IMU could distinguish neighboring lameness grades in a single 20 m walk.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: grey. No evidence on economic losses from lameness or farms’ willingness to pay. Mechanism: grey. Human gait analysis with IMUs is well established (general knowledge outside this run’s source materials). Measuring the two claws of a cow’s hoof as they bear weight independently remains untested.",
+      "short": {
+        "rank": 7,
+        "why": "The strongest problem in the field: early screening directly affects culling decisions. Selling gait data also gets around a cow’s reluctance to wear shoes.",
+        "risk": "Farms may not pay for a score. If collecting one reading takes three people per cow, operating costs could wipe out the value.",
+        "test": "Compare 3 prototypes against a veterinarian’s blinded scores for 20 cows. Calculate only κ and the number of failed recordings."
+      }
+    },
+    "C11": {
+      "id": "C11",
+      "title": "A cow runs the last 100 m of a marathon",
+      "status": "live",
+      "statusReason": "The event is easy to picture: a cow in running shoes covers the final 100 m. A shoot without spectators is possible within two weeks, and failure would be visible if the cow stopped, broke free, or the shoes proved hard to remove.",
+      "family": "F08 Event marketing",
+      "reading": "R3",
+      "insight": "In the brand interpretation, running shoes are props that make the cow look like an athlete. The moment people want to see is the cow crossing the finish line. Keep the distance short enough that only the ritual remains.",
+      "role": "Turn a race finish into a 15-second video.",
+      "occasion": "The final 100 m of a city marathon, a dairy brand event, or a farm open day.",
+      "freq": "1–2 events a year.",
+      "current": "Have someone in a cow costume pose at the finish, or put up a cow-shaped balloon.",
+      "relationship": "Race organizers, brand staff, animal handler, veterinarian, photographer.",
+      "sub": "Alternative: a person in a cow costume runs the last 100 m, at about 1/50 of the cost and with no risk to an animal. Audiences have seen so many cow costumes that the idea attracts an order of magnitude less attention.",
+      "gap": "A real cow in real running shoes is an image audiences have yet to see. It also accounts for all the risk. First show that the scene can be filmed, then see whether anyone cares.",
+      "promise": "A hundred meters from the finish line, a cow in running shoes comes running toward you.",
+      "mechanism": "Choose a calm cow accustomed to crowds. Begin acclimating it to amplified sound and foot traffic in an enclosed space 3 weeks ahead. A familiar handler leads it for just 100 m, in shoes removable in 30 seconds. A veterinarian is present, with limits on temperature and crowd size.",
+      "how": "Acclimate the cow before the race → arrive 30 minutes early → lead it at a jog over the final 100 m → cross the line → remove shoes immediately → interview the handler.",
+      "action": "First shoot without spectators: one cow, 100 m, 4 camera positions. See whether the team can get usable footage without signs of stress in the cow. Then discuss a race appearance.",
+      "tradeoff": "Animal welfare and public reaction pose very high risks. Permits, insurance, and transport could cost more than the content is worth.",
+      "proof": "Proposed: ≥1 million organic views of the 15-second video and ≥35% completion. Stress indicators (heart rate, tail swishing, stopping) stay within 20% above baseline.",
+      "kill": "Complete a spectator-free shoot within two weeks. Drop the live-cow version and move to C12 if there are ≥2 stops or attempts to break free over 100 m, if the shoes cannot come off within 30 seconds, or if no insurable venue can be found.",
+      "claim": "A real cow in real shoes running 100 m could draw attention that a costumed person cannot, with animal welfare risks kept manageable under strict limits.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: grey. No brand budgets or race materials. Mechanism: grey. The feasibility of leading a cow over a short distance is an assumption. Stress and permission are the biggest unknowns. This card makes no claim that a similar event has ever taken place.",
+      "links": "C12"
+    },
+    "C12": {
+      "id": "C12",
+      "title": "Cow Run pop-up 5K (people in costume)",
+      "status": "variant",
+      "statusReason": "A fallback for C11. Keep the ritual and the image, with human runners taking over if C11 is dropped or its costs cannot be agreed.",
+      "family": "F08 Event marketing",
+      "reading": "R3",
+      "insight": "If a real cow is impractical, people can take its place in the ritual while keeping the visual intact. The direction could survive even if C11 fails.",
+      "role": "A participatory public event.",
+      "occasion": "City 5Ks, outdoor plazas at shopping centers, brand members’ days.",
+      "freq": "Once a year.",
+      "current": "Themed events such as color runs and pajama runs.",
+      "relationship": "The brand, runners, shopping center, volunteers.",
+      "sub": "Alternative: organize a conventional themed run and leave out the cow story. The registration page would lack a one-line premise people want to share.",
+      "gap": "No new unmet need. This is a fallback for C11, with no independent opportunity identified.",
+      "promise": "A thousand people run a 5K on “cow-hoof soles.”",
+      "mechanism": "Registration includes C01 sole patches or co-branded shoes. The finish has a “cattle pen” photo area and a “cow shoe sizes” wall for pictures.",
+      "how": "Sign up → collect shoes or patches → run → take a finish-line photo → collect a “cow hoof certificate.”",
+      "action": "Make C01 shoes an event exclusive. Start with a single 300-person run.",
+      "tradeoff": "It depends entirely on C01 working, and the market is full of similar themed runs.",
+      "proof": "Proposed: registration-page conversion ≥8% and race completion ≥85%.",
+      "kill": "Use the C11 test shoot to decide. If C11 is dropped and this event attracts fewer than 3 sponsors, stop.",
+      "claim": "Human participants could carry the ritual while preserving both the visual and the motivation to register.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: grey. Mechanism: grey. Themed runs are an established event format (general knowledge), but there are no conversion data.",
+      "links": "C11, C01"
+    },
+    "C13": {
+      "id": "C13",
+      "title": "Running shoes for a cow, made from a cow",
+      "status": "live",
+      "statusReason": "The exhibit can be built in two weeks: a pair of all-cowhide running shoes and hoofprints on the floor. The conversation it invites is clear. Failure would be visible if visitors cannot say “these shoes are made from a cow.” It is the only way to make the cow present without bringing a live animal.",
+      "family": "F09 Material reversal",
+      "reading": "R3",
+      "insight": "Read “for” as “from,” and a gift becomes an accusation: the shoes for a cow are made from a cow. The reversal brings the cow into the room without putting a live animal on display or using one for entertainment.",
+      "role": "An exhibit posing an ethical question by turning “make running shoes for a cow” into “make running shoes from a cow.”",
+      "occasion": "Design weeks, animal ethics exhibitions, brand ESG announcements, boutique window displays.",
+      "freq": "2–4 weeks per exhibition.",
+      "current": "Use a poster to discuss leather ethics, or display samples of animal and vegan leather side by side.",
+      "relationship": "Curators, brands, animal protection groups, visitors.",
+      "sub": "Alternative: a poster comparing animal and vegan leather (a few hundred yuan). It makes an argument but gives visitors no physical sense of unease and little reason to stop.",
+      "gap": "Visitors know that leather shoes come from cattle, but rarely see shoes for a cow and shoes made from a cow in the same image. A pair of size 45 all-cowhide running shoes resting on hoofprints completes the thought.",
+      "promise": "These shoes are for a cow. They are also made from a cow.",
+      "mechanism": "Make a standard pair of running shoes with uppers, insoles, laces, and buckles all made from cowhide and cattle bone. Print “Material source: a cow weighing about 600 kg” inside the box. Make hoofprints on the display floor and place the shoes as if the cow were about to put them on.",
+      "how": "Approach → read “a pair of running shoes for a cow” → realize the materials all come from a cow → look down at the hoofprints → take a photo or start a debate.",
+      "action": "Within two weeks, make 1 sample pair and 1 rendering of the display. Stage a small exhibition for 20 people in 1 design community. Count how many say, unprompted, “these shoes are made from a cow.”",
+      "tradeoff": "People may read it as a stunt or find it offensive to the brand. Both the leather and vegan-leather camps may dislike it. Media coverage is hard to control.",
+      "proof": "Proposed: an average visit of ≥45 seconds during the exhibition (n ≥ 200 visitors). At least 30% of comments spontaneously mention the paradox in the materials.",
+      "kill": "At the 20-person exhibition, stop if fewer than 5 visitors can say on their own that the shoes are made from a cow. That would mean the paradox failed to register.",
+      "claim": "Reversing the meaning of the material could make more people stop and think about where leather comes from than a written argument would.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: grey. No exhibition or brand budget materials. Mechanism: grey. The idea that juxtaposition creates meaning is a design assumption. Dwell time and unprompted recall can be tested, but a small sample will say little about other audiences."
+    },
+    "C14": {
+      "id": "C14",
+      "title": "A farm photo experience: put a shoe on a cow",
+      "status": "live",
+      "statusReason": "A specific setting (family trips to a farm near the city), a very low cost (an oversized pair of soft shoes and a calm cow), and a clear sign of failure: does anyone pay over the weekend? One weekend could yield actual payment data.",
+      "family": "F10 Farm visits",
+      "reading": "R3",
+      "insight": "The cow need not run and the shoe need not fit. What gives the experience value is a moment visitors cannot get elsewhere: “I touched its foot.”",
+      "role": "The high point of a paid visit: visitors come specifically to put a shoe on a cow themselves.",
+      "occasion": "Weekend family day trips, school field trips, company team outings.",
+      "freq": "Once per visitor. The farm sees 50–300 people per week.",
+      "current": "Bottle-feed calves, watch a milking demonstration, ride a tractor. At the photo spots, visitors simply stand next to the animal.",
+      "relationship": "Farm owner, guide, visitors, cow.",
+      "sub": "Alternative: add one oversized prop shoe to an existing feeding activity and let visitors hold it for a posed photo (under ¥500, ready in a day). Visitors miss the moment of actually putting the shoe on, and the shoe hangs in midair in the photo.",
+      "gap": "When feeding a calf, you give it something to drink. When putting on a shoe, you touch its foot. That different degree of physical contact gives the photo a story that existing farm activities lack.",
+      "promise": "Put a running shoe on a cow with your own hands, then have your picture taken together.",
+      "mechanism": "A pair of oversized soft-soled shoes shaped after real cow hooves rests loosely on the hoof. A guide steadies the cow and gives a 30-second safety briefing. Limit sessions to 6 people and give the cow a break after each 15-minute session.",
+      "how": "Queue → wash hands → guide steadies the cow → visitor rests the shoe on the left front hoof → take a picture → remove the shoe → collect a “cow hoof size card.”",
+      "action": "Make one triple-size soft EVA shoe and try it at 1 farm for 1 weekend. Record the number of people who queue, additional spending, and the cow’s reactions.",
+      "tradeoff": "Animal stress and safety liability. The experience is easy to copy, and session length limits visitor numbers.",
+      "proof": "Proposed: ≥60 paid visits during the trial weekend at ≥¥39 per person, ≥25% increase in average spend per visitor, and stress indicators no higher than the cow’s usual baseline.",
+      "kill": "Within two weeks, run a one-weekend trial at 1 farm. Stop if there are fewer than 30 paid visits, if the cow kicks or tries to break free even once, or if visitors stay less than 3 minutes on average.",
+      "claim": "Putting a shoe on a cow could become a hands-on experience people pay for and are more likely to share than feeding a calf.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: grey. No data on farm traffic, average spend, or competing experiences. Mechanism: grey. The assumption that resting a soft shoe on a hoof is low risk requires a vet’s confirmation. This card makes no claim that any farm already offers a similar experience.",
+      "short": {
+        "rank": 4,
+        "why": "The shortest path to a payment, with a test that takes one weekend. It also tests whether a real cow is worth more than a person in costume.",
+        "risk": "A single instance of animal stress or one safety incident could end the farm’s participation.",
+        "test": "One farm, one weekend, ¥39 per person. Count paid visits and record the cow’s reactions."
+      }
+    },
+    "C15": {
+      "id": "C15",
+      "title": "Oversized running shoes for a mascot",
+      "status": "live",
+      "statusReason": "The user is clear: a costume performer. So is the job: running and jumping through a 2-hour parade. An off-the-shelf running-shoe midsole and a printed shell could test it within two weeks.",
+      "family": "F11 Mascot footwear",
+      "reading": "R4",
+      "insight": "When a person plays the cow, the first user is the performer sweating inside the costume. The joke becomes workplace gear. Looking like a hoof and being able to run can each be solved in a separate layer.",
+      "role": "Work equipment that helps a cow mascot performer get through a 2-hour parade without twisting an ankle.",
+      "occasion": "Parades at races and shopping centers, opening ceremonies, scheduled performances at theme parks.",
+      "freq": "1–3 shows a week, 60–120 minutes each.",
+      "current": "The performer wears their own athletic shoes inside the costume’s soft-soled hoof covers. The feet look human and get hot inside.",
+      "relationship": "Performer, costume maker, event organizer, audience.",
+      "sub": "Alternative: slip your own running shoes into the costume’s hoof covers (¥0). They stretch the covers out of shape, feel like slippers when walking, and do not breathe.",
+      "gap": "Existing costumes treat hooves as decoration and make little allowance for the performer needing to run. A shoe fitted to a human foot inside a hoof-shaped exterior would do both jobs.",
+      "promise": "A cow hoof on the outside. On the inside, a running shoe you can run in for 2 hours.",
+      "mechanism": "A replaceable midsole from a wide-fit running shoe sits inside a two-part, hoof-shaped EVA shell with an 8 mm gap. Side vents and arch support complete the shoe. The opening stays hidden under the costume trouser leg.",
+      "how": "Put on socks → slip into the liner → fasten the two halves of the shell → join the parade → open the shell at the interval to let heat out → disassemble and wash afterward.",
+      "action": "Use size 45 wide-fit running shoes and a 3D-printed two-part shell to make 1 pair. Have 1 performer wear them for a full 2-hour parade. Measure foot temperature and count any ankle twists.",
+      "tradeoff": "The shell adds weight and makes turning harder. It serves a small market of professional performers with infrequent repeat purchases.",
+      "proof": "Proposed: foot temperature ≤38°C and no blisters after a 2-hour parade (n = 3). Performers rate their ability to run ≥4/5.",
+      "kill": "Within two weeks, try 1 pair on 1 performer in a real 2-hour parade. Stop if they twist an ankle, develop a blister, or ask to take them off within 30 minutes.",
+      "claim": "A running shoe inside a cow-hoof shell could deliver the required look and stand up to a 2-hour shift.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: grey. No input from costume performers or costume makers. The idea that performers have sore feet is an inference. Mechanism: grey. A wide-fit midsole plus an outer shell is an established combination (general knowledge). Heat dissipation and changes in balance remain untested."
+    },
+    "C16": {
+      "id": "C16",
+      "title": "Split-toe quick-release running shoe for a real cow",
+      "status": "needs-evidence",
+      "statusReason": "This addresses the literal brief, but fastening a shoe without an ankle to hold onto is a hard problem. A stationary shell must first show that it can be fitted in 3 minutes and stay on without injury before a moving test makes sense.",
+      "family": "F12 Cloven-hoof engineering",
+      "reading": "R5",
+      "insight": "The literal reading raises a more basic question than how the shoe looks: how do you fit it to an animal without an ankle to fasten it around? Reducing the problem to 3 minutes makes it small enough to test.",
+      "role": "One-off performance gear for a real cow to walk or run a few dozen meters on camera “in running shoes.”",
+      "occasion": "Filming, trade show appearances, awards podiums, farm open days.",
+      "freq": "A few times a year.",
+      "current": "Paint the hooves, tie on strips of cloth, or composite the shoes in postproduction.",
+      "relationship": "Cow, handler, hoof trimmer, photographer.",
+      "sub": "Alternative: add a pair of shoes in postproduction (a few thousand yuan, no risk to the animal). Close-ups and ground contact can give away the effect, and nobody on site sees it happen.",
+      "gap": "Filming a cow actually wearing shoes requires a physical prop. Whether it can stay on the hoof for 3 minutes determines whether a physical shoot is possible or the effect must be added later.",
+      "promise": "A shoe that really fits on a cow’s hoof and stays on for a 100 m run.",
+      "mechanism": "Two independent compartments, one for each claw. A soft band sits just below the coronary band, designed to avoid compressing blood vessels. A diagonal rear strap wraps around the heel bulbs and closes with a magnetic quick release. The forefoot is thin and the heel is 8 mm thicker to mimic a running shoe’s heel-to-toe drop.",
+      "how": "Clean and trim the hoof → spread the claws → fit each half → close the buckle → tension the diagonal strap → lead the cow 100 m → pinch the release with one hand to remove the shoe.",
+      "action": "First make a shell for a stationary fit test only and try it on 1 calm cow for 3 minutes. If that passes, make a version for the 100 m moving test.",
+      "tradeoff": "Without an ankle to hold onto, any band may slip or compress the hoof. The concept might work briefly, but the card rules out prolonged use and limits it to a prop.",
+      "proof": "Proposed: no detachments and no marks at the coronary band in 3 minutes (n = 3). At most 2 adjustments during a 100 m walk.",
+      "kill": "Within two weeks, do 3 stationary 3-minute trials with 1 cow. Drop the moving version and keep only a shell for posed photos if the first fitting takes over 3 minutes, the cow kicks, stamps or tries to break free, or the shell rotates more than 30° within 10 steps.",
+      "claim": "A split shell and a soft band below the coronary band could stay on a cow’s hoof for 3 minutes without an ankle fastening, slipping off, or causing injury.",
+      "evidence": "yellow",
+      "evidenceNotes": "Demand: grey. No shoot or exhibition budgets. Mechanism: yellow. U1 literally asks for “running shoes” and “for a cow to wear,” providing partial support for the design premise. The anatomical description “no heel, no ankle” is an explicit inference without measurements. The fastening itself is a hypothesis.",
+      "short": {
+        "rank": 5,
+        "why": "The only card to tackle the literal question head-on. A 3-minute stationary check is cheap enough to run immediately and offers the highest information value.",
+        "risk": "The shell may simply fail to stay on: the tissue at the coronary band may not tolerate any strap, and the cow may not cooperate.",
+        "test": "One cow, one stationary shell, three 3-minute trials. Check only whether it comes off or leaves pressure marks."
+      }
+    },
+    "C17": {
+      "id": "C17",
+      "title": "Hoof gauge and a shoe-sizing system for cattle",
+      "status": "live",
+      "statusReason": "A prerequisite for C16 and C08. An acrylic measuring mat and printed calipers could be made in two weeks, and repeatability could be tested in a day. The tool could also be sold on its own to makers and researchers.",
+      "family": "F13 Hoof sizing",
+      "reading": "R5",
+      "insight": "Before “making shoes for cows” can become an industry, it needs sizes. A sizing standard is the smallest step from a joke to practical infrastructure. This is also the only card that does not depend on a cow’s cooperation.",
+      "role": "A measuring tool that turns a vague impression of a hoof into one of 6 sizes that can be ordered.",
+      "occasion": "Before making shoe samples, when a vet opens a record, or during hoof-trimming training.",
+      "freq": "One record per cow, one size selection per pair of shoes.",
+      "current": "Measure hoof width with a flexible tape and pick a shell by experience. Data cannot be shared reliably, and different people get different results.",
+      "relationship": "Shoemakers, hoof trimmers, veterinarians, researchers.",
+      "sub": "Alternative: vernier calipers and a handwritten chart (a few tens of yuan). They do not reliably capture the angle between the claws or the circumference at the coronary band. Two people produce two sets of numbers.",
+      "gap": "Without shared sizes, every pair needs an individual scan and prototyping costs stay high. With 6 standard sizes and a measuring card, the second pair could finally cost less.",
+      "promise": "Take three measurements. Give one size.",
+      "mechanism": "A three-jaw gauge measures hoof width, hoof length, and the angle between the claws. A marked mat can be photographed and the system offers 6 sizes (N1–N6). A phone photo reads the scale automatically and generates an order number.",
+      "how": "Stand the cow on level ground → place hoof on the measuring mat → fit the jaws → take a picture → read the size → place an order or create a record.",
+      "action": "Use an acrylic measuring mat and a 3D-printed three-jaw gauge on 20 cows. Have two people measure each cow once and calculate the differences.",
+      "tradeoff": "It is only useful if someone actually wants to make shoes for cattle. The market is tiny and depends entirely on C16 and C08.",
+      "proof": "Proposed: the two measurers’ results for the same cow differ by ≤2 mm in ≥85% of cases (n = 20).",
+      "kill": "Within two weeks, test with 20 cows and 2 measurers. If measurements differ by more than 4 mm in ≥30% of cases, manual hoof measurement is too inconsistent. Switch to a 3D scanning service.",
+      "claim": "Cow hooves could be standardized into 6 sizes, and a manual gauge could give sufficiently consistent readings.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: grey. No evidence of demand from shoemakers or farms. Mechanism: grey. Repeatability is an engineering question testable in two weeks. The value of this card depends entirely on whether C16 or C08 works.",
+      "links": "C16, C08"
+    },
+    "C18": {
+      "id": "C18",
+      "title": "Strap an adult running shoe directly to a cow’s hoof",
+      "status": "killed",
+      "statusReason": "Rejected on structural grounds. With no heel or ankle for the shoe to grip, the straps can only cinch the soft tissue at the coronary band. This fit conflicts with the anatomy and adds no new mechanism: C16 addresses the same fastening problem. The card remains on record to prevent it being proposed again.",
+      "family": "F14 Direct adaptation",
+      "reading": "R5",
+      "insight": "The literal reading readily suggests strapping on an existing running shoe. Writing that idea down and rejecting it pushed the design toward C16’s split structure. Ruling something out is itself a design outcome.",
+      "role": "The most intuitive approach: buy a pair of large running shoes and tape them on.",
+      "occasion": "A one-off shoot.",
+      "freq": "Once.",
+      "current": "Fasten with tape or rope.",
+      "relationship": "Cow, handler.",
+      "sub": "This is itself the cheapest alternative (under ¥500 and 10 minutes). The shoe turns over within 3–5 steps and the tape compresses the coronary band.",
+      "gap": "None. It assumes that a tight binding will suffice, which the anatomical reasoning rejects. It identifies neither a new unmet need nor a new mechanism.",
+      "promise": "Have a cow “wearing running shoes” in ten minutes.",
+      "mechanism": "A large running shoe with two turns of cloth-backed tape around the coronary band.",
+      "how": "Slip shoe on → wrap tape → lead cow → shoe turns over.",
+      "action": "Film just one 10-step comparison for the record. Do not proceed to prototyping.",
+      "tradeoff": "Tape can injure the cow by compressing the coronary band. The sole is too stiff to let the two claws move independently.",
+      "proof": "Proposed: the shoe holds its position for ≥8 of 10 steps (expected to fail).",
+      "kill": "No need for two weeks. A single 10-step fitting would give a decision. Rule the idea out permanently if the shoe turns over within 5 steps or the cow stamps.",
+      "claim": "Rejected claim: simply tightening the straps is enough to secure a running shoe to a cow’s hoof.",
+      "evidence": "grey",
+      "evidenceNotes": "Demand: not applicable because the mechanism itself is judged unworkable. Mechanism: grey. “No heel, no ankle” is an anatomical inference, not a measurement, but the run judges it sufficient to screen the idea out without animal testing. The record prevents the idea from being proposed again.",
+      "links": "C16"
+    }
+  },
+  "grill": {
+    "C16": {
+      "rounds": [
+        {
+          "q": "What keeps a running shoe on a cow’s hoof without a human-style ankle or heel?",
+          "consider": "Laces would sit at the upper edge of the coronary band, over soft tissue and blood vessels. The record contrasts the insensitive horn used to nail on a horseshoe with the lack of an equivalent nailing area on a cow’s hoof. The two-part shell and soft collar are an untested hypothesis in this run.",
+          "decision": "Move the fastening off the coronary band. Grip the two halves and add an angled strap behind the heel bulbs. Limit the target to 3 minutes of wear and drop the long-wear goal."
+        },
+        {
+          "q": "If it only has to last 3 minutes, is it still a running shoe?",
+          "consider": "A shoot needs a recognizable running-shoe silhouette and one footfall. Neither C13 nor C14 requires the shoe to work for running. If C16 serves only a shoot, its value overlaps with C11 and C14.",
+          "decision": "Keep C16 to test the literal brief. Success means the shoe stays on for 3 minutes and causes no injury. Drop the promise of commercial value."
+        }
+      ],
+      "verdict": "narrow",
+      "note": "The structure remains open, with a strict time limit. Next comes a 3-minute static fitting. If that fails, retain only a prop for staged photos and shift resources to C01 and C14."
+    },
+    "C01": {
+      "rounds": [
+        {
+          "q": "Is this a shoe for a cow, or a running shoe with a hoof print?",
+          "consider": "A sole graphic alone would tie the shoe to the brief through copy. Two independently moving sections could actually change landing and push-off, a mechanical difference that can be tested.",
+          "decision": "Make the cow part of the structure: two independently hinged halves and zero drop. Remove all printed cow patterns."
+        },
+        {
+          "q": "Could the central groove make the shoe unstable and reduce it to a gimmick?",
+          "consider": "Split-toe and barefoot running shoes exist, according to the maker’s general knowledge. This run offers no evidence of stability over 10 km on city streets. If the shoe only works for a 200-meter photo walk, it becomes a life-size version of C05.",
+          "decision": "Make a pain-free 10 km a requirement to pass the test."
+        }
+      ],
+      "verdict": "continue",
+      "note": "Keep as the first recommendation. The mechanism is testable, the buyer is clear and failure is inexpensive. Make 3 groove widths and have people identify the prints blind."
+    },
+    "C05": {
+      "rounds": [
+        {
+          "q": "Is a four-pack a clever unit to sell, or does it spoil the joke about “a pair”?",
+          "consider": "A four-pack corrects the brief’s “pair”. A recipient gets the joke that cows have four feet, but only in the first 10 seconds after opening. A single miniature-shoe key ring already delivers the cuteness of a little shoe.",
+          "decision": "Keep the four-pack and make the cow size chart on the back of the box the main joke, so the four shoes add up to more than a quantity."
+        },
+        {
+          "q": "How would you handle the infringement risk of copying an actual running shoe?",
+          "consider": "A direct copy carries legal risk and makes the object look as though it was never designed for a cow.",
+          "decision": "Use an original wide, laceless shape with a two-part sole. Keep only the traits that make it recognizable as a running shoe."
+        }
+      ],
+      "verdict": "continue",
+      "note": "This is the least expensive idea to try. Make 50 boxes and see whether anyone will pay for the number joke. If it fails, stop C06 as well."
+    },
+    "C11": {
+      "rounds": [
+        {
+          "q": "Could a real cow on a city racecourse meet welfare and permit requirements?",
+          "consider": "Crowd noise, road surface, transport and insurance are hard constraints. Even the final 100 meters would require a closure and a veterinarian on site. A person in a cow costume (C12) could deliver the same shot with no animal at risk.",
+          "decision": "Limit the appearance to 100 meters in a closed setting with a familiar handler. The shoes must come off within 30 seconds. Develop C12 in parallel as a backup."
+        },
+        {
+          "q": "If the footage is valuable because the cow is real, can that value be verified?",
+          "consider": "Filming without spectators can show only that the cow can be filmed. Whether viewers care that it is real requires audience-response data. The costs differ by an order of magnitude.",
+          "decision": "Fund two steps separately: a shoot with no spectators for technical feasibility, then a small campaign for audience attention. Discuss an event only if both pass."
+        }
+      ],
+      "verdict": "narrow",
+      "note": "Retain the direction as a 100-meter ceremony. It missed the recommendations because its next check costs the most and takes the longest of any idea on the list."
+    }
+  },
+  "handoff": [
+    "C01",
+    "C05",
+    "C07"
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "package": "idea-atlas",
+  "version": "1.0.0",
+  "companion": {
+    "name": "idea-to-positioning",
+    "version": "1.0.1"
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1083,
+      "sha256": "9eb9af8017a5661cf01f7f8e2edee917378797315a1a2bd48fae9dae5e805cbd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7055,
+      "sha256": "0de0e964f12b87b27b723c69c81f4648fc628c7eb099fc002f7da5e621008ba6"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 6778,
+      "sha256": "62c9959e9acc94adf5349e3f3578a6eb9aa12bf0db101d53a380127932c0bf5c"
+    },
+    {
+      "path": "companions/idea-to-positioning/CHANGELOG.md",
+      "bytes": 2053,
+      "sha256": "8479e6bbb0869c6f85246f83c1937fd95c0669d88ffc01c491ed62b98476d249"
+    },
+    {
+      "path": "companions/idea-to-positioning/CONTRIBUTORS.md",
+      "bytes": 322,
+      "sha256": "410045dd7363695404f3b53ff3350813c7b600e13f323c0d79e34e1b20d966c8"
+    },
+    {
+      "path": "companions/idea-to-positioning/LICENSE",
+      "bytes": 1068,
+      "sha256": "8c8811d4c5aab4f92cbf592b811d4e59ca70ba43fcae5f524c1690d8f3425f56"
+    },
+    {
+      "path": "companions/idea-to-positioning/README.md",
+      "bytes": 7071,
+      "sha256": "f54a9652e5ebbfd854125e6d9b930d369859071c76b408bed21babb1278ab1e8"
+    },
+    {
+      "path": "companions/idea-to-positioning/SKILL.md",
+      "bytes": 4238,
+      "sha256": "05de1826eed3947d45ba914911f3f0cc905983834b60d800c3f243fa8f8672b3"
+    },
+    {
+      "path": "companions/idea-to-positioning/examples/ai-cognitive-robot/00_DECISION_BRIEF.md",
+      "bytes": 5682,
+      "sha256": "0c2310db72c50d0cd65cc87b51e738745e71d8f142b4e7001a00f391b3a7d73e"
+    },
+    {
+      "path": "companions/idea-to-positioning/examples/ai-cognitive-robot/01_DECK_OUTLINE.md",
+      "bytes": 6046,
+      "sha256": "f55870a40b87601ee525e8fd19611b7b3df02a72a91cc6c7f49207324267ee79"
+    },
+    {
+      "path": "companions/idea-to-positioning/examples/ai-cognitive-robot/02_GRILL_LOG.md",
+      "bytes": 3809,
+      "sha256": "4f3b60236e1b057b7465a4bbfcd26030fef737ff94ba65929ececbcf2dc7fa6f"
+    },
+    {
+      "path": "companions/idea-to-positioning/examples/ai-cognitive-robot/03_SOURCES.md",
+      "bytes": 5597,
+      "sha256": "c881e63d17912184156ca198e5bb7f51733b1f4335a073aab9edc8d3ff329bf7"
+    },
+    {
+      "path": "companions/idea-to-positioning/examples/ai-cognitive-robot/README.md",
+      "bytes": 1542,
+      "sha256": "3b84fd42bd6c953477e26e896e946f866d382235eff1499e38933532cf31f19d"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/deck-outline.md",
+      "bytes": 2577,
+      "sha256": "a92d8fe6631773abe4809bb0f389519caf22bb729de8719e6176055ba3fcf75b"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/evidence-coding.md",
+      "bytes": 4592,
+      "sha256": "06925093e7a34658f88912a9ee3da5ddcf44e778a4c39ab256e1a2abb059f669"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/front-stage-output.md",
+      "bytes": 3040,
+      "sha256": "326a37bbcf2943eeb6608306922cbfc4ea06463eb4a7a0e38c3e55d817297f15"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/grill-protocol.md",
+      "bytes": 4562,
+      "sha256": "6671cebd5c95bd31a3adf410429f767a7134cf58e0b5a5215629c66842827b6a"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/long-run-mode.md",
+      "bytes": 6944,
+      "sha256": "8887bd1fef7594738d023b18981a3c15691a42a6b84075595382ac85c8732f4a"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/minimal-input-mode.md",
+      "bytes": 2762,
+      "sha256": "ae55134d5bd568a7fd4f8ea1453d7a014b65b969bea817526b8b72b8b6d37aa1"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/outputs.md",
+      "bytes": 3207,
+      "sha256": "de4e4163f59a567731e2c20723b05958e160b2c30ed5902b6e021d4fbe23d9fc"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/positioning-canvas.md",
+      "bytes": 2730,
+      "sha256": "44d7ca77bc3edd53276a456177925410ee121ff902ea7d39751e653e31f46c1f"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/question-bank.md",
+      "bytes": 3412,
+      "sha256": "495f2fcfc1c48591af68448adffa3af7564b16c7f2f238716014ed843fbfe06a"
+    },
+    {
+      "path": "companions/idea-to-positioning/references/workflow.md",
+      "bytes": 5326,
+      "sha256": "d645140f576fc6da128e0b5a8cd11cb7b2f78dacbbf6ff66de50ee33f2b0bd1e"
+    },
+    {
+      "path": "companions/idea-to-positioning/templates/claim-one-pager.md",
+      "bytes": 880,
+      "sha256": "d182606598aa4ab9d0c703890479022c566604722c785b6c538c33d91b2e9443"
+    },
+    {
+      "path": "companions/idea-to-positioning/templates/concept-card.md",
+      "bytes": 1067,
+      "sha256": "30434e0556c0e37acfcb9502fcd1e2b56ced88f642353ce44c911fef9362f94d"
+    },
+    {
+      "path": "companions/idea-to-positioning/templates/decision-brief.md",
+      "bytes": 1119,
+      "sha256": "6ce92cc47612f73b1e17e7c44f4557b3522c7fc8c04e099e7fec72f9888544f6"
+    },
+    {
+      "path": "companions/idea-to-positioning/templates/decision-log.md",
+      "bytes": 536,
+      "sha256": "0211805ec89c7d60526adcf8b9cbe8c68430f9efb26710d49dfc3c619440c6bd"
+    },
+    {
+      "path": "companions/idea-to-positioning/templates/kill-memo.md",
+      "bytes": 514,
+      "sha256": "2aea9d15566686c68b236179ec560e3fdca724dbc459cc1f7c48d2dada311ad3"
+    },
+    {
+      "path": "companions/idea-to-positioning/templates/read-me-first.md",
+      "bytes": 1012,
+      "sha256": "0ba945ed61b132824e0248a19660853ae949d3ce93bf5641c004b90db087abb6"
+    },
+    {
+      "path": "companions/idea-to-positioning/templates/source-table.md",
+      "bytes": 604,
+      "sha256": "4ca13106faf9954f0a5dba57e960d929cd8bbb9494e67ef9b0c275f7d0c48208"
+    },
+    {
+      "path": "docs/cow-shoes/en.html",
+      "bytes": 127866,
+      "sha256": "fbb2651c278b4e3ee2ed141d5077575339339fff1a1acc1d4b392f44ecdd93df"
+    },
+    {
+      "path": "docs/cow-shoes/en.json",
+      "bytes": 69443,
+      "sha256": "4eac7fd091d1c838e4329289996d38afe85655f6c75850c1086b7557bcaead4b"
+    },
+    {
+      "path": "docs/cow-shoes/zh.html",
+      "bytes": 114194,
+      "sha256": "03539d0b7ae6653a44cd052c06441c11a67e6f59ed5cbcd60b071704916f98f1"
+    },
+    {
+      "path": "docs/cow-shoes/zh.json",
+      "bytes": 56387,
+      "sha256": "712f49a8319cc78caa45d8d4aeecb45a3295c4e2188a4896a0e2db7b21ef65f6"
+    },
+    {
+      "path": "docs/index.html",
+      "bytes": 3324,
+      "sha256": "59050644a7bc40f431701ed6b25a8b991df1d775dbf434420ee5db508adc326a"
+    },
+    {
+      "path": "docs/media/atlas.svg",
+      "bytes": 617,
+      "sha256": "8d7eef2b7347151340ea4970bbec3743a2cbc1215981ffb67c516d56ef9f7c65"
+    },
+    {
+      "path": "docs/media/cow-shoes-en.png",
+      "bytes": 485301,
+      "sha256": "88baa5fd09fe02743366c039b5342dcee6326ac320326f405aac52fb524d3453"
+    },
+    {
+      "path": "docs/media/cow-shoes-zh.png",
+      "bytes": 532173,
+      "sha256": "63b45d367eedea0345db9b32cfaa9843411b7e15af40f875b86d78e320b8fb20"
+    },
+    {
+      "path": "docs/media/demo.css",
+      "bytes": 3117,
+      "sha256": "c9d7b322a93e41fc3c23e459ab4c85edc6b07de4b3d214bf6a62fa8bb0768581"
+    },
+    {
+      "path": "docs/media/sideboard-en.png",
+      "bytes": 472622,
+      "sha256": "149a7f7b077d0f6101412b024487adb7775e5ad42fda851dff0b6efb3391210a"
+    },
+    {
+      "path": "docs/media/sideboard-zh.png",
+      "bytes": 374800,
+      "sha256": "31fd02cfec44224b987138e6762937a79f6fee90ecda2da4a7ae91526611fdd4"
+    },
+    {
+      "path": "docs/sideboard/en.html",
+      "bytes": 107424,
+      "sha256": "3b4cec1e061311aef38939183f2874b9214f4a0098297e2155adb2e1b74d61ab"
+    },
+    {
+      "path": "docs/sideboard/en.json",
+      "bytes": 48298,
+      "sha256": "cdc1cb47f8cbce18e9fd255e9a2ed67b1fec3d3247f665fa9fbe0e53c2ad4b23"
+    },
+    {
+      "path": "docs/sideboard/zh.html",
+      "bytes": 95982,
+      "sha256": "d04fbaeede55e48e2af4bf3f03eff823d66858aad81d30abef44e4c28fa653a1"
+    },
+    {
+      "path": "docs/sideboard/zh.json",
+      "bytes": 37476,
+      "sha256": "d5460a3e297df763189aea10a75a9e28950e1e72ceb4121e42a81d1f913d4fa5"
+    },
+    {
+      "path": "docs/zh.html",
+      "bytes": 3279,
+      "sha256": "6d0ab1b85f16a2e179979a5c0e2c9a5026b853096dee3250cbbb29093dc572ae"
+    },
+    {
+      "path": "idea-atlas/LICENSE",
+      "bytes": 1083,
+      "sha256": "9eb9af8017a5661cf01f7f8e2edee917378797315a1a2bd48fae9dae5e805cbd"
+    },
+    {
+      "path": "idea-atlas/SKILL.md",
+      "bytes": 16999,
+      "sha256": "709231c826d46512ec93d2d826e679f7079a7e1e1cf176f1e30e297a8ab4ab72"
+    },
+    {
+      "path": "idea-atlas/examples/sideboard/atlas-data.json",
+      "bytes": 35780,
+      "sha256": "50c05ee7b6b9ca4beb979a67dfdf9d6ab29b18e40e80cebde1c22c1aa4be2773"
+    },
+    {
+      "path": "idea-atlas/examples/sideboard/atlas.html",
+      "bytes": 94957,
+      "sha256": "bb090d9ae17d41b16aa52b7a456f4901fd14f5a7a7de93728eb87f3449786677"
+    },
+    {
+      "path": "idea-atlas/examples/sideboard/preview.png",
+      "bytes": 240891,
+      "sha256": "12df7c4f6c1128d51e396d0203927d2c767c45f07348708f4f537853edc1fc1b"
+    },
+    {
+      "path": "idea-atlas/references/canvas-data.md",
+      "bytes": 5459,
+      "sha256": "5a9ea0d4f146b8e331546adc0dfe401aaad5f1bb6c4dbc78c4b57d1f3fa627d9"
+    },
+    {
+      "path": "idea-atlas/references/constraint-campaign.md",
+      "bytes": 3934,
+      "sha256": "fcdd20a55760f6d86e794ae9357785e600de435b680d67afaad414a34b258d00"
+    },
+    {
+      "path": "idea-atlas/references/decision-flow.md",
+      "bytes": 5887,
+      "sha256": "bc7336bf756f306d538f09aeb947e929e075ea6cf40d4051ea832880b1af41f0"
+    },
+    {
+      "path": "idea-atlas/references/full-run.md",
+      "bytes": 3366,
+      "sha256": "0c078cf25cfd9d68b15377acd6d0968384edfc1bb321317597ad4ed39fa2afcf"
+    },
+    {
+      "path": "idea-atlas/references/generation-protocol.md",
+      "bytes": 6981,
+      "sha256": "91b9ee665f2c2fdcb653b0a6ac9046de3a13613634157f06938ebf1d6ac6077e"
+    },
+    {
+      "path": "idea-atlas/references/independent-runs.md",
+      "bytes": 5298,
+      "sha256": "7658016420210efc7d4dfbfc60386a4102dc084a15cb5522b8bdb9b833352b0f"
+    },
+    {
+      "path": "idea-atlas/references/interactive-tree-flow.md",
+      "bytes": 2839,
+      "sha256": "0008377870b980df7f5ce9a9bfa4768710a681f036ab9e4501bb196416da8346"
+    },
+    {
+      "path": "idea-atlas/references/lens-deck.md",
+      "bytes": 3721,
+      "sha256": "9a2f2409403f76e6bb9c3c1a9a7f5cd6776d1529fb5e68bf781a3414cabdf27b"
+    },
+    {
+      "path": "idea-atlas/references/perturbation-campaign.md",
+      "bytes": 4485,
+      "sha256": "ccd965c61cb872463f2c8a1fe066ab490d2dbec927c04d7eb2d34ce68f5f85aa"
+    },
+    {
+      "path": "idea-atlas/references/positioning-table.md",
+      "bytes": 2248,
+      "sha256": "e692b40307195698de1ddd2d563f19844f4b6d889b8bcadda86e2bafbb81b7ed"
+    },
+    {
+      "path": "idea-atlas/references/process-sheet.md",
+      "bytes": 4965,
+      "sha256": "8fea3578c7e56a3963a3b51b22a0b6e9780b71d1c3844ab1c759223a1c884366"
+    },
+    {
+      "path": "idea-atlas/references/quality-contract.md",
+      "bytes": 7646,
+      "sha256": "cff8e1e5811c869e2fd8110a2235ae08392aeec123ba4f032711531138dafdd7"
+    },
+    {
+      "path": "idea-atlas/references/reading-comparison.md",
+      "bytes": 1877,
+      "sha256": "e22db2a56eb45df8ab330b87ae9b4bddfd5f0ceaa7a2885620fb53e536752838"
+    },
+    {
+      "path": "idea-atlas/references/reframing.md",
+      "bytes": 3738,
+      "sha256": "ea7f521acc93b648e07f40e5b6d6be016d3540744712af25cbfebcc21b49ad01"
+    },
+    {
+      "path": "idea-atlas/references/visual-map.md",
+      "bytes": 5518,
+      "sha256": "dbe1851fb559795c20ef5f882247bfd1f2cf13bb91d5edec977b0e510b2eac63"
+    },
+    {
+      "path": "idea-atlas/scripts/agent_run.py",
+      "bytes": 7237,
+      "sha256": "ec3be00bee1a622cf483827574aece2b82c2b1f2b106600a6f70f5dd48f0b661"
+    },
+    {
+      "path": "idea-atlas/scripts/atlas_records.py",
+      "bytes": 9867,
+      "sha256": "71498371aa500f00345b562f892ce2346cd1021b7f9613301b4236d5f605b4d0"
+    },
+    {
+      "path": "idea-atlas/scripts/hermes_run.py",
+      "bytes": 7179,
+      "sha256": "bd480180f4b59f4da16cccefa578b7d5de1863784145365d7557e028dc77304a"
+    },
+    {
+      "path": "idea-atlas/scripts/render_canvas.py",
+      "bytes": 8011,
+      "sha256": "0c69f27f72408475a069bf41e98345851b2a826b2a36e9c991bf5a7099bb6c96"
+    },
+    {
+      "path": "idea-atlas/templates/atlas-canvas.html",
+      "bytes": 64074,
+      "sha256": "4b88e48ddc8dc5b38a651f8fef53dddcf3e3a29f7793048c7d3b3fb9ca562125"
+    },
+    {
+      "path": "idea-atlas/templates/atlas.md",
+      "bytes": 959,
+      "sha256": "c50a8bfe1678c4121329acebc5a6c535b9b0965303f5a30d93d0bec54e38b136"
+    },
+    {
+      "path": "idea-atlas/templates/base-frame.md",
+      "bytes": 726,
+      "sha256": "7ad4d7318a2713f16bbc5d22aca3b9db92e81e54c0fffe0a6d51615c6f62dad2"
+    },
+    {
+      "path": "idea-atlas/templates/brief.md",
+      "bytes": 1602,
+      "sha256": "813e2c5a078a4c3443d805858c89d048ad15f85b0bf3657c5ef8387df6db5f55"
+    },
+    {
+      "path": "idea-atlas/templates/card.md",
+      "bytes": 2493,
+      "sha256": "e8211a1e05f7d410cc395b649cb1c0d8f883f6f0c885444c96e56a274c7a16e1"
+    },
+    {
+      "path": "idea-atlas/templates/direction-table.md",
+      "bytes": 1478,
+      "sha256": "2269881d1e8e8377b6162bb0dfe93636d7aca82f5e4db85c5eacb600e1af9486"
+    },
+    {
+      "path": "idea-atlas/templates/dossier.md",
+      "bytes": 1953,
+      "sha256": "91251b5693fc7a29f7720cc20e050458688e4125d30ebc174c57aed0903c10ef"
+    },
+    {
+      "path": "idea-atlas/templates/handoff.md",
+      "bytes": 664,
+      "sha256": "d048ee5f5dda33edf95cf7958821979c291e06dc402b3f02f21c4f58344e3256"
+    },
+    {
+      "path": "idea-atlas/templates/positioning-table.md",
+      "bytes": 1366,
+      "sha256": "b2cae9bfccfdb21bd0829c4e2311982b5b1f77448cc7d64493b04b9c6ed0d7f7"
+    },
+    {
+      "path": "idea-atlas/templates/run-ledger.md",
+      "bytes": 959,
+      "sha256": "bed03883d97230a1d01260267216ad25074f58345576a29a505a0296170dca59"
+    },
+    {
+      "path": "idea-atlas/templates/shortlist.md",
+      "bytes": 642,
+      "sha256": "d27a7abbc8861d712c2bc5662f7efc33bcb4618c46c0b5213a3a49213440c5f0"
+    },
+    {
+      "path": "idea-atlas/tests/test_agent_run.py",
+      "bytes": 6577,
+      "sha256": "a48f983130abe92006f9fc992119856380734180ad8864b1a7884e33e0e37589"
+    },
+    {
+      "path": "idea-atlas/tests/test_hermes_run.py",
+      "bytes": 2921,
+      "sha256": "9ab78219e4f4578361441397c233033e18ddd41613cdaee7ee9db8a673d9315d"
+    },
+    {
+      "path": "idea-atlas/tests/test_render_canvas.py",
+      "bytes": 4651,
+      "sha256": "b76a88aff0091f252d1d560c47f533f04ace6f71aa6dccd93d477739066525f4"
+    },
+    {
+      "path": "tools/package_release.py",
+      "bytes": 3241,
+      "sha256": "31b9eb65ade753e1edf9fc0cc89fa3847b139154e769932695a90b410f07e1cd"
+    }
+  ]
+}

@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><title>Idea Atlas</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Cpath%20fill%3D%22%231c3446%22%20d%3D%22M2%209.6c0-.8.4-1.5%201.2-1.8l9-4.4%2010.6%204.5%208.5-3.7c1-.5%202.2.2%202.2%201.3v21.4c0%20.8-.4%201.4-1.1%201.8l-9.6%204.5-10.6-4.6L4%2032.3c-1%20.5-2-.2-2-1.3Z%22%2F%3E%3Cpath%20fill%3D%22%23436073%22%20d%3D%22M12.2%203.4%2022.8%207.9v25.3l-10.6-4.6Z%22%2F%3E%3Cpath%20fill%3D%22%232d4c60%22%20d%3D%22m22.8%207.9%208.5-3.7c1-.5%202.2.2%202.2%201.3v21.4c0%20.8-.4%201.4-1.1%201.8l-9.6%204.5Z%22%2F%3E%3Cpath%20d%3D%22m5.8%2023.6%206.4-6.4%207.1%202.3%208.3-7.6%22%20fill%3D%22none%22%20stroke%3D%22%23d3eef6%22%20stroke-width%3D%222.45%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2227.6%22%20cy%3D%2211.9%22%20r%3D%223.1%22%20fill%3D%22%239ce5f5%22%20stroke%3D%22%232d4c60%22%20stroke-width%3D%221.1%22%2F%3E%3C%2Fsvg%3E">
+<style>
+*{box-sizing:border-box}
+:root { 
+  color-scheme:light;
+  --ink:#232326; --mute:#616168; --line:#d8d8dc; --paper:#f7f7f8; --sheet:#fff;
+  --accent:#0066c6; --accent-light:#eaf3fd; --hover:#ececef; --thread:#a7a7ad;
+  --heading:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Consolas,monospace;
+ }
+html,body{height:100%;margin:0;color:var(--ink);font:14px/1.5 var(--heading);-webkit-font-smoothing:antialiased}
+body{background:var(--paper)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+button:disabled{opacity:.4;cursor:default}
+[hidden]{display:none!important}
+svg.icon{width:18px;height:18px;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#app{height:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.topbar,.foot{flex:none;position:relative;z-index:2}
+
+.topbar{display:flex;align-items:center;gap:14px;height:57px;padding-inline:clamp(16px,3vw,48px);z-index:5;background:#fff;border-bottom:1px solid #e5e5e8}
+.brand{display:flex;align-items:center;gap:9px;white-space:nowrap;color:#353538;font-weight:640;font-size:15px;letter-spacing:.01em}
+.atlas-mark{width:32px;height:32px;display:block;flex:none}
+.mode-switch{display:flex;align-items:center;gap:1px;margin-left:auto;padding:3px;border-radius:9px;background:#ededf0}
+.mode-switch button{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;min-height:28px;border:0;border-radius:6px;background:transparent;font-size:12px;font-weight:570;color:#55565b}
+.mode-switch i,.filter-trigger i{display:inline-flex}
+.mode-switch svg.icon,.filter-trigger svg.icon{height:15px;width:15px}
+.mode-switch button[aria-pressed=true]{color:#202124;background:#fff;box-shadow:0 1px 4px #1e1f291a}
+.mode-switch button:not([aria-pressed=true]):hover,.filter-trigger:hover{background:#e4e4e8}
+.filter-host{position:relative;padding-left:12px;border-left:1px solid var(--line)}
+.filter-trigger{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;padding:4px 10px;font-size:13px;font-weight:540;border:0;border-radius:8px;color:#515258;background:transparent}
+.filter-trigger[aria-expanded=true]{background:var(--hover)}
+.filter-trigger.has-filter{color:var(--accent);background:var(--accent-light)}
+#filterTotal{font-variant-numeric:tabular-nums;font-size:11px}
+.filter-list{position:absolute;right:0;top:calc(100% + 9px);min-width:203px;padding:6px;display:grid;border:1px solid var(--line);border-radius:13px;background:var(--sheet);box-shadow:0 10px 32px #10131a1c,0 2px 6px #10131a0b}
+.filter{display:flex;align-items:center;gap:7px;padding:7px 10px;min-height:34px;border:0;border-radius:7px;text-align:left;background:transparent;color:var(--ink);font-size:13px}
+.filter:hover{background:var(--hover)}
+.filter[aria-pressed=true]{font-weight:620;background:var(--accent-light);color:var(--accent)}
+.count{margin-left:auto;font-size:12px;font-variant-numeric:tabular-nums}
+.filter-sep{height:1px;margin:5px 9px;background:var(--line)}
+.divider{width:1px;height:14px;flex:none;background:var(--line);margin:0 5px}
+.statusmark{display:inline-block;width:7px;height:7px;flex:none}
+.live{color:var(--mute)}
+.mark-live{border-radius:50%;background:#34815c}
+.needs-evidence{color:var(--mute)}
+.mark-needs-evidence{border:1.65px solid #93702f;transform:rotate(45deg);border-radius:1px}
+.killed{color:var(--mute)}
+.mark-killed{position:relative;width:8px;height:8px}
+.mark-killed:before,.mark-killed:after{content:"";position:absolute;top:3px;left:0;width:8px;height:1.6px;background:#73737a;transform:rotate(45deg)}
+.mark-killed:after{transform:rotate(-45deg)}
+.mark-variant,.mark-seed,.mark-duplicate{border:1.5px solid #73737a;border-radius:2px}
+.surface{flex:1;min-height:0;display:flex;position:relative}
+.main{flex:1;min-width:0;position:relative}
+.mapview { position:absolute;inset:0;overflow:hidden;touch-action:none;cursor:grab;background:var(--paper) }
+.mapview:focus-visible{outline-offset:-4px}
+.mapview.drag{cursor:grabbing;user-select:none}
+.world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+.wires{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+
+/* The overview has three levels: a document title, section headings, and grouped rows. */
+.wire,.active-edge {
+  fill:none; stroke:#c5c7cb; stroke-width:1; stroke-linecap:round; stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+}
+.active-edge { stroke:#6995bf; stroke-width:1.5 }
+.wire.dim { opacity:.38 }
+#groups { position:absolute; inset:0; pointer-events:none }
+.group-surface {
+  position:absolute; border-radius:16px; background:var(--sheet);
+  box-shadow:0 1px 3px #161b2710, 0 0 0 1px #161b2709;
+}
+.node {
+  position:absolute; appearance:none; border:0; background:transparent;
+  min-width:0; padding:0; text-align:left; cursor:pointer; user-select:none;
+  color:var(--ink); overflow-wrap:anywhere;
+}
+.node:focus-visible { z-index:1; outline-width:2px; outline-offset:2px }
+.node.dim { opacity:.38 }
+.root-node,.lens-node { display:flex; flex-direction:column; align-items:flex-start; border-radius:6px }
+.root-meta,.lens-meta,.idea-title,.badge { display:flex; align-items:center }
+.root-node strong {
+  order:0; font-size:39px; line-height:1.19; font-weight:730; letter-spacing:-.035em; text-wrap:balance;
+}
+.root-meta { order:1; gap:10px; margin-top:12px; font-size:13px; font-weight:500; color:var(--mute) }
+.lens-node { padding:0 4px; gap:7px }
+.lens-meta { width:100%; gap:9px; align-items:baseline }
+.lens-meta strong { font-size:23px; line-height:1.3; font-weight:680; letter-spacing:-.025em }
+.lens-letter { flex:none; white-space:nowrap; font:500 11px/1.4 var(--mono); color:var(--mute) }
+.lens-text { color:#575b62; line-height:1.48; font-size:14px; padding-right:8px }
+.root-node:hover strong,.lens-node:hover strong { color:#333d50 }
+.idea-node {
+  display:flex; flex-direction:column; justify-content:center; gap:4px;
+  padding:14px 16px; border-radius:0;
+}
+.idea-node.first { border-radius:16px 16px 0 0 }
+.idea-node.last { border-radius:0 0 16px 16px }
+.idea-node.first.last { border-radius:16px }
+.idea-node:not(.first)::before {
+  content:""; position:absolute; left:16px; right:16px; top:0; height:1px; background:#e7e7ea;
+}
+.idea-title { width:100%; justify-content:space-between; align-items:baseline; gap:10px }
+.idea-title strong { font-size:17px; font-weight:610; line-height:1.38 }
+.idea-node .micro { font-size:13px; line-height:1.55; color:#676970 }
+.badge { display:inline-flex; flex:none; gap:5px; white-space:nowrap; color:var(--mute); font:12px/1.45 var(--heading) }
+.idea-node .badge { font-size:11px }
+.idea-node:hover { background:#f0f2f5 }
+.idea-node.selected { background:#e7f0fc }
+.lens-node.selected strong,.root-node.selected strong { color:#185588 }
+.idea-node.killed-card .idea-title strong { color:#686970 }
+@media(prefers-contrast:more) {
+  .wire { stroke:#81838a }
+  .active-edge { stroke:#225e97; stroke-width:2 }
+  .idea-node:not(.first)::before { background:#a0a0a4 }
+  .node.dim { opacity:1; outline:1px dashed #78797d; outline-offset:-2px }
+}
+.foot{height:42px;padding:0 clamp(14px,2.1vw,34px);gap:14px;background:#fff;border-top:1px solid var(--line);display:flex;align-items:center;color:var(--mute);font-size:12px}
+.zoom-tools{display:flex;align-items:center;gap:2px}
+.tool{background:transparent;border:0;display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:5px;height:30px;min-width:30px;padding:3px 6px;color:var(--ink);font-size:12px}
+.tool:hover{background:var(--hover)}
+.tool.percent{font:12px var(--mono);min-width:45px}
+.foot-end{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.keyhint{font-size:11.5px}
+
+@media(max-width:820px){
+  .topbar{height:52px;gap:9px}
+  .foot{gap:8px}.keyhint{display:none}
+}
+@media(max-width:650px){
+  .topbar{height:52px;padding:0 12px}.filter-host{padding-left:6px}.atlas-mark{width:29px;height:29px}.filter-trigger{padding:4px 6px}.filter{min-height:42px}
+  .brand{font-size:16px;font-weight:620;color:var(--ink)}
+  .mode-switch button{font-size:12px;padding:5px 8px;gap:5px}
+  
+  .root-node strong{font-size:30px}.lens-meta strong{font-size:21px}.foot{padding:0 9px;height:38px}.foot-end{font-size:11px}
+}
+
+.index-view {
+  height:100%; overflow:auto; container-type:inline-size; background:#fff;
+  padding:24px clamp(16px,4vw,62px) 40px; color:var(--ink);
+}
+.index-heading, #indexTable { max-width:1360px; margin-inline:auto }
+.index-heading { display:flex; align-items:baseline; gap:12px; margin-bottom:18px }
+.index-heading h2 { font:720 23px/1.35 var(--heading); letter-spacing:-.025em; margin:0 }
+.index-heading span { color:var(--mute); font-size:13px; font-variant-numeric:tabular-nums }
+.pa-index { font-size:14px; line-height:1.55; overflow-wrap:anywhere }
+.pa-index table { width:100%; border-collapse:separate; border-spacing:0; text-align:left }
+.pa-index th,.pa-index td { vertical-align:middle; padding:13px 12px; border:0; border-bottom:1px solid var(--line) }
+.pa-index thead th {
+  position:sticky; top:-24px; z-index:1; background:var(--paper);
+  font-weight:620; color:var(--mute); font-size:12px; padding-block:8px;
+}
+.pa-index thead th:first-child { border-radius:6px 0 0 0 }
+.pa-index thead th:last-child { border-radius:0 6px 0 0 }
+.pa-index tbody th { width:29%; font-weight:inherit }
+.pa-index .pa-branchcol { width:18% }
+.pa-index tbody td:last-child { width:1%; white-space:nowrap }
+.pa-indexopen,.pa-cardlink { color:inherit; font:inherit; text-align:left; cursor:pointer }
+.pa-indexopen {
+  display:flex; align-items:baseline; gap:10px; padding:5px 2px; border:none; background:transparent;
+  width:100%; border-radius:3px;
+}
+.pa-indexopen strong { font-size:15px; line-height:1.45; font-weight:680 }
+.pa-id { font:600 11.5px/1.6 var(--mono); color:var(--mute) }
+.pa-indexopen .pa-id,.pa-cardlink .pa-id {
+  flex:none; font-variant-numeric:tabular-nums; color:var(--mute);
+  background:var(--hover); border-radius:4px; padding:1px 5px;
+}
+.pa-index tr:focus-within,.pa-index tbody tr:hover,.pa-index tbody tr:has([aria-current="true"]) { background:var(--paper) }
+.pa-indexopen:hover strong,.pa-indexopen[aria-current="true"] strong { color:var(--accent) }
+.pa-branchname { display:inline-flex; align-items:baseline; gap:6px; font-weight:600; font-size:13px }
+
+.pa-indexscene,.pa-cardlink small { display:block; color:var(--mute); line-height:1.5; font-size:12px; font-weight:400 }
+.pa-indexscene:not(:empty) { margin-block:2px }
+.pa-index .badge,.drawer .badge { font-size:12px }
+.pa-empty { padding:24px 0; color:var(--mute); border-top:1px solid var(--line) }
+@container (max-width:560px) {
+  .pa-index table,.pa-index tbody { display:block }
+  .pa-index thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%) }
+  .pa-index tbody tr { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:3px 10px; padding:14px 2px; border-bottom:1px solid var(--line) }
+  .pa-index tbody th,.pa-index tbody td,.pa-index .pa-branchcol,.pa-index tbody td:last-child { border:0; min-width:0; width:auto; padding:0 }
+  .pa-index tbody th { grid-area:1/1 }
+  .pa-index tbody .pa-branchcol { grid-area:2/1 /3/-1; padding-block:0 3px }
+  .pa-index tbody td:nth-child(3) { grid-area:3/1 /4/-1; font-size:14px }
+  .pa-index tbody td:last-child { grid-area:1/2; align-self:center }
+  .pa-indexopen { gap:6px }
+  .pa-branchname { font-size:12px }
+}
+.drawer {
+  width:clamp(345px,31vw,465px); min-height:0; flex:none; display:flex; flex-direction:column;
+  z-index:3; background:#fff; color:var(--ink); border-left:1px solid var(--line);
+}
+.drawer-head {
+  flex:none; padding:14px 23px 17px; border-bottom:1px solid var(--line);
+  background:var(--sheet); position:relative; overflow-wrap:anywhere;
+}
+
+.drawer-top { display:flex; align-items:center; justify-content:space-between; gap:10px }
+.drawer-k { font-size:12px; color:var(--mute); line-height:1.5 }
+
+.drawer-head h2 { font:680 30px/1.3 var(--heading);margin:13px 0 2px;letter-spacing:-.025em }
+.close-btn { display:grid;place-items:center;flex:none;width:32px;height:32px;border:0;border-radius:50%;color:var(--mute);background:var(--hover) }
+.close-btn:hover { background:var(--line) }
+.drawer-body { flex:auto; min-height:0; padding:17px 23px 36px; overflow:auto; overscroll-behavior:contain }
+.pa-detail { font-size:14px; line-height:1.65; overflow-wrap:anywhere }
+.pa-muted { color:var(--mute); font-size:13px; margin:8px 0 14px }
+.pa-question { font-size:16px; font-weight:620; line-height:1.65; margin:12px 0 18px; color:var(--ink) }
+.pa-section + .pa-section,.pa-fields + .pa-section { margin-top:24px }
+.pa-detail h3 { display:flex;align-items:center;gap:8px;margin:0;padding-block:6px;border-bottom:1px solid var(--line);font:660 15px/1.5 var(--heading);color:var(--ink) }
+.pa-detail h3 .pa-id { color:var(--mute); font-size:11px }
+.pa-fields { width:100%; border-collapse:collapse; text-align:left; table-layout:fixed }
+.pa-fields th,.pa-fields td { padding:8px 0; border-bottom:1px solid var(--line); vertical-align:top }
+.pa-fields th { width:6.4em; padding-right:12px; font-size:12px; font-weight:520; color:var(--mute) }
+.pa-fields td { line-height:1.65 }
+
+.pa-links { display:grid }
+.pa-cardlink {
+  display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:baseline; gap:9px; width:100%;
+  border:0; border-bottom:1px solid var(--line); background:transparent; padding:12px 2px;
+}
+.pa-cardlink:hover { background:var(--paper) }
+.pa-cardlink strong { display:block; font-weight:640 }
+.pa-cardlink small { margin-top:2px }
+.pa-open-icon { color:var(--mute); font-size:14px }
+@media(max-width:820px) { .drawer { width:330px } }
+@media(max-width:650px) {
+  .index-view { padding:16px 14px 28px }
+  .index-heading { margin-bottom:8px }
+  .index-heading h2 { font-size:20px }
+  .drawer { position:absolute; inset:0 0 0 auto; width:min(100%,415px); box-shadow:-6px 0 18px #00000010 }
+  .drawer-head { padding:12px 16px }
+  .drawer-head h2 { font-size:26px }
+  .filter-host .filter-list{max-width:calc(100vw - 24px);max-height:calc(100dvh - 70px);overflow:auto}
+
+  .drawer-body { padding:15px 16px 32px }
+  .close-btn { width:38px; height:38px }
+}
+/* The card reader has its own scrolling document. The map and branch inspectors stay independent. */
+.drawer.card-open {
+  --reader-pad:clamp(24px,2.65vw,42px);
+  --reader-line:#e6e6e9;
+  --reader-muted:#64656b;
+  --reader-ink:#222326;
+  width:clamp(430px,39vw,584px);
+  background:#fff; color:var(--reader-ink); border-left:1px solid #dbdbdf;
+}
+.card-open .drawer-head { padding:9px var(--reader-pad) 7px; border:0; background:#fff; }
+.card-open .drawer-top { min-height:32px; }
+.card-open #drawerPath {
+  display:flex; align-items:center; flex-wrap:nowrap; gap:7px; min-width:0;
+  line-height:1.35; font-size:12.5px; color:var(--reader-muted);
+}
+.card-open .crumb-link {
+  appearance:none; border:0; padding:5px 0; background:none; color:inherit; font:inherit;
+  min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.card-open .crumb-link:hover { text-decoration:underline; text-underline-offset:3px; }
+.card-open .crumb-sep { color:#93949b; }
+.card-open .card-code { flex:none; letter-spacing:.03em; font-variant-numeric:tabular-nums; }
+.card-open .compact-title { display:none; }
+.card-open.scrolled .compact-title {
+  display:inline; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;
+  color:var(--reader-ink); font-weight:620;
+}
+.card-open .close-btn { width:30px; height:30px; background:#f1f1f3; }
+.card-open .close-btn:hover { background:#e7e7ea; }
+.card-open .close-btn .icon { width:15px; height:15px; }
+.card-open .drawer-body {
+  padding:0; min-width:0; scrollbar-gutter:stable; scroll-padding-top:52px;
+  overflow-x:hidden; overflow-y:auto; overflow-wrap:anywhere;
+}
+.card-open .card-hero { padding:12px var(--reader-pad) 18px; }
+.card-open #drawerTitle {
+  font:720 clamp(30px,2.5vw,37px)/1.2 var(--heading);
+  margin:0; letter-spacing:-.025em; text-wrap:balance;
+}
+.card-open .card-promise { margin:7px 0 0; font-size:17px; line-height:1.5; color:#505158; }
+.card-open .card-meta {
+  display:flex; align-items:center; flex-wrap:wrap; gap:5px 12px;
+  font-size:12px; color:var(--reader-muted); margin-top:13px;
+}
+.card-open .card-meta .badge { font-size:12px; }
+.card-open .card-tabs {
+  position:sticky; top:0; z-index:2; display:flex; align-items:stretch; gap:clamp(16px,2.5vw,30px);
+  padding:0 var(--reader-pad); background:#fff; box-shadow:inset 0 -1px var(--reader-line);
+}
+.card-open .card-tabs button {
+  position:relative; min-height:44px; display:inline-flex; align-items:center; gap:6px; white-space:nowrap;
+  padding:4px 1px; border:0; background:transparent; font-size:14px; color:var(--reader-muted); font-weight:550;
+}
+.card-open .card-tabs button[aria-selected="true"] { color:var(--reader-ink); font-weight:680; }
+.card-open .card-tabs button[aria-selected="true"]::after {
+  content:""; position:absolute; inset:auto 0 0; height:2px; background:currentColor; border-radius:2px;
+}
+.card-open .tab-count { font-size:11px; color:var(--reader-muted); font-variant-numeric:tabular-nums; }
+.card-open .card-pane { padding:24px var(--reader-pad) 42px; font-size:15px; line-height:1.7; }
+.card-open .reading-section,.card-open .decision-summary,.card-open .reading-context { margin:0 0 24px; }
+.card-open .reading-section h3 {
+  margin:0 0 8px; color:var(--reader-muted); font-size:12.5px; line-height:1.45; font-weight:620;
+}
+.card-open .reading-section p,.card-open .fold-body p { margin:5px 0 0; }
+.card-open .reading-section .reading-headline,.card-open .reading-lead {
+  margin:0 0 7px; color:var(--reader-ink); font-weight:640; font-size:19px; line-height:1.5; letter-spacing:-.015em;
+}
+.card-open .reading-section p:not(.reading-headline),.card-open .fold-body { color:#45464b; }
+.card-open .reading-context {
+  padding:15px 18px; border-radius:12px; background:#f5f5f7;
+}
+.card-open .context-main { margin:0; color:var(--reader-ink); font-size:15px; font-weight:610; }
+.card-open .context-time { font-size:13px; color:var(--reader-muted); }
+.card-open .reading-context p { margin:6px 0 0; }
+.card-open .reading-fields,.card-open .measure-list { margin:0; }
+.card-open .reading-fields > div,.card-open .measure-list > div {
+  display:grid; grid-template-columns:minmax(4em,5em) minmax(0,1fr); column-gap:16px; padding:8px 0;
+}
+.card-open .reading-fields dt,.card-open .measure-list dt { color:var(--reader-muted); font-size:13px; padding-top:1px; }
+.card-open .reading-fields dd,.card-open .measure-list dd { margin:0; }
+.card-open .measure-list > div + div { border-top:1px solid var(--reader-line); }
+.card-open .reading-fold { border-top:1px solid var(--reader-line); }
+.card-open .reading-fold > summary,.card-open .round-basis > summary {
+  display:flex; align-items:center; gap:8px; cursor:pointer; list-style:none; color:var(--reader-ink);
+}
+.card-open summary::-webkit-details-marker { display:none; }
+.card-open .reading-fold > summary { min-height:44px; justify-content:space-between; padding:9px 2px 9px 0; font-size:14px; font-weight:590; }
+.card-open .reading-fold > summary::after,.card-open .round-basis > summary::before {
+  content:""; width:6px; height:6px; flex:none;
+  border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor;
+  transform:rotate(-45deg); color:var(--reader-muted);
+}
+.card-open .reading-fold[open] > summary::after,.card-open .round-basis[open] > summary::before { transform:rotate(45deg); }
+.card-open .reading-fold .fold-body { padding:2px 0 16px; font-size:14px; line-height:1.75; }
+.card-open .decision-summary { padding:17px 20px 18px; border-radius:13px; background:#f3f5f7; }
+.card-open .decision-summary small { display:block; color:var(--reader-muted); font-size:12px; font-weight:580; }
+.card-open .decision-summary strong { display:block; margin-top:4px; font-size:21px; line-height:1.45; letter-spacing:-.02em; font-weight:660; }
+.card-open .decision-summary p { margin:5px 0 0; font-size:15px; line-height:1.65; color:#44464b; }
+.card-open .round-list { margin:0; padding:0; list-style:none; }
+.card-open .round {
+  display:grid; grid-template-columns:22px minmax(0,1fr); gap:10px;
+  padding:16px 0 13px; border-top:1px solid var(--reader-line);
+}
+.card-open .round-no { color:var(--reader-muted); font:540 12px/1.65 var(--mono); padding-top:3px; }
+.card-open .round-body h4 { margin:0; font-size:16px; font-weight:640; line-height:1.5; }
+.card-open .round-body .round-result { margin:6px 0 2px; font-size:14px; line-height:1.65; color:#44464b; }
+.card-open .round-basis > summary { width:fit-content; min-height:34px; padding:2px 4px; font-size:13px; color:var(--reader-muted); }
+.card-open .round-basis > summary::before { width:5px; height:5px; }
+.card-open .round-basis .fold-body { padding:3px 0 8px; font-size:14px; line-height:1.7; }
+@media(max-width:700px) {
+  .drawer.card-open { --reader-pad:clamp(18px,5.5vw,32px); position:fixed; inset:0; z-index:8; width:100%; box-shadow:none; border:0; }
+  .card-open .drawer-head { padding-block:3px; }
+  .card-open .close-btn { width:40px; height:40px; }
+  .card-open .card-hero { padding-top:8px; padding-bottom:14px; }
+  .card-open #drawerTitle { font-size:30px; }
+  .card-open .card-meta { margin-top:9px; }
+  .card-open .card-pane { padding-block:19px 30px; }
+  .card-open .round-basis > summary { min-height:42px; }
+}
+@media(prefers-contrast:more) {
+  .drawer.card-open { --reader-muted:#46474d; --reader-line:#9d9fa6; }
+  .card-open .card-tabs button[aria-selected="true"]::after { height:3px; }
+}
+
+.card-open .record-empty { color:var(--reader-muted);font-size:13px }
+
+/* Language choice remains visible in the narrow-screen, full-page inspector. */
+.brand { gap:9px; font-size:17px; font-weight:660; letter-spacing:-.025em }
+.language-switch {
+  display:inline-flex; align-items:center; flex:none; padding:3px; gap:2px;
+  border:1px solid #c7cdd3; border-radius:9px; background:#fff;
+}
+.language-switch button {
+  border:0; border-radius:6px; padding:5px 10px; min-height:28px;
+  background:transparent; color:#404a53; font:590 12.5px/1.2 var(--heading); white-space:nowrap;
+}
+.language-switch button:hover { background:#eaf0f4 }
+.language-switch button[aria-pressed=true] { background:#253e50; color:#fff }
+.drawer-top .language-switch { display:none }
+html[lang="en"] .card-open .reading-fields > div,html[lang="en"] .card-open .measure-list > div {
+  grid-template-columns:minmax(5em,7em) minmax(0,1fr);
+}
+@media(max-width:700px) {
+  .topbar { display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-rows:auto auto;
+    gap:3px 8px; height:auto; padding:7px 14px 6px }
+  .brand { grid-area:1/1; font-size:16px }
+  .topbar > .language-switch { grid-area:1/2; justify-self:end }
+  .mode-switch { grid-area:2/1; justify-self:start; margin:0 }
+  .filter-host { grid-area:2/2; justify-self:end; padding:0; border:0; max-width:100% }
+  .filter-trigger { font-size:12px; min-height:32px }
+  .card-open .drawer-top .language-switch {display:inline-flex;margin-left:auto}
+  .card-open .drawer-top { gap:7px }
+  .card-open #drawerPath {flex:1}
+  .card-open .close-btn {flex:none}
+  .card-open .language-switch button {min-height:29px;padding:4px 7px}
+}
+@media(max-width:410px) {
+  html[lang="en"] .foot { gap:5px }
+  html[lang="en"] .foot-end { font-size:10.5px; white-space:normal; text-align:right }
+  .language-switch button { padding:5px 8px }
+}
+</style></head><body><div id="app">
+<header class="topbar">
+  <div class="brand"><svg class="atlas-mark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#1c3446" d="M2 9.6c0-.8.4-1.5 1.2-1.8l9-4.4 10.6 4.5 8.5-3.7c1-.5 2.2.2 2.2 1.3v21.4c0 .8-.4 1.4-1.1 1.8l-9.6 4.5-10.6-4.6L4 32.3c-1 .5-2-.2-2-1.3Z"/><path fill="#436073" d="M12.2 3.4 22.8 7.9v25.3l-10.6-4.6Z"/><path fill="#2d4c60" d="m22.8 7.9 8.5-3.7c1-.5 2.2.2 2.2 1.3v21.4c0 .8-.4 1.4-1.1 1.8l-9.6 4.5Z"/><path d="m5.8 23.6 6.4-6.4 7.1 2.3 8.3-7.6" fill="none" stroke="#d3eef6" stroke-width="2.45" stroke-linecap="round" stroke-linejoin="round"/><circle cx="27.6" cy="11.9" r="3.1" fill="#9ce5f5" stroke="#2d4c60" stroke-width="1.1"/></svg><span id="brandName">Idea Atlas</span></div>
+  <nav class="mode-switch" aria-label="View" data-aria-en="View" data-aria-zh="阅读视图">
+    <button type="button" id="modeMap" aria-pressed="true"><i data-icon="tree"></i><span data-copy-en="Map" data-copy-zh="地图">Map</span></button>
+    <button type="button" id="modeIndex" aria-pressed="false"><i data-icon="list"></i><span data-copy-en="List" data-copy-zh="清单">List</span></button>
+  </nav>
+  <div class="filter-host" id="filterHost">
+    <button type="button" class="filter-trigger" id="filterTrigger" aria-controls="filters" aria-expanded="false"><i data-icon="filter"></i><span id="filterLabel"><span data-copy-en="Filter" data-copy-zh="筛选">Filter</span></span><span id="filterTotal" hidden></span></button>
+    <div id="filters" class="filter-list" role="group" aria-label="Filter ideas" data-aria-en="Filter ideas" data-aria-zh="筛选方向" hidden></div>
+  </div>
+  <div class="language-switch" role="group" aria-label="Language"><button type="button" lang="en" data-language="en">English</button><button type="button" lang="zh-CN" data-language="zh">中文</button></div>
+</header>
+<main class="surface"><div class="main"><div class="mapview" id="mapView" tabindex="0" aria-label="Idea map. Use arrow keys to pan, plus and minus to zoom, and Tab to move between nodes." data-aria-en="Idea map. Use arrow keys to pan, plus and minus to zoom, and Tab to move between nodes." data-aria-zh="探索画布，使用方向键平移，加减键缩放，Tab 选择节点"><div class="world" id="world"><div id="groups" aria-hidden="true"></div><svg id="wires" class="wires" aria-hidden="true"></svg><div id="nodes"></div></div></div><section class="index-view" id="indexView" hidden><div class="index-heading"><h2><span data-copy-en="Idea list" data-copy-zh="点子清单">Idea list</span></h2><span id="indexCount"></span></div><div id="indexTable"></div></section></div>
+<aside class="drawer" id="drawer" aria-labelledby="drawerTitle" hidden><div class="drawer-head"><div class="drawer-top"><span class="drawer-k" id="drawerPath"></span><div class="language-switch" role="group" aria-label="Language"><button type="button" lang="en" data-language="en">English</button><button type="button" lang="zh-CN" data-language="zh">中文</button></div><button id="closeDrawer" class="close-btn" aria-label="Close details" data-aria-en="Close details" data-aria-zh="关闭详情"><i data-icon="close"></i></button></div><h2 id="drawerTitle"></h2></div><div id="drawerBody" class="drawer-body"></div></aside></main>
+<footer class="foot"><div class="zoom-tools" id="zoomTools"><button class="tool" id="zoomOut" aria-label="Zoom out" data-aria-en="Zoom out" data-aria-zh="缩小"><i data-icon="minus"></i></button><button class="tool percent" id="actual" title="Reset to 100% zoom" data-title-en="Reset to 100% zoom" data-title-zh="恢复 100% 缩放">100%</button><button class="tool" id="zoomIn" aria-label="Zoom in" data-aria-en="Zoom in" data-aria-zh="放大"><i data-icon="plus"></i></button><span class="divider"></span><button class="tool" id="fit" title="Fit the entire map to the window" data-title-en="Fit the entire map to the window" data-title-zh="居中显示完整画布"><i data-icon="fit"></i><span data-copy-en="Fit" data-copy-zh="全图">Fit</span></button></div><span class="keyhint" id="keyHint"><span data-copy-en="Drag to pan · Scroll to zoom · Select a node to read more" data-copy-zh="拖动平移 · 滚轮缩放 · 点击节点查看详情">Drag to pan · Scroll to zoom · Select a node to read more</span></span><span class="foot-end" id="readout" aria-live="polite"></span></footer></div>
+<script type="application/json" id="atlasData">{"project":{"title":"餐边柜场景下的第二料理中心","subtitle":"第二次运行：从第二套动作、公共台面与无水无烟三条线重开"},"readings":{"R1":{"name":"第二套动作","q":"哪一类动作可以从厨房完整切出来，成为独立的一套？","premise":"第二料理中心不是一个空间，而是一套离开厨房仍成立的动作：早餐、冲泡、出菜、便当、夜宵。","audience":"早高峰紧、常带饭/请客、厨房只有一条台面的家庭。","check":"记录一周每套动作的起点/终点；哪套最常被打断、最想不再回厨房。"},"R2":{"name":"公共台面的政治","q":"餐边柜在公共区域，谁有权用、谁负责收？","premise":"餐边柜不是私人厨房台面；孩子、老人、客人、室友、居家办公者会争同一块面，清洁责任不清。","audience":"与家人/室友/客人共用餐厅的人。","check":"观察一周谁站在餐边柜前、谁最后擦台面；问一次冲突。"},"R3":{"name":"无水无烟的边界","q":"不接水、不排烟，哪些料理仍值得在餐边柜发生？","premise":"餐边柜通常没有给排水和排烟；可做无水源洗切、组装、电磁轻煮、保温，不做爆炒/油炸。","audience":"精装房/租房/不能改水路的家庭。","check":"用两桶水做一次两人份洗切；用便携电磁炉煮一次火锅，测蒸汽/插座/台面温度。"}},"cards":{"A01":{"id":"A01","reading":"R1","title":"早餐发车台","family":"morning launch","status":"live","promise":"早餐不再穿过厨房","role":"双职工/有学龄儿童的家庭","occasion":"工作日 7:00–7:30","freq":"每周 5 天","current":"面包机/热水壶/碗盘都在厨房，早餐端来端去","relationship":"夫妻/孩子；早上同时出门","sub":"厨房台面+餐桌；免费但拥挤","gap":"厨房早高峰只有一条台面，餐桌被书包/电脑占","mechanism":"40cm 台面集成面包机/热水壶/碗盘+可拆屑盘；插座上翻","action":"把早餐三件套固定在餐边柜","how":"前晚摆好；早上按键；托盘上桌","proof":"拟：5 分钟完成；每周 ≥4 次；台面 ≤60cm","tradeoff":"面包屑/蒸汽/占台面","kill":"2 周内 5 家庭中 3 家回到厨房做早餐，或每天擦台面 \u003e2 次","insight":"第二料理中心最先成立的，可能不是做菜，而是把早餐从厨房早高峰里切出来。","evidence":"yellow","evidenceNotes":"U1 未提供家庭样本；早餐拥堵是假设；需 5 家庭 2 周。","statusReason":"结构成立；频次未验证。","short":{"rank":1,"why":"最高频、最轻油、最符合 40cm","risk":"面包屑/蒸汽","test":"5 家庭 × 2 周早餐记录"},"claim":"对双职工/有学龄儿童的家庭来说，在工作日 7:00–7:30，他们现在面包机/热水壶/碗盘都在厨房，早餐端来端去；现有替代是厨房台面+餐桌；免费但拥挤，但厨房早高峰只有一条台面，餐桌被书包/电脑占。这个方案用40cm 台面集成面包机/热水壶/碗盘+可拆屑盘；插座上翻，承诺“早餐不再穿过厨房”，以拟：5 分钟完成；每周 ≥4 次；台面 ≤60cm为目标，代价是面包屑/蒸汽/占台面。"},"A02":{"id":"A02","reading":"R1","title":"咖啡待客台","family":"coffee host","status":"live","promise":"客人不用等主人","role":"爱喝咖啡/茶、常待客的人","occasion":"周末下午/朋友来访","freq":"每周 2–4 次","current":"咖啡机在厨房，客人来了主人跑进跑出","relationship":"主人/客人","sub":"厨房咖啡机+托盘；免费但动线断","gap":"主人离开客厅，第一杯要等 5–10 分钟","mechanism":"45cm 台面+咖啡机/热水壶/杯具+带盖小水箱","action":"把冲泡搬到客人视线内","how":"客人坐；主人侧身操作；3 分钟出杯","proof":"拟：3 分钟 4 杯；每周 ≥2 次；离桌 ≤1 次","tradeoff":"水箱/清洗/占台面","kill":"2 周内水箱发霉或清洗 \u003e2 次/周","insight":"待客时最贵的不是咖啡，是主人离开客厅的那 5 分钟。","evidence":"yellow","evidenceNotes":"U1 未提供待客频率；水箱是假设；需 1 次 6 人下午茶。","statusReason":"场景成立；清洁未验证。","short":{"rank":2,"why":"待客可见、轻油、易演示","risk":"水箱/清洗","test":"6 人下午茶计时+清洗"},"claim":"对爱喝咖啡/茶、常待客的人来说，在周末下午/朋友来访，他们现在咖啡机在厨房，客人来了主人跑进跑出；现有替代是厨房咖啡机+托盘；免费但动线断，但主人离开客厅，第一杯要等 5–10 分钟。这个方案用45cm 台面+咖啡机/热水壶/杯具+带盖小水箱，承诺“客人不用等主人”，以拟：3 分钟 4 杯；每周 ≥2 次；离桌 ≤1 次为目标，代价是水箱/清洗/占台面。"},"A03":{"id":"A03","reading":"R1","title":"出菜中转台","family":"plating pass","status":"needs-evidence","promise":"最后 1 米不回头","role":"常做多道菜、在家请客的人","occasion":"晚餐前 30 分钟","freq":"每周 2–3 次","current":"菜在厨房装盘，再端到餐桌","relationship":"主人/客人","sub":"厨房台面+餐桌；免费但来回","gap":"餐边柜没有耐热、够大的摆盘面","mechanism":"90cm 高、耐热台面+托盘+保温灯+隐藏垃圾口","action":"把最后装盘移到餐边柜","how":"厨房出菜；餐边柜装盘；上桌","proof":"拟：少走 2 趟；台面 ≥100×40cm","tradeoff":"耐热/深度/清洁","kill":"2 周内热盘烫坏饰面，或放不下两个菜盘","insight":"餐边柜的空位，可能是厨房到餐桌之间的最后 1 米。","evidence":"grey","evidenceNotes":"U1 未提供请客频率；耐热是假设；需纸板模型+热盘。","statusReason":"场景成立；材料未验证。","short":{"rank":6,"why":"把第二中心落在出菜动线","risk":"耐热/尺寸","test":"纸板模型+热盘 2 周"},"claim":"对常做多道菜、在家请客的人来说，在晚餐前 30 分钟，他们现在菜在厨房装盘，再端到餐桌；现有替代是厨房台面+餐桌；免费但来回，但餐边柜没有耐热、够大的摆盘面。这个方案用90cm 高、耐热台面+托盘+保温灯+隐藏垃圾口，承诺“最后 1 米不回头”，以拟：少走 2 趟；台面 ≥100×40cm为目标，代价是耐热/深度/清洁。"},"A04":{"id":"A04","reading":"R1","title":"便当装配台","family":"lunch assembly","status":"needs-evidence","promise":"早上 3 分钟装好","role":"带饭上班/上学的人","occasion":"工作日 7:00–7:30","freq":"每周 5 天","current":"便当在厨房台面装，和早餐争台面","relationship":"自己/孩子","sub":"厨房台面+餐桌；免费但拥挤","gap":"便当盒/配菜/餐具分散，装完还要收","mechanism":"40cm 台面+便当盒/配菜抽屉+小砧板+垃圾桶","action":"把便当装配固定成一条线","how":"前晚备菜；早上按顺序装；盒盖/袋子一处取","proof":"拟：3 分钟装好；每周 ≥4 次","tradeoff":"清洁/占台面/冰箱距离","kill":"2 周内往返冰箱 \u003e3 次/天，或台面不够","insight":"便当是第二料理中心里最容易被忽略的高频装配动作。","evidence":"grey","evidenceNotes":"U1 未提供带饭习惯；动线是假设；需 5 人 2 周。","statusReason":"场景成立；频次未验证。","short":null,"claim":"对带饭上班/上学的人来说，在工作日 7:00–7:30，他们现在便当在厨房台面装，和早餐争台面；现有替代是厨房台面+餐桌；免费但拥挤，但便当盒/配菜/餐具分散，装完还要收。这个方案用40cm 台面+便当盒/配菜抽屉+小砧板+垃圾桶，承诺“早上 3 分钟装好”，以拟：3 分钟装好；每周 ≥4 次为目标，代价是清洁/占台面/冰箱距离。"},"A05":{"id":"A05","reading":"R1","title":"夜宵轻煮","family":"late-night boil","status":"needs-evidence","promise":"不用进厨房煮面","role":"晚上想吃热食但不想开大灯的人","occasion":"22:00–23:00","freq":"每周 2–3 次","current":"厨房煮面/外卖；开灯/油烟/洗碗","relationship":"自己/伴侣","sub":"厨房+外卖；免费但打断/气味","gap":"厨房远；开灯吵醒家人；油烟","mechanism":"餐边柜电磁炉+小锅+碗+定时；轻煮/泡面/热汤","action":"把夜宵放在餐边柜","how":"接水；煮；吃；锅放托盘；擦台面","proof":"拟：10 分钟；不吵醒家人；每周 ≥2 次","tradeoff":"气味/安全/清洁","kill":"2 周内触发家人抱怨或台面留油","insight":"夜宵是‘第二料理中心’最私人的一套动作；它要的是不打扰。","evidence":"grey","evidenceNotes":"U1 未提供夜宵习惯；气味是假设；需 3 家庭 2 周。","statusReason":"场景成立；安全未验证。","short":null,"claim":"对晚上想吃热食但不想开大灯的人来说，在22:00–23:00，他们现在厨房煮面/外卖；开灯/油烟/洗碗；现有替代是厨房+外卖；免费但打断/气味，但厨房远；开灯吵醒家人；油烟。这个方案用餐边柜电磁炉+小锅+碗+定时；轻煮/泡面/热汤，承诺“不用进厨房煮面”，以拟：10 分钟；不吵醒家人；每周 ≥2 次为目标，代价是气味/安全/清洁。"},"A06":{"id":"A06","reading":"R1","title":"早餐抽屉","family":"breakfast drawer","status":"needs-evidence","promise":"拉开就是早餐","role":"早上不想摆台面的人","occasion":"工作日早晨","freq":"每周 5 天","current":"碗/麦片/果酱分散在厨房柜子","relationship":"自己/孩子","sub":"厨房柜+餐桌；免费但分散","gap":"每天重复拿取/收纳，台面仍被占","mechanism":"40cm 抽拉抽屉：碗/麦片/果酱/勺一层；上层小家电","action":"把早餐收纳成一个抽屉","how":"拉出；取碗；冲麦片；推回","proof":"拟：30 秒取齐；每天 ≥4 次","tradeoff":"承重/防潮/价格","kill":"2 周内导轨变形或食物受潮","insight":"早餐的摩擦不只在做，还在每天把同一套东西拿出来再放回去。","evidence":"grey","evidenceNotes":"U1 未提供收纳行为；导轨/防潮是假设；需 1 个抽屉样机。","statusReason":"结构简单；行为未验证。","short":null,"claim":"对早上不想摆台面的人来说，在工作日早晨，他们现在碗/麦片/果酱分散在厨房柜子；现有替代是厨房柜+餐桌；免费但分散，但每天重复拿取/收纳，台面仍被占。这个方案用40cm 抽拉抽屉：碗/麦片/果酱/勺一层；上层小家电，承诺“拉开就是早餐”，以拟：30 秒取齐；每天 ≥4 次为目标，代价是承重/防潮/价格。"},"B01":{"id":"B01","reading":"R2","title":"孩子自主台","family":"kid self-serve","status":"live","promise":"孩子自己拿，不用喊妈","role":"有 4–10 岁孩子的家庭","occasion":"放学后/周末早餐","freq":"每周 4–5 次","current":"孩子够不到厨房台面，家长代拿","relationship":"孩子/家长","sub":"厨房高台面+家长；免费但依赖成人","gap":"餐边柜高度适合孩子，但没有安全/易取分区","mechanism":"90cm 台面下层放水杯/水果/餐具；防翻杯/圆角；上层锁柜","action":"把孩子的取用高度做出来","how":"孩子自己拿杯/水果；家长只补货","proof":"拟：独立取用 ≥4 次/周；无烫伤/打翻","tradeoff":"安全/收纳/外观","kill":"2 周内打翻 \u003e2 次，或孩子仍只找家长","insight":"餐边柜的公共性，最先被孩子检验：够不够得到、能不能自己收。","evidence":"yellow","evidenceNotes":"U1 未提供孩子年龄；安全高度是假设；需 3 家庭观察。","statusReason":"场景成立；安全未验证。","short":{"rank":4,"why":"公共台面里最明确的行为差异","risk":"安全/打翻","test":"3 家庭 × 2 周观察"},"claim":"对有 4–10 岁孩子的家庭来说，在放学后/周末早餐，他们现在孩子够不到厨房台面，家长代拿；现有替代是厨房高台面+家长；免费但依赖成人，但餐边柜高度适合孩子，但没有安全/易取分区。这个方案用90cm 台面下层放水杯/水果/餐具；防翻杯/圆角；上层锁柜，承诺“孩子自己拿，不用喊妈”，以拟：独立取用 ≥4 次/周；无烫伤/打翻为目标，代价是安全/收纳/外观。"},"B02":{"id":"B02","reading":"R2","title":"老人分餐台","family":"elderly plating","status":"needs-evidence","promise":"少走几步，先吃上","role":"与老人同住、需要分餐/软食的家庭","occasion":"午餐/晚餐","freq":"每天","current":"老人在厨房等热饭，端到房间","relationship":"老人/照护者","sub":"厨房+微波炉；免费但动线长","gap":"老人走动慢；烫伤/等饭","mechanism":"保温抽屉+软食餐盘+一键加热；台面 85cm","action":"让老人先坐下","how":"餐边柜取餐；保温；端到桌","proof":"拟：5 分钟出餐；不烫手；每周 ≥5 次","tradeoff":"安全/清洁/容量","kill":"2 周内烫伤/洒漏，或老人不愿用","insight":"老人需要的不是第二厨房，是不用走、不用等。","evidence":"grey","evidenceNotes":"U1 未提供老人状况；安全是假设；需 1 户 2 周。","statusReason":"场景成立；安全未验证。","short":null,"claim":"对与老人同住、需要分餐/软食的家庭来说，在午餐/晚餐，他们现在老人在厨房等热饭，端到房间；现有替代是厨房+微波炉；免费但动线长，但老人走动慢；烫伤/等饭。这个方案用保温抽屉+软食餐盘+一键加热；台面 85cm，承诺“少走几步，先吃上”，以拟：5 分钟出餐；不烫手；每周 ≥5 次为目标，代价是安全/清洁/容量。"},"B03":{"id":"B03","reading":"R2","title":"客人自助台","family":"guest buffet","status":"needs-evidence","promise":"客人不進厨房","role":"常在家聚会/请客的人","occasion":"周末聚会 2–3 小时","freq":"每月 1–2 次","current":"菜放厨房，客人不好意思进；主人来回端","relationship":"主人/客人","sub":"厨房+餐桌；免费但主人累","gap":"客人不知道在哪拿；主人服务全场","mechanism":"餐边柜做自助：盘/夹/饮料/垃圾口；单向动线","action":"把自助餐台放餐边柜","how":"客人排队取；主人只补菜；垃圾口隐藏","proof":"拟：主人补菜 ≤2 次；客人自主 ≥80%","tradeoff":"保温/占台面/清洁","kill":"2 周内客人仍进厨房，或放不下 6 人份","insight":"请客时餐边柜不是储物柜，是让客人不進厨房的缓冲区。","evidence":"grey","evidenceNotes":"U1 未提供聚会频率；自助动线是假设；需 1 次 8 人聚会。","statusReason":"场景成立；容量未验证。","short":null,"claim":"对常在家聚会/请客的人来说，在周末聚会 2–3 小时，他们现在菜放厨房，客人不好意思进；主人来回端；现有替代是厨房+餐桌；免费但主人累，但客人不知道在哪拿；主人服务全场。这个方案用餐边柜做自助：盘/夹/饮料/垃圾口；单向动线，承诺“客人不進厨房”，以拟：主人补菜 ≤2 次；客人自主 ≥80%为目标，代价是保温/占台面/清洁。"},"B04":{"id":"B04","reading":"R2","title":"居家办公午餐","family":"wfh lunch","status":"needs-evidence","promise":"12 点不排队","role":"在家办公、午休短的人","occasion":"工作日 12:00–12:30","freq":"每周 5 天","current":"去厨房做/点外卖，和家务争台面","relationship":"自己/家人","sub":"厨房/外卖；免费但打断工作","gap":"午休短；厨房远；气味/声音","mechanism":"餐边柜热水壶/三明治机/碗盘；5 分钟午餐线","action":"把午餐放在工作区旁","how":"11:55 按键；12:00 吃；12:15 回桌","proof":"拟：5 分钟；每周 ≥4 次；不弄脏工作区","tradeoff":"气味/噪音/占台面","kill":"2 周内油烟抱怨，或仍点外卖 \u003e3 次/周","insight":"居家办公的第二料理中心，是减少一次厨房往返。","evidence":"grey","evidenceNotes":"U1 未提供 WFH 比例；气味是假设；需 5 人 2 周。","statusReason":"场景成立；气味未验证。","short":null,"claim":"对在家办公、午休短的人来说，在工作日 12:00–12:30，他们现在去厨房做/点外卖，和家务争台面；现有替代是厨房/外卖；免费但打断工作，但午休短；厨房远；气味/声音。这个方案用餐边柜热水壶/三明治机/碗盘；5 分钟午餐线，承诺“12 点不排队”，以拟：5 分钟；每周 ≥4 次；不弄脏工作区为目标，代价是气味/噪音/占台面。"},"B05":{"id":"B05","reading":"R2","title":"清洁归属站","family":"cleanup caddy","status":"needs-evidence","promise":"谁最后吃，谁收","role":"多人共用餐边柜、饭后清理扯皮的家庭","occasion":"晚餐后 10 分钟","freq":"每天","current":"碗盘堆水槽/餐桌，没人认领","relationship":"全家/客人","sub":"厨房水槽+洗碗机；免费但来回端","gap":"餐边柜没有收盘/垃圾/抹布位；责任不清","mechanism":"侧挂收盘架+分类垃圾+抹布/清洁剂抽屉","action":"把清理工具放在现场","how":"吃完；收盘；垃圾/抹布一处拿；擦台面","proof":"拟：清理 ≤5 分钟；抱怨 ≤1 次/周","tradeoff":"气味/占位/清洁","kill":"2 周内垃圾口发臭或碗仍堆水槽","insight":"第二料理中心的最后一环不是做，是收；没有清理位，台面很快被占。","evidence":"grey","evidenceNotes":"U1 未提供清理冲突；气味是假设；需 3 家庭 2 周。","statusReason":"场景成立；卫生未验证。","short":null,"claim":"对多人共用餐边柜、饭后清理扯皮的家庭来说，在晚餐后 10 分钟，他们现在碗盘堆水槽/餐桌，没人认领；现有替代是厨房水槽+洗碗机；免费但来回端，但餐边柜没有收盘/垃圾/抹布位；责任不清。这个方案用侧挂收盘架+分类垃圾+抹布/清洁剂抽屉，承诺“谁最后吃，谁收”，以拟：清理 ≤5 分钟；抱怨 ≤1 次/周为目标，代价是气味/占位/清洁。"},"B06":{"id":"B06","reading":"R2","title":"合租轮值台","family":"shared-house rota","status":"needs-evidence","promise":"谁用谁复位","role":"合租/多代同住的餐厅","occasion":"每天/周末","freq":"每天","current":"台面被各自东西占，没人复位","relationship":"室友/家人","sub":"餐桌/各自房间；免费但混乱","gap":"没有归属/复位规则；清洁靠吵","mechanism":"40cm 台面+个人托盘/标签+可擦写轮值板+锁柜","action":"让每个人有一格","how":"用自己的托盘；用完复位；轮值擦台面","proof":"拟：台面清空 ≥80%；冲突 ≤1 次/周","tradeoff":"隐私/外观/规则","kill":"2 周内没人复位或托盘堆满","insight":"公共台面的问题不是收纳，是归属；没有一格，就没有人负责。","evidence":"grey","evidenceNotes":"U1 未提供合租情况；规则是假设；需 3 户 2 周。","statusReason":"场景成立；行为未验证。","short":null,"claim":"对合租/多代同住的餐厅来说，在每天/周末，他们现在台面被各自东西占，没人复位；现有替代是餐桌/各自房间；免费但混乱，但没有归属/复位规则；清洁靠吵。这个方案用40cm 台面+个人托盘/标签+可擦写轮值板+锁柜，承诺“谁用谁复位”，以拟：台面清空 ≥80%；冲突 ≤1 次/周为目标，代价是隐私/外观/规则。"},"C01":{"id":"C01","reading":"R3","title":"无水源洗切站","family":"waterless prep","status":"live","promise":"不接水管也能洗切","role":"不能改水路的精装房/租房家庭","occasion":"做饭前 10 分钟","freq":"每周 4–5 次","current":"菜拿到厨房水槽洗，再端回餐桌","relationship":"做饭的人/家人","sub":"厨房水槽；免费但来回","gap":"餐边柜没有水；洗切必须回厨房","mechanism":"12L 净水桶+10L 废水桶+折叠沥水盆+砧板","action":"把洗切搬到餐边柜","how":"接水；洗；沥；废水倒回桶；收起","proof":"拟：2 人份 ≤3L 水；2 周无霉","tradeoff":"换水/清洁/占台面","kill":"2 周内桶发霉或换水 \u003e3 次/餐","insight":"餐边柜最大的硬约束不是电，是水；无水源洗切才是真机会。","evidence":"yellow","evidenceNotes":"U1 未提供水路条件；水量/卫生是假设；需 2 周洗切实测。","statusReason":"场景强；卫生未验证。","short":{"rank":3,"why":"解决餐边柜没有水的硬约束","risk":"换水/发霉","test":"2 周洗切实测；测霉/水量"},"claim":"对不能改水路的精装房/租房家庭来说，在做饭前 10 分钟，他们现在菜拿到厨房水槽洗，再端回餐桌；现有替代是厨房水槽；免费但来回，但餐边柜没有水；洗切必须回厨房。这个方案用12L 净水桶+10L 废水桶+折叠沥水盆+砧板，承诺“不接水管也能洗切”，以拟：2 人份 ≤3L 水；2 周无霉为目标，代价是换水/清洁/占台面。"},"C02":{"id":"C02","reading":"R3","title":"折叠沥水砧板","family":"fold-out board","status":"needs-evidence","promise":"切完直接端","role":"台面只有 40cm 深的人","occasion":"做饭前/备餐","freq":"每周 3–4 次","current":"砧板放餐桌；切完再端","relationship":"做饭的人","sub":"餐桌/厨房台面；免费但高度不对","gap":"餐边柜台面不够深；砧板+盘子放不下","mechanism":"40cm 折叠板：切/沥/端一体；收起 10cm","action":"把砧板变成可折叠端盘","how":"拉出；切；折起；直接端","proof":"拟：切 2 人份；不滴水；收起 ≤10cm","tradeoff":"稳定性/清洁/五金","kill":"2 周内折叠件晃动或水渗柜体","insight":"餐边柜的台面不是不够大，而是不能临时变大。","evidence":"grey","evidenceNotes":"U1 未提供台面尺寸；稳定性是假设；需 1 个样件。","statusReason":"简单；五金未验证。","short":null,"claim":"对台面只有 40cm 深的人来说，在做饭前/备餐，他们现在砧板放餐桌；切完再端；现有替代是餐桌/厨房台面；免费但高度不对，但餐边柜台面不够深；砧板+盘子放不下。这个方案用40cm 折叠板：切/沥/端一体；收起 10cm，承诺“切完直接端”，以拟：切 2 人份；不滴水；收起 ≤10cm为目标，代价是稳定性/清洁/五金。"},"C03":{"id":"C03","reading":"R3","title":"移动备餐车","family":"mobile prep cart","status":"needs-evidence","promise":"台面不够就推过来","role":"餐厅/厨房之间需要临时台面的人","occasion":"做饭/待客","freq":"每周 2–3 次","current":"用餐桌当备餐台，端来端去","relationship":"全家/客人","sub":"餐桌/厨房台面；免费但占桌","gap":"餐边柜固定，不能跟着人走","mechanism":"40cm 深推车：砧板/调料/餐具/垃圾袋；可锁轮","action":"把备餐台推到需要的地方","how":"推到餐桌旁；锁轮；切/装；推回","proof":"拟：延展 60cm；承重 15kg；不挡走道","tradeoff":"占位/稳定性/清洁","kill":"2 周内挡住走道或轮子锁不住","insight":"第二料理中心不一定是柜子，也可能是一辆可以推的 40cm 台面。","evidence":"grey","evidenceNotes":"U1 未提供走道尺寸；稳定性是假设；需 1 辆样车。","statusReason":"概念成立；动线未验证。","short":null,"claim":"对餐厅/厨房之间需要临时台面的人来说，在做饭/待客，他们现在用餐桌当备餐台，端来端去；现有替代是餐桌/厨房台面；免费但占桌，但餐边柜固定，不能跟着人走。这个方案用40cm 深推车：砧板/调料/餐具/垃圾袋；可锁轮，承诺“台面不够就推过来”，以拟：延展 60cm；承重 15kg；不挡走道为目标，代价是占位/稳定性/清洁。"},"C04":{"id":"C04","reading":"R3","title":"垃圾/厨余口","family":"waste port","status":"needs-evidence","promise":"不在台面堆垃圾","role":"备餐多、垃圾没处放的人","occasion":"做饭/备餐","freq":"每天","current":"垃圾袋挂柜门/堆台面","relationship":"做饭的人/家人","sub":"垃圾桶+挂钩；免费但难看/异味","gap":"餐边柜没有隐藏垃圾位；台面很快乱","mechanism":"侧拉分类垃圾桶+小厨余盒+活性炭盖","action":"把垃圾口藏进柜侧","how":"拉出；分类丢；推回；每周清","proof":"拟：台面零垃圾袋；2 周无异味","tradeoff":"气味/清洁/占柜内","kill":"2 周内厨余发臭或垃圾口卡住","insight":"台面能不能持续用，取决于垃圾往哪去。","evidence":"grey","evidenceNotes":"U1 未提供垃圾习惯；气味是假设；需 2 周实测。","statusReason":"概念成立；卫生未验证。","short":null,"claim":"对备餐多、垃圾没处放的人来说，在做饭/备餐，他们现在垃圾袋挂柜门/堆台面；现有替代是垃圾桶+挂钩；免费但难看/异味，但餐边柜没有隐藏垃圾位；台面很快乱。这个方案用侧拉分类垃圾桶+小厨余盒+活性炭盖，承诺“不在台面堆垃圾”，以拟：台面零垃圾袋；2 周无异味为目标，代价是气味/清洁/占柜内。"},"C05":{"id":"C05","reading":"R3","title":"电磁轻煮","family":"induction zone","status":"live","promise":"无火也能煮","role":"想在餐厅煮面/火锅但不想油烟的人","occasion":"晚餐/夜宵","freq":"每周 2–3 次","current":"便携电磁炉放餐桌；插排拖地","relationship":"家人/客人","sub":"便携电磁炉；¥100–300 但散热/电线未解决","gap":"餐边柜没有明火/排烟；电磁炉进柜散热差","mechanism":"嵌入式电磁炉+防干烧+定时+防水面板+背部散热","action":"把轻煮固定到餐边柜","how":"放锅；选功率；定时；关火；擦台面","proof":"拟：煮 2 人份 ≤15 分钟；台面 ≤60℃","tradeoff":"功率/散热/锅具","kill":"2 周内插座过载/台面烫坏/蒸汽熏柜","insight":"餐边柜做热食的边界不是能不能做，是能不能安全地做。","evidence":"yellow","evidenceNotes":"U1 未提供电路条件；散热是假设；需 1 个嵌入样机+2 小时火锅。","statusReason":"场景强；散热未验证。","short":{"rank":5,"why":"最直接回应第二料理","risk":"散热/电","test":"1 个嵌入样机；2 小时火锅"},"claim":"对想在餐厅煮面/火锅但不想油烟的人来说，在晚餐/夜宵，他们现在便携电磁炉放餐桌；插排拖地；现有替代是便携电磁炉；¥100–300 但散热/电线未解决，但餐边柜没有明火/排烟；电磁炉进柜散热差。这个方案用嵌入式电磁炉+防干烧+定时+防水面板+背部散热，承诺“无火也能煮”，以拟：煮 2 人份 ≤15 分钟；台面 ≤60℃为目标，代价是功率/散热/锅具。"},"C06":{"id":"C06","reading":"R3","title":"完整第二厨房","family":"full second kitchen","status":"killed","promise":"第二个水槽+灶+排烟","role":"大平层/别墅、想要完整第二厨房的人","occasion":"每天/待客","freq":"每天","current":"butler pantry/中厨外厨；已有","relationship":"全家/保姆/客人","sub":"完整第二厨房；¥5–20 万","gap":"餐边柜没有给排水/排烟/燃气；成本高","mechanism":"把水槽、电磁炉、排烟、冰箱全塞进餐边柜","action":"做完整第二厨房","how":"改水改电；装排烟；放冰箱","proof":"完整第二厨房","tradeoff":"水/排水/排烟/成本/规范","kill":"餐边柜不是厨房；完整第二厨房需要土建/排水/排烟；这是另一个项目","insight":"餐边柜做不了完整第二厨房；它的机会在轻料理，不在复制厨房。","evidence":"yellow","evidenceNotes":"U1 未提供房型/预算；成本/规范是常识性假设，未核价。","statusReason":"硬 gate：水/排水/排烟/成本；kill as standalone。","short":null,"claim":"对大平层/别墅、想要完整第二厨房的人来说，在每天/待客，他们现在butler pantry/中厨外厨；已有；现有替代是完整第二厨房；¥5–20 万，但餐边柜没有给排水/排烟/燃气；成本高。这个方案用把水槽、电磁炉、排烟、冰箱全塞进餐边柜，承诺“第二个水槽+灶+排烟”，以完整第二厨房为目标，代价是水/排水/排烟/成本/规范。"}},"grill":{"A01":{"rounds":[{"q":"早餐发车台是不是只是把面包机搬到餐边柜？","consider":"如果只是换位置，用户没有理由改变习惯；差异必须是早高峰动线、台面释放和清洁。","decision":"continue，但承诺收紧为‘早餐不再穿过厨房’。"},{"q":"40cm 深、面包屑、蒸汽，柜体受得了吗？","consider":"面包机会掉屑，热水壶会放蒸汽；需要可拆屑盘+防潮台面+背部散热。","decision":"narrow：先做 A01+A06 的 40cm 早餐模块，不单独卖台面。"},{"q":"谁清理公共区域的早餐台？","consider":"餐边柜在餐厅，清洁责任不清；如果每天要擦，用户会放弃。","decision":"narrow：把可拆洗托盘作为核心件。"}],"verdict":"narrow","note":"保留早餐方向；先做 40cm 早餐模块 + 5 家庭 2 周实测。"},"C01":{"rounds":[{"q":"没有水管，洗切真的比回厨房更省事吗？","consider":"换水/倒废水本身也是动线；如果一顿饭要换 3 次水，方案不成立。","decision":"narrow：只做 2 人份轻洗切，不承诺大份/油腻餐具。"},{"q":"水桶/沥水盆会不会发霉？","consider":"湿区在餐厅，清洁频率低；需要可拆、可晾干、无死角。","decision":"narrow：先做 2 周卫生测试；发霉即 kill。"},{"q":"这是产品，还是只是一个水桶？","consider":"如果只是桶+盆，用户可以去露营店买；差异必须在柜内集成/折叠/废水管理。","decision":"continue → narrow：做能收进 40cm 柜体的洗切模块。"}],"verdict":"narrow","note":"保留无水源洗切；先做 2 周卫生/水量测试。"},"C06":{"rounds":[{"q":"完整第二厨房不是已经有 butler pantry 吗？","consider":"butler pantry 是独立空间，带水槽/排水/排烟/土建；餐边柜没有这些条件。","decision":"kill as standalone；保留为反证。"},{"q":"能不能把水槽/电磁炉/排烟都塞进餐边柜？","consider":"需要给排水/排烟/燃气/电路/防水；成本接近小厨房改造，不是家具。","decision":"kill；这不是餐边柜产品，是装修项目。"},{"q":"什么情况下 C06 会复活？","consider":"如果用户愿意为 1.2m 的第二水槽+灶改造餐厅，那是 butler pantry brief。","decision":"kill as standalone; keep as counterfactual."}],"verdict":"kill","note":"餐边柜做不了完整第二厨房；保留为反证。"}},"handoff":["A01","C01","B01"],"language":"zh"}</script>
+<script>
+'use strict';
+const $=s=>document.getElementById(s);
+const DATA=JSON.parse($('atlasData').textContent);
+const reframed=DATA.readings!==undefined;
+for(const key of ['cards','readings','lenses','grill'])DATA[key]=Object.assign(Object.create(null),DATA[key]);
+const pristineApp=$('app').cloneNode(true);
+const languageKey='idea-atlas.language';
+let lifetime;
+let initialLanguage='en';
+try { if(localStorage.getItem(languageKey)==='zh') initialLanguage='zh'; } catch {}
+function renderAtlas(language,saved){
+ if(lifetime){
+   lifetime.abort();
+   $('app').replaceWith(pristineApp.cloneNode(true));
+ }
+ lifetime=new AbortController();
+ const listen=(target,type,handler)=>target.addEventListener(type,handler,{signal:lifetime.signal});
+ const isEnglish=language==='en';
+ const t=(en,zh)=>isEnglish?en:zh;
+ document.documentElement.lang=t('en','zh-CN');
+ $('brandName').textContent=t('Idea Atlas','点子地图');
+ for(const group of document.querySelectorAll('.language-switch')){
+   group.setAttribute('aria-label',t('Interface language','界面语言'));
+   group.title=t('Switch interface language','切换界面语言');
+   for(const button of group.querySelectorAll('button')){
+     button.setAttribute('aria-pressed',String(button.dataset.language===language));
+   }
+ }
+for(const element of document.querySelectorAll('[data-copy-en]')){
+  element.textContent=t(element.dataset.copyEn,element.dataset.copyZh);
+}
+for(const element of document.querySelectorAll('[data-aria-en]')){
+  element.setAttribute('aria-label',t(element.dataset.ariaEn,element.dataset.ariaZh));
+}
+for(const element of document.querySelectorAll('[data-title-en]')){
+  element.title=t(element.dataset.titleEn,element.dataset.titleZh);
+}
+const cards=Object.values(DATA.cards), handoff=DATA.handoff||[];
+const branchType=reframed?'reading':'lens', branchPrefix=branchType+':', branchLabel=reframed?'读法':'视角';
+const branches=reframed?DATA.readings:DATA.lenses;
+const branchEntries=Object.entries(branches);
+// Bind the same tint to a branch, its cards and the connecting lines.
+const branchTone=new Map(branchEntries.map(([id],i)=>[id,String(i%6)]));
+const branchKey=card=>branchPrefix+card[branchType];
+function ideaCount(n) {
+  return t(n+(n===1?' idea':' ideas'),n+' 个方向');
+}
+const groupCount=branchEntries.length;
+const englishGroup=reframed?(groupCount===1?'perspective':'perspectives'):(groupCount===1?'lens':'lenses');
+const totals=t(groupCount+' '+englishGroup,groupCount+' 个'+branchLabel)+' · '+ideaCount(cards.length);
+const brief=DATA.project.title, subtitle=DATA.project.subtitle||'';
+const actionFor=card=>card.action||card.mechanism||card.promise||'';
+document.title=brief+' · '+t('Idea Atlas','点子地图');
+
+const labels={live:t("Promising", "可推进"),'needs-evidence':t("Needs evidence", "待补证"),killed:t("Ruled out", "已淘汰"),duplicate:t("Merged", "已合并"),seed:t("Seed", "种子"),variant:t("Variant", "变体")};
+function esc(s){return String(s??'').replace(/[&<>"']/g,v=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[v]));}
+const sourceAttrs=' dir="auto" lang="'+esc(DATA.language||'')+'"';
+function statusLabel(c){return labels[c.status]||c.status}
+function badge(c){return '<span class="badge '+esc(c.status)+'"><i aria-hidden="true" class="statusmark mark-'+esc(c.status)+'"></i>'+esc(statusLabel(c))+'</span>'}
+const icons={filter:'<path d="M3 6h18M6 12h12M9 18h6"/>',tree:'<path d="m3.2 6.2 5.7-2.6 6.2 2.7 5.7-2.6v14.2l-5.7 2.5-6.2-2.7-5.7 2.6zM8.9 3.6v14.1m6.2-11.4v14.1"/>',list:'<path d="M8 6h12M8 12h12M8 18h12M3 6h.1M3 12h.1M3 18h.1"/>',plus:'<path d="M12 5v14M5 12h14"/>',minus:'<path d="M5 12h14"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',fit:'<path d="M9 4H4v5M15 4h5v5M4 15v5h5M20 15v5h-5"/>'};
+document.querySelectorAll('[data-icon]').forEach(el=>el.innerHTML='<svg aria-hidden="true" class="icon" viewBox="0 0 24 24">'+icons[el.dataset.icon]+'</svg>');
+function detailRows(rows) {
+  const present = rows.filter(([,value]) => value !== undefined && value !== null && value !== '');
+  if (!present.length) return '';
+  return '<table class="pa-fields"><tbody>' + present.map(([label,value,rowClass]) =>
+    '<tr' + (rowClass ? ' class="' + esc(rowClass) + '"' : '') + '><th scope="row">' + esc(label) + '</th><td>' + esc(value) + '</td></tr>').join('') + '</tbody></table>';
+}
+
+function detailLinks(items) {
+  return '<div class="pa-links">' + items.map(c =>
+    '<button type="button" data-tone="' + branchTone.get(c[branchType]) + '" data-card="' + esc(c.id) + '" class="pa-cardlink"><span class="pa-id">' +
+    esc(c.id) + '</span><span><strong>' + esc(c.title) + '</strong><small>' + esc(c.promise || actionFor(c)) +
+    '</small></span><span aria-hidden="true" class="pa-open-icon">↗</span></button>').join('') + '</div>';
+}
+
+function prose(value, cls) {
+  return value ? '<p'+sourceAttrs+(cls?' class="'+cls+'"':'')+'>'+esc(value)+'</p>' : '';
+}
+function readingSection(title, content) {
+  return content ? '<section class="reading-section"><h3>'+esc(title)+'</h3>'+content+'</section>' : '';
+}
+function readingFields(rows, cls='reading-fields') {
+  const fields=rows.filter(([,value])=>value!==undefined && value!==null && value!=='');
+  return fields.length ? '<dl class="'+cls+'">'+fields.map(([label,value])=>
+    '<div><dt>'+esc(label)+'</dt><dd>'+esc(value)+'</dd></div>').join('')+'</dl>' : '';
+}
+function fold(title, content, cls='reading-fold') {
+  return content ? '<details class="'+cls+'"><summary>'+esc(title)+'</summary><div class="fold-body">'+content+'</div></details>' : '';
+}
+function cardOverview(c) {
+  const action=prose(c.action,'reading-headline')+prose(c.mechanism)+readingFields([[t("How it works", "使用方式"),c.how]]);
+  const context=prose(c.role,'context-main')+prose([c.occasion,c.freq].filter(Boolean).join(' · '),'context-time')+prose(c.current);
+  const supplementary=readingFields([
+    [t("People involved", "关系"),c.relationship],[t("Existing alternative", "已有替代"),c.sub],[t("Unmet need", "定位空位"),c.gap],[t("Trade-offs", "代价"),c.tradeoff],
+    [t("Idea family", "定位族"),c.family],[t("Lens", "使用视角"),reframed&&c.lens?DATA.lenses[c.lens]?.name||c.lens:''],[t("Related ideas", "对照方向"),Array.isArray(c.links)?c.links.join(' · '):c.links]
+  ]);
+  return readingSection(t("Design approach", "设计动作"),action) +
+    (context?readingSection(t("In use", "使用场景"),'<div class="reading-context">'+context+'</div>'):'') +
+    readingSection(t("Design insight", "设计洞察"),prose(c.insight)) +
+    fold(t("More context", "更多定位信息"),supplementary) + fold(t("Full positioning statement", "完整定位陈述"),prose(c.claim));
+}
+const evidenceText={green:t("Direct evidence", "直接依据"),yellow:t("Indirect evidence", "间接依据"),grey:t("Unverified", "尚待验证")};
+function cardVerification(c, grill) {
+  const short=c.short;
+  const next=short?.test ? readingSection(t("Next test", "下一步验证"),prose(short.test,'reading-headline')) : '';
+  const evidence=readingFields([[t("Evidence level", "证据状态"),evidenceText[c.evidence]||c.evidence],[t("Basis and limitations", "依据与局限"),c.evidenceNotes],[t("Screening rationale", "初筛理由"),c.statusReason]]);
+  const measures=readingFields([[t("Test criteria", "验证目标"),c.proof],[t("When to rule it out", "淘汰条件"),c.kill]],'measure-list');
+  const shortlist=short ? readingSection(t("Shortlist", "入围推荐")+(short.rank!=null?' · #'+short.rank:''),
+    readingFields([[t("Why it made the cut", "留下理由"),short.why],[t("Main risk", "主要风险"),short.risk]])) : '';
+  const names={specificity:t("Specificity", "场景具体度"),evidence:t("Evidence", "证据"),difference:t("Distinctiveness", "差异"),feasibility:t("Feasibility", "可行性"),brand:t("Brand potential", "品牌潜力"),fit:t("Fit", "契合度")};
+  const scores=Object.entries(c.scores||{});
+  const total=c.score??c.score_total??scores.reduce((sum,[,n])=>sum+Number(n),0);
+  const scoreDetails=scores.length ? fold(t("Card score · ", "原卡评分 · ")+total+' / '+(scores.length*5),
+    readingFields(scores.map(([key,n])=>[names[key]||key,n+' / 5']))) : '';
+  return next + readingSection(t("Available evidence", "现有依据"),evidence) + readingSection(t("How to judge the result", "如何判断结果"),measures) +
+    shortlist + scoreDetails + (!grill?('<p class="record-empty">'+t("No challenge rounds recorded.", "尚无逐轮质疑记录。")+'</p>'):'');
+}
+const verdictLabels=new Map([
+  ['continue',t('Continue exploring','继续探索')],['narrow',t('Narrow the scope','收窄方案')],
+  ['pivot',t('Change direction','调整方向')],['kill',t('Rule out the idea','淘汰')]
+]);
+function cardReview(g) {
+  const summary=g.verdict||g.note ? '<div class="decision-summary"><small>'+t("After the challenges", "质疑后的决定")+'</small>'+
+    (g.verdict?'<strong>'+esc(verdictLabels.get(g.verdict)??g.verdict)+'</strong>':'')+prose(g.note)+'</div>' : '';
+  const rounds=g.rounds||[];
+  return summary + (rounds.length ? '<ol class="round-list">'+rounds.map((r,i)=>
+    '<li class="round"><span class="round-no" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div class="round-body"><h4'+sourceAttrs+'>'+
+    esc(r.q)+'</h4>'+prose(r.decision,'round-result')+
+    fold(t("Show reasoning", "查看依据"),prose(r.consider),'round-basis')+'</div></li>').join('')+'</ol>' : '');
+}
+function cardDetail(c) {
+  const g=DATA.grill?.[c.id];
+  const sections=[['overview',t("Overview", "概览"),cardOverview(c)],['verification',t("Validation", "验证"),cardVerification(c,g)]];
+  if(g && (g.rounds?.length || g.note || g.verdict)) sections.push(['review',t("Challenges", "质疑"),cardReview(g)]);
+  const meta='<div class="card-meta"><span class="initial-state">'+t("Initial review · ", "初筛 ")+badge(c)+'</span>'+
+    (c.short?.rank!=null?'<span>'+t("Shortlist #", "入围 #")+esc(c.short.rank)+'</span>':'')+
+    (handoff.includes(c.id)?'<span>'+t("Ready for handoff", "待交接")+'</span>':'')+'</div>';
+  const hero='<div class="card-hero">'+prose(c.promise,'card-promise')+meta+'</div>';
+  const tabs='<div class="card-tabs" role="tablist" aria-label="'+t("Idea details", "卡片内容")+'">'+sections.map(([id,label],i)=>
+    '<button type="button" role="tab" id="card-tab-'+id+'" aria-controls="card-pane-'+id+'" aria-selected="'+(i===0)+
+    '" tabindex="'+(i===0?0:-1)+'" data-pane="'+id+'">'+label+
+    (id==='review'&&g.rounds?.length?'<span class="tab-count">'+g.rounds.length+'</span>':'')+'</button>').join('')+'</div>';
+  return hero+tabs+sections.map(([id,,content],i)=>'<article class="card-pane" id="card-pane-'+id+
+    '" role="tabpanel" aria-labelledby="card-tab-'+id+'" tabindex="0"'+(i===0?'':' hidden')+'>'+content+'</article>').join('');
+}
+
+function branchDetail(id) {
+  const branch = branches[id];
+  const group = cards.filter(c => c[branchType] === id);
+  const reasoning = reframed ? detailRows([[t("Premise", "题面前提"),branch.premise],[t("Who to talk to", "可接触的对象"),branch.audience],[t("What to check first", "先查什么"),branch.check]]) : '';
+  const directions = group.length ? detailLinks(group) : '<p class="pa-muted">'+t("This branch has no ideas yet.", "此分支尚无方向卡。")+'</p>';
+  return '<div class="pa-detail"><p class="pa-question">' + esc(branch.q) + '</p>' + reasoning +
+    '<section class="pa-section"><h3>'+t("Ideas in this branch ", "分支方向 ")+'<span class="pa-id">' + group.length +
+    '</span></h3>' + directions + '</section></div>';
+}
+
+function projectDetail() {
+  const next = handoff.map(id => DATA.cards[id]).filter(Boolean);
+  return '<div class="pa-detail">' + (subtitle ? '<p class="pa-question">' + esc(subtitle) + '</p>' : '') + '<section class="pa-section"><h3>' + (reframed?t("Perspectives", "题目读法"):t("Lenses", "探索视角")) + '</h3><div class="pa-links">' +
+    branchEntries.map(([id,branch],i) => '<button type="button" class="pa-cardlink" data-tone="' + branchTone.get(id) + '" data-' + branchType + '="' +
+    esc(id) + '"><span class="pa-id">' + esc(reframed?id:(branch.code||String.fromCharCode(65+i%26))) + '</span><span><strong>' + esc(branch.name) + '</strong><small>' + esc(branch.q) +
+    '</small></span><span class="pa-open-icon" aria-hidden="true">↗</span></button>').join('') + '</div></section>' +
+    (next.length ? '<section class="pa-section"><h3>'+t("Ready for handoff ", "待交接方向 ")+'<span class="pa-id">' + next.length +
+    '</span></h3>' + detailLinks(next) + '</section>' : '') + '</div>';
+}
+
+function indexContent(items) {
+  if (!cards.length) return '<p class="pa-empty">'+t("No ideas in this run yet. Open the map to explore the perspectives and what to check first.", "本轮尚无方向卡。请回到点子地图，查看各读法对应的对象与待查问题。")+'</p>';
+  if (!items.length) return '<p class="pa-empty">'+t("No ideas match this filter.", "没有符合当前条件的方向。")+'</p>';
+  return '<div class="pa-index"><table><thead><tr><th scope="col">'+t("Idea", "方向")+'</th><th scope="col">' + (reframed?t("Perspective / lens", "读法与视角"):t("Lens", "视角")) + '</th>' +
+    '<th scope="col">'+t("Context and design approach", "场景与设计动作")+'</th><th scope="col">'+t("Status", "状态")+'</th></tr></thead><tbody>' +
+    items.map(c => '<tr data-tone="' + branchTone.get(c[branchType]) + '"><th scope="row"><button type="button" class="pa-indexopen" data-card="' +
+    esc(c.id) + '" aria-label="'+t("Open ", "打开 ")+'' + esc(c.id) + ' ' + esc(c.title) + '"><span class="pa-id">' +
+    esc(c.id) + '</span><strong>' + esc(c.title) + '</strong></button></th><td class="pa-branchcol"><span class="pa-branchname">' + esc(branches[c[branchType]].name) + '</span>' +
+    (reframed && c.lens ? '<small class="pa-indexscene">'+esc(DATA.lenses[c.lens]?.name||c.lens)+'</small>' : '') +
+    '</td><td><span class="pa-indexscene">' + esc(c.occasion) + '</span>' + esc(actionFor(c)) +
+    '</td><td>' + badge(c) + '</td></tr>').join('') + '</tbody></table></div>';
+}
+
+const view=$('mapView'), world=$('world'), svg=$('wires'), drawer=$('drawer');
+const minZoom=.12,maxZoom=3, clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
+const state={mode:'map',filter:'all',selected:null,focus:null,mobile:null,scale:1,x:0,y:0,auto:true};
+let geometry, lastTrigger=null;
+const rules=[
+ ['all',t("All", "全部"),()=>true],
+ ...Object.entries(labels).filter(([id])=>['live','needs-evidence','killed'].includes(id)||cards.some(c=>c.status===id)).map(([id,label])=>[id,label,c=>c.status===id]),
+ ['short',t("Shortlisted", "推荐候选"),c=>!!c.short],['handoff',t("Ready for handoff", "待交接"),c=>handoff.includes(c.id)],['grill',t("With challenges", "有质询记录"),c=>!!DATA.grill[c.id]]
+];
+function matched(){return cards.filter(rules.find(r=>r[0]===state.filter)[2]);}
+function toggleFilters(show, restoreFocus=false) {
+ const trigger=$('filterTrigger'), panel=$('filters');
+ panel.hidden=!show;
+ trigger.setAttribute('aria-expanded',String(show));
+ if(show) panel.querySelector('[aria-pressed="true"]')?.focus({preventScroll:true});
+ else if(restoreFocus) trigger.focus({preventScroll:true});
+}
+$('filterTrigger').addEventListener('click',()=>toggleFilters($('filters').hidden));
+$('filterHost').addEventListener('focusout',e=>{
+ if(e.relatedTarget && !$('filterHost').contains(e.relatedTarget)) toggleFilters(false);
+});
+listen(document,'pointerdown',e=>{
+ if(!$('filters').hidden && !$('filterHost').contains(e.target)) toggleFilters(false);
+});
+function drawFilters(){
+ $('filters').innerHTML=rules.map(([id,label,test],i)=>(id==='short'?'<span class="filter-sep" aria-hidden="true"></span>':'')+
+ '<button class="filter" data-filter="'+id+'" aria-pressed="'+(state.filter===id)+'">'+(labels[id]?'<i aria-hidden="true" class="statusmark mark-'+id+'"></i>':'')+
+ label+'<span class="count">'+cards.filter(test).length+'</span></button>').join('');
+}
+// Measure native text at its final width before routing any lines. Longer labels
+// and uneven lens sizes therefore change the geometry, including on small screens.
+
+function columnPitch(){
+  return clamp(Math.floor((window.innerWidth-88)/Math.max(1,branchEntries.length)),246,388);
+}
+function needsLayout(){
+  return geometry.viewport !== window.innerWidth;
+}
+function draw(){
+  const stacked=window.innerWidth<=720;
+  state.mobile=stacked;
+  const pitch=columnPitch(), gutter=30;
+  const colWidth=stacked ? clamp(window.innerWidth-48,200,500) : pitch-gutter;
+  const w=stacked ? colWidth : Math.max(510,branchEntries.length*pitch-gutter);
+  const nodes=$('nodes'), panels=$('groups');
+  nodes.replaceChildren();
+  panels.replaceChildren();
+  svg.replaceChildren();
+  const rects=new Map(), routes=new Map();
+  let h=0;
+  function node(key,style,html,label,width){
+    const el=document.createElement('button');
+    el.type='button'; el.className='node '+style; el.dataset.key=key;
+    if(DATA.cards[key]) el.dataset.card=key;
+    else if(key.startsWith(branchPrefix)) el.dataset[branchType]=key.slice(branchPrefix.length);
+    else el.dataset.root='';
+    el.setAttribute('aria-label',label);
+    el.style.width=width+'px'; el.innerHTML=html; nodes.append(el);
+    return {key,el,w:width,h:el.offsetHeight};
+  }
+  function place(item,x,y){
+    Object.assign(item,{x,y});
+    item.el.style.left=x+'px'; item.el.style.top=y+'px';
+    rects.set(item.key,item); h=Math.max(h,y+item.h);
+  }
+  function path(d,style,key){
+    const line=document.createElementNS('http://www.w3.org/2000/svg','path');
+    line.setAttribute('class',style); line.setAttribute('d',d);
+    if(key) line.dataset.edge=key;
+    svg.append(line); return line;
+  }
+  // Round only the elbows. The unselected tree shares a trunk between branch headings.
+  function fork(fromX,fromY,toX,toY){
+    if(fromX===toX) return 'M '+fromX+' '+fromY+' V '+toY;
+    const direction=Math.sign(toX-fromX);
+    const mid=fromY+(toY-fromY)/2;
+    const r=Math.min(13,Math.abs(toX-fromX)/2,(toY-fromY)/2);
+    return 'M '+fromX+' '+fromY+' V '+(mid-r)+' Q '+fromX+' '+mid+' '+(fromX+direction*r)+' '+mid+
+      ' H '+(toX-direction*r)+' Q '+toX+' '+mid+' '+toX+' '+(mid+r)+' V '+toY;
+  }
+  const root=node('root','root-node','<strong'+sourceAttrs+'>'+esc(brief)+'</strong><span class="root-meta">'+esc(totals)+'</span>',
+    brief+t(". Open the brief and handoff ideas.", "，查看课题与交接方向"),Math.min(w,820));
+  place(root,0,0);
+  const sections=branchEntries.map(([id,branch],i)=>{
+    const key=branchPrefix+id,code=reframed?id:(branch.code||String.fromCharCode(65+i%26));
+    const codeLabel=branch.name.split(/\s+/,1)[0]===code?'':'<span class="lens-letter">'+esc(code)+'</span>';
+    const lens=node(key,'lens-node','<span class="lens-meta"><strong'+sourceAttrs+'>'+esc(branch.name)+
+      '</strong>'+codeLabel+'</span><span class="lens-text"'+sourceAttrs+'>'+esc(branch.q)+'</span>',
+      branch.name+t(", ", "，")+branch.q,colWidth);
+    const leaves=cards.filter(c=>c[branchType]===id).map((c,index,group)=>{
+      const style='idea-node'+(index===0?' first':'')+(index===group.length-1?' last':'')+(c.status==='killed'?' killed-card':'');
+      const leaf=node(c.id,style,'<span class="idea-title"><strong'+sourceAttrs+'>'+esc(c.title)+'</strong>'+badge(c)+
+        '</span><span class="micro"'+sourceAttrs+'>'+esc(actionFor(c))+'</span>',c.id+' '+c.title+t(", ", "，")+statusLabel(c)+t(". Open idea details.", "，打开定位表"),colWidth-12);
+      leaf.el.title=c.id+' · '+c.title;
+      return leaf;
+    });
+    return {lens,leaves};
+  });
+  const maxHeader=Math.max(0,...sections.map(s=>s.lens.h));
+  let sectionTop=root.h+(stacked?33:59);
+  for(const [i,{lens,leaves}] of sections.entries()){
+    const x=stacked?0:i*pitch;
+    place(lens,x,sectionTop);
+    const groupTop=sectionTop+(stacked?lens.h:maxHeader)+16;
+    let y=groupTop;
+    for(const leaf of leaves){
+      place(leaf,x+12,y);
+      y+=leaf.h;
+    }
+    if(leaves.length){
+      const panel=document.createElement('div');
+      panel.className='group-surface';
+      Object.assign(panel.style,{left:(x+12)+'px',top:groupTop+'px',width:(colWidth-12)+'px',height:(y-groupTop)+'px'});
+      panels.append(panel);
+    }
+    const targetX=x+9;
+    const lead=stacked?'':fork(9,root.h+9,targetX,sectionTop-8);
+    if(lead) path(lead,'wire',lens.key);
+    // On narrow screens the sections form a vertical reading order. Local curves
+    // keep the selected row attached to its heading without running past other groups.
+    const rail=x+2, startY=sectionTop+lens.h+5;
+    const localGuide=leaves.length?'M '+rail+' '+startY+' v 9 q 0 8 8 8 h 2':'';
+    routes.set(lens.key,lead||localGuide);
+    for(const leaf of leaves){
+      const targetY=leaf.y+leaf.h/2;
+      const stem='M '+rail+' '+startY+' V '+(targetY-9)+' Q '+rail+' '+targetY+' '+(rail+9)+' '+targetY+' H '+leaf.x;
+      routes.set(leaf.key,(lead+' '+stem).trim());
+    }
+    if(stacked) sectionTop=Math.max(y,sectionTop+lens.h)+35;
+  }
+  path('','active-edge').id='activePath';
+  geometry={w,h,rects,routes,viewport:window.innerWidth};
+  Object.assign(world.style,{width:w+'px',height:h+'px'});
+  svg.setAttribute('width',w); svg.setAttribute('height',h);
+  paint();
+}
+function paint(){
+ const matches=matched(),active=state.selected||state.focus;
+ const visible=new Set(['root',...matches.flatMap(c=>[c.id,branchKey(c)])]);
+
+ for(const item of $('nodes').children){
+   const key=item.dataset.key;
+   item.classList.toggle('selected',key===state.selected);
+   item.classList.toggle('dim',state.filter!=='all'&&!visible.has(key));
+   item.setAttribute('aria-expanded',String(key===state.selected));
+ }
+ for(const edge of svg.querySelectorAll('[data-edge]')){
+   edge.classList.toggle('dim',state.filter!=='all'&&!visible.has(edge.dataset.edge));
+ }
+ $('activePath').setAttribute('d',geometry.routes.get(active)||'');
+ $('readout').textContent=state.filter==='all'?totals:t(matches.length+' of '+ideaCount(cards.length),'匹配 '+matches.length+' / '+cards.length+' 个方向');
+}
+function transform(){
+ world.style.transform='translate('+state.x+'px,'+state.y+'px) scale('+state.scale+')';
+ $('actual').textContent=Math.round(state.scale*100)+'%';$('zoomIn').disabled=state.scale>=maxZoom-.0001;$('zoomOut').disabled=state.scale<=minZoom+.0001;
+}
+function fitView(initial=false){
+ if(!view.clientWidth||!view.clientHeight)return;
+ const w=view.clientWidth,h=view.clientHeight;
+
+ const gap=state.mobile?24:36;
+ const widthScale=(w-gap*2)/geometry.w;
+ if(initial){
+   state.scale=clamp(Math.min(1,widthScale),minZoom,1);
+   state.x=(w-geometry.w*state.scale)/2;
+   state.y=state.mobile?28:clamp(h*.055,26,54);
+ }else{
+   state.scale=clamp(Math.min(widthScale,(h-48)/geometry.h,1.08),minZoom,maxZoom);
+   state.x=(w-geometry.w*state.scale)/2;state.y=(h-geometry.h*state.scale)/2;
+ }
+ state.auto=true;transform();
+}
+function zoom(z,x=view.clientWidth/2,y=view.clientHeight/2){
+ const next=clamp(z,minZoom,maxZoom), ratio=next/state.scale;
+ state.x=x-(x-state.x)*ratio;state.y=y-(y-state.y)*ratio;state.scale=next;state.auto=false;transform();
+}
+function keepVisible(key){
+ const b=geometry.rects.get(key);if(!b||!view.clientWidth||(!drawer.hidden&&(window.innerWidth<=650||drawer.getAttribute('aria-modal')==='true')))return;
+ const pad=22,s=state.scale,w=view.clientWidth,h=view.clientHeight;
+ const x=state.x+b.x*s,y=state.y+b.y*s;
+ if(x+b.w*s>w-pad)state.x-=x+b.w*s-(w-pad);else if(x<pad)state.x+=pad-x;
+ if(y+b.h*s>h-pad)state.y-=y+b.h*s-(h-pad);else if(y<pad)state.y+=pad-y;
+ transform();
+}
+const narrowReader=window.matchMedia('(max-width:700px)');
+function syncReaderMode(){
+ const full=narrowReader.matches && !drawer.hidden && drawer.classList.contains('card-open');
+ for(const surface of document.querySelectorAll('.topbar,.main,.foot')) surface.inert=full;
+ if(full){drawer.setAttribute('role','dialog');drawer.setAttribute('aria-modal','true')}
+ else{drawer.removeAttribute('role');drawer.removeAttribute('aria-modal')}
+}
+listen(narrowReader,'change',syncReaderMode);
+function openDetail(key,trigger){
+ const c=DATA.cards[key],id=key.startsWith(branchPrefix)?key.slice(branchPrefix.length):null;
+ const l=id===null?null:branches[id];
+ if(!c&&!l&&key!=='root')return;
+ if(trigger&&!drawer.contains(trigger))lastTrigger=trigger;
+ state.selected=key;
+ drawer.hidden=false;
+ const openingBranch=c?c[branchType]:id;
+ if(openingBranch===null)delete drawer.dataset.tone;
+ else drawer.dataset.tone=branchTone.get(openingBranch);
+ syncIndexSelection();
+
+ const heading=$('drawerTitle'), body=$('drawerBody');
+ const fromDrawer=trigger && drawer.contains(trigger);
+ heading.remove();
+ drawer.classList.toggle('card-open',!!c);
+ drawer.classList.remove('scrolled');
+ if(c){
+   $('drawerPath').innerHTML='<button type="button" class="crumb-link" data-'+branchType+'="'+esc(c[branchType])+'">'+
+     esc(branches[c[branchType]].name)+'</button><span class="crumb-sep" aria-hidden="true">›</span><span class="card-code">'+esc(c.id)+
+     '</span><span class="compact-title" aria-hidden="true">'+esc(c.title)+'</span>';
+ }else{
+   $('drawerPath').textContent=l?t("Brief  ›  ", "课题  ›  ")+(reframed?t("Perspectives", "题目读法"):t("Lenses", "探索视角")):t("Idea Atlas  ›  Brief", "点子地图  ›  课题");
+ }
+ heading.lang=DATA.language||'';heading.dir='auto';
+ heading.textContent=c?c.title:l?l.name:brief;
+ body.innerHTML=c?cardDetail(c):l?branchDetail(id):projectDetail();
+ if(c)body.querySelector('.card-hero').prepend(heading);
+ else drawer.querySelector('.drawer-head').append(heading);
+ body.scrollTop=0;syncReaderMode();paint();
+ if(state.mode==='map')keepVisible(key);
+ if(state.mobile||fromDrawer||trigger?.matches(':focus-visible'))$('closeDrawer').focus({preventScroll:true});
+}
+function updateDetailHeader(){
+ const body=$('drawerBody'),hero=body.querySelector('.card-hero');
+ drawer.classList.toggle('scrolled',!!hero && body.scrollTop>=hero.offsetHeight-6);
+}
+function showCardTab(tab) {
+ const body=$('drawerBody');
+ const hero=body.querySelector('.card-hero');
+ const y=Math.min(body.scrollTop,hero.offsetHeight);
+ for(const other of tab.parentElement.querySelectorAll('[role=tab]')){
+   const active=other===tab;
+   other.setAttribute('aria-selected',String(active));
+   other.tabIndex=active?0:-1;
+   $(other.getAttribute('aria-controls')).hidden=!active;
+ }
+ body.scrollTop=y;
+ updateDetailHeader();
+}
+$('drawerBody').addEventListener('scroll',updateDetailHeader,{passive:true});
+$('drawerBody').addEventListener('click',e=>{
+ const tab=e.target.closest('[role=tab]');
+ if(tab) showCardTab(tab);
+});
+$('drawerBody').addEventListener('keydown',e=>{
+ const tab=e.target.closest('[role=tab]');
+ if(!tab || !['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+ const tabs=[...tab.parentElement.querySelectorAll('[role=tab]')],i=tabs.indexOf(tab);
+ const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+ e.preventDefault(); tabs[next].focus({preventScroll:true}); showCardTab(tabs[next]);
+});
+
+function syncIndexSelection(){
+ for(const button of $('indexTable').querySelectorAll('.pa-indexopen')){
+  if(button.dataset.card===state.selected)button.setAttribute('aria-current','true');
+  else button.removeAttribute('aria-current');
+ }
+}
+function closeDetail(restore=false){
+ if(drawer.hidden)return;
+ drawer.hidden=true;syncReaderMode();state.selected=null;syncIndexSelection();paint();
+ if(state.auto&&state.mode==='map')fitView(true);
+ if(restore&&lastTrigger?.isConnected)lastTrigger.focus({preventScroll:true});
+ lastTrigger=null;
+}
+function setFilter(f){
+ if(!rules.some(r=>r[0]===f))return;
+ state.filter=f;
+ const match=matched();
+ const filterRule=rules.find(rule=>rule[0]===f);
+ $('filterLabel').textContent=f==='all'?t("Filter", "筛选"):filterRule[1];
+ $('filterTotal').textContent=match.length;
+ $('filterTotal').hidden=f==='all';
+ $('filterTrigger').classList.toggle('has-filter',f!=='all');
+ $('filterTrigger').setAttribute('aria-label',t('Filter ideas. Selected: '+filterRule[1]+', '+ideaCount(match.length),'筛选方向，当前为'+filterRule[1]+t(", ", "，")+match.length+' 个方向'));
+ if(!$('filters').hidden) toggleFilters(false,true);
+ if(state.selected&&DATA.cards[state.selected]&&!match.includes(DATA.cards[state.selected]))closeDetail();
+ if(f!=='all'&&state.selected?.startsWith(branchPrefix)&&!match.some(c=>branchKey(c)===state.selected))closeDetail();
+ $('filters').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===f)));
+ $('indexTable').innerHTML=indexContent(match);syncIndexSelection();$('indexCount').textContent=ideaCount(match.length);paint();
+}
+function setMode(mode){
+ state.mode=mode;closeDetail();
+ const map=mode==='map';view.hidden=!map;$('indexView').hidden=map;$('zoomTools').hidden=!map;$('keyHint').hidden=!map;
+ $('modeMap').setAttribute('aria-pressed',String(map));$('modeIndex').setAttribute('aria-pressed',String(!map));
+ if(map&&needsLayout())draw();
+ if(map&&state.auto)fitView(true);
+}
+let swallowClick=false;
+listen(document,'click',e=>{
+ if(swallowClick&&view.contains(e.target)){e.preventDefault();return}
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.card)openDetail(b.dataset.card,b);
+ else if(b.dataset[branchType])openDetail(branchPrefix+b.dataset[branchType],b);
+ else if('root' in b.dataset)openDetail('root',b);
+ else if(b.dataset.filter)setFilter(b.dataset.filter);
+});
+$('closeDrawer').onclick=()=>closeDetail(true);$('modeMap').onclick=()=>setMode('map');$('modeIndex').onclick=()=>setMode('index');
+$('zoomIn').onclick=()=>zoom(state.scale*1.25);$('zoomOut').onclick=()=>zoom(state.scale/1.25);$('actual').onclick=()=>zoom(1);$('fit').onclick=()=>fitView();
+view.addEventListener('focusin',e=>{
+ const button=e.target.closest('.node');
+ state.focus=button?.matches(':focus-visible')?button.dataset.key:null;
+ if(state.focus) keepVisible(state.focus);
+ paint();
+});
+view.addEventListener('focusout',()=>{state.focus=null;paint()});
+const pointers=new Map();let gesture=null,didDrag=false;
+function beginGesture(){
+ const p=[...pointers.values()];if(!p.length){gesture=null;return}
+ const a=p[0],b=p[1]||a;
+ gesture={x:(a.x+b.x)/2,y:(a.y+b.y)/2,d:Math.hypot(a.x-b.x,a.y-b.y),tx:state.x,ty:state.y,s:state.scale};
+}
+view.addEventListener('pointerdown',e=>{
+ if(e.button!==0)return;const r=view.getBoundingClientRect();
+ if(!pointers.size){didDrag=false;swallowClick=false}
+ pointers.set(e.pointerId,{x:e.clientX-r.left,y:e.clientY-r.top});beginGesture();
+ if(pointers.size>1)didDrag=true;
+});
+view.addEventListener('pointermove',e=>{
+ if(!pointers.has(e.pointerId)||!gesture)return;
+ const r=view.getBoundingClientRect();pointers.set(e.pointerId,{x:e.clientX-r.left,y:e.clientY-r.top});
+ const [a,b=a]=[...pointers.values()],x=(a.x+b.x)/2,y=(a.y+b.y)/2;
+ if(!didDrag&&Math.hypot(x-gesture.x,y-gesture.y)<4)return;
+ didDrag=true;view.setPointerCapture(e.pointerId);view.classList.add('drag');state.auto=false;
+ const next=gesture.d>0?clamp(gesture.s*Math.hypot(a.x-b.x,a.y-b.y)/gesture.d,minZoom,maxZoom):gesture.s;
+ state.scale=next;state.x=x-(gesture.x-gesture.tx)*next/gesture.s;state.y=y-(gesture.y-gesture.ty)*next/gesture.s;transform();
+});
+function endPointer(e){
+ if(!pointers.delete(e.pointerId))return;beginGesture();
+ if(!pointers.size){view.classList.remove('drag');swallowClick=didDrag;setTimeout(()=>{swallowClick=false},0)}
+}
+listen(window,'pointerup',endPointer);listen(window,'pointercancel',endPointer);
+view.addEventListener('wheel',e=>{
+ e.preventDefault();const r=view.getBoundingClientRect();
+ const unit=e.deltaMode===1?16:e.deltaMode===2?view.clientHeight:1;
+ if(e.shiftKey){state.auto=false;state.x-=(e.deltaX||e.deltaY)*unit;transform()}
+ else zoom(state.scale*Math.exp(-clamp(e.deltaY*unit,-300,300)*.0028),e.clientX-r.left,e.clientY-r.top);
+},{passive:false});
+listen(document,'keydown',e=>{
+ if(e.key==='Escape'){
+   if(!$('filters').hidden){e.preventDefault();toggleFilters(false,true);return}
+   closeDetail(true);return
+ }
+ if(state.mode!=='map'||!view.contains(e.target)||e.ctrlKey||e.metaKey||e.altKey)return;
+ const move={ArrowLeft:[55,0],ArrowRight:[-55,0],ArrowUp:[0,55],ArrowDown:[0,-55]}[e.key];
+ if(move){e.preventDefault();state.auto=false;state.x+=move[0];state.y+=move[1];transform()}
+ else if(['+','=','-'].includes(e.key)){e.preventDefault();zoom(state.scale*(e.key==='-'?.8:1.25))}
+ else if(e.key.toLowerCase()==='f')fitView();
+});
+$('app').addEventListener('click',e=>{
+ const button=e.target.closest('[data-language]');
+ if(!button||button.dataset.language===language)return;
+ const next=button.dataset.language;
+ try {localStorage.setItem(languageKey,next)} catch {}
+ const selectedTab=drawer.querySelector('[role=tab][aria-selected=true]');
+ const openFolds=[...drawer.querySelectorAll('details')].map(d=>d.open);
+ renderAtlas(next,{
+   mode:state.mode, filter:state.filter, selected:state.selected,
+   pane:selectedTab?.dataset.pane, openFolds, scroll:$('drawerBody').scrollTop,
+   indexScroll:$('indexView').scrollTop, drawerButton:drawer.contains(button),
+   camera:state.auto?null:{scale:state.scale,x:state.x,y:state.y}
+ });
+});
+draw();drawFilters();setFilter(saved?.filter||'all');fitView(true);
+if(saved){
+ setMode(saved.mode);
+ if(saved.camera){Object.assign(state,saved.camera,{auto:false});transform()}
+ if(saved.selected){
+   const mapTrigger=geometry.rects.get(saved.selected)?.el;
+   const trigger=saved.mode==='index'?[...$('indexTable').querySelectorAll('[data-card]')].find(el=>el.dataset.card===saved.selected):mapTrigger;
+   openDetail(saved.selected,trigger);
+   const tab=saved.pane && $('card-tab-'+saved.pane);
+   if(tab)showCardTab(tab);
+   drawer.querySelectorAll('details').forEach((item,i)=>item.open=!!saved.openFolds[i]);
+   $('drawerBody').scrollTop=saved.scroll;
+   updateDetailHeader();
+ }
+ $('indexView').scrollTop=saved.indexScroll;
+ const group=saved.drawerButton?drawer.querySelector('.language-switch'):document.querySelector('.topbar .language-switch');
+ group.querySelector('[aria-pressed=true]').focus({preventScroll:true});
+}
+listen(window,'resize',()=>{
+ if(state.mode!=='map')return;
+ if(needsLayout()){
+   const oldWidth=geometry.w, oldHeight=geometry.h;
+   const focusedKey=document.activeElement?.dataset.key;
+   draw();
+   if(!state.auto){
+     state.x=state.x*geometry.w/oldWidth;
+     state.y=state.y*geometry.h/oldHeight;
+     transform();
+   }
+   if(focusedKey)geometry.rects.get(focusedKey)?.el.focus({preventScroll:true});
+ }
+ if(state.auto)fitView(true);
+ else if(state.selected)keepVisible(state.selected);
+});
+
+}
+renderAtlas(initialLanguage,null);
+</script></body></html>

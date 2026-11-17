@@ -1,0 +1,35 @@
+name: Publish release archives
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test the skill and build both ZIPs
+        run: |
+          python3 -B -m unittest discover -s idea-atlas/tests
+          python3 -B tools/package_release.py
+          git diff --exit-code -- MANIFEST.json
+      - name: Attach the archives to the tagged release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          skill="dist/idea-atlas-skill-$version.zip"
+          full="dist/idea-atlas-$version.zip"
+          test -f "$skill" && test -f "$full"
+          gh release create "$GITHUB_REF_NAME" "$skill" "$full" \
+            --verify-tag --title "Idea Atlas $GITHUB_REF_NAME" --notes-from-tag
