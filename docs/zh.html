@@ -5,8 +5,8 @@
 <link rel="icon" href="media/atlas.svg" type="image/svg+xml"><link rel="stylesheet" href="media/demo.css">
 <link rel="alternate" hreflang="en" href="index.html"><link rel="alternate" hreflang="zh-CN" href="zh.html"></head>
 <body><header><div class="bar"><span class="brand"><img src="media/atlas.svg" alt="" width="31" height="31">Idea Atlas</span>
-<nav class="languages" aria-label="页面语言"><a lang="en" href="index.html">English</a><a lang="zh-CN" href="zh.html" aria-current="page">中文</a></nav></div></header>
-<main><section class="intro"><h1>打开想法地图</h1><p>选一个课题，点开一张卡片，看看怎么验证这个想法，以及哪一次质疑改变了它。</p></section>
+<div class="header-actions"><a class="github-link" href="https://github.com/gyy320603-star/idea-atlas">GitHub · Star 收藏</a><nav class="languages" aria-label="页面语言"><a lang="en" href="index.html">English</a><a lang="zh-CN" href="zh.html" aria-current="page">中文</a></nav></div></div></header>
+<main><section class="intro"><h1>打开想法地图</h1><p>选一个课题，点开一张卡片，看看怎么验证这个想法，以及哪一次质疑改变了它。</p><div class="intro-actions"><a class="primary" href="#use-your-brief">用自己的课题试试</a></div></section>
 <div class="cases"><article class="case">
   <a class="preview" href="cow-shoes/zh.html" aria-label="给牛穿的一双跑鞋 · 中文原稿"><img src="media/cow-shoes-zh.png" alt="牛跑鞋地图的五条分支及其方向卡片" width="1400" height="880"></a>
   <p class="meta">5 种读法 · 18 张卡 · 7 张入围</p><h2>给牛穿的一双跑鞋</h2><p class="copy">鞋究竟给谁穿？沿着 C01 看一个牛蹄印如何变成人穿的分趾鞋底，以及两轮质疑怎样把「跑完 10 公里不痛」写进通过条件。</p>
@@ -17,4 +17,12 @@
   <p class="meta">4 种读法 · 18 张卡 · 6 张入围</p><h2>餐边柜里的第二料理中心</h2><p class="copy">哪些事可以搬出厨房？打开 A01，看早餐动线、蒸汽与清洁这三轮质疑如何收窄方案。再看 D04，比较「完整第二厨房」为何被淘汰。</p>
   <div class="actions"><a class="primary" href="sideboard/zh.html">打开中文原稿 <span aria-hidden="true">→</span></a><a class="secondary" lang="en" href="sideboard/en.html">English translation</a></div>
 </article></div>
-<footer><p>两组第一轮原稿均由 Hermes 搭配 DeepSeek V4.1 Flash 1017 生成。英文版另行翻译；地图右上角的 English / 中文 切换界面文字。</p><details><summary>查看原始运行记录</summary><p>牛跑鞋出自 0.14.1 的独立 worker。该轮归档时移除了未声明的 lens 引用，并将交接清单收至前三张。 餐边柜出自 0.13.0 的当前对话。两张地图均使用 1.0.0 前端，两轮都没有提供外部证据，卡片中的测试是待执行的计划。</p><p><a href="cow-shoes/zh.json">牛跑鞋原稿 JSON</a> · <a href="sideboard/zh.json">餐边柜原稿 JSON</a></p></details></footer></main></body></html>
+<section class="start" id="use-your-brief" aria-labelledby="start-title" tabindex="-1">
+<h2 id="start-title">把链接丢给 Codex</h2>
+<p>把下面这句话复制给 Codex，再填上自己的设计课题。</p>
+<div class="prompt-box"><textarea id="install-prompt" readonly rows="3" aria-label="发给 Codex 的安装提示">安装 https://github.com/gyy320603-star/idea-atlas 里的 idea-atlas skill，然后帮我探索这个课题：[填写你的设计课题]。</textarea>
+<button class="primary copy-prompt" type="button" data-copy="复制这句话" data-success="已复制" data-failure="选中文字复制">复制这句话</button></div>
+<p class="copy-status" role="status" aria-live="polite" data-success="粘贴到 Codex，填上课题即可。" data-failure="请用键盘或长按菜单复制选中的文字。"></p>
+<div class="start-links"><a href="https://github.com/gyy320603-star/idea-atlas">GitHub · Star 收藏项目</a><a href="https://github.com/gyy320603-star/idea-atlas/blob/main/README.zh-CN.md#安装并试跑">详细安装说明</a></div>
+</section>
+<footer><p>两组第一轮原稿均由 Hermes 搭配 DeepSeek V4.1 Flash 1017 生成。英文版另行翻译；地图右上角的 English / 中文 切换界面文字。</p><details><summary>查看原始运行记录</summary><p>牛跑鞋出自 0.14.1 的独立 worker。该轮归档时移除了未声明的 lens 引用，并将交接清单收至前三张。 餐边柜出自 0.13.0 的当前对话。两张地图均使用 1.0.0 前端，两轮都没有提供外部证据，卡片中的测试是待执行的计划。</p><p><a href="cow-shoes/zh.json">牛跑鞋原稿 JSON</a> · <a href="sideboard/zh.json">餐边柜原稿 JSON</a></p></details></footer></main><script src="media/demo.js" defer></script></body></html>

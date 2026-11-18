@@ -4,6 +4,10 @@
 
 Idea Atlas 是一个用于设计前期探索的 agent skill。给它一个课题，就能得到一张可以点开阅读的想法地图。点开一张卡，就能看到谁会用、现在怎么做、为什么愿意换，以及出现什么结果就该放弃。生成的地图是一个独立的 HTML 文件，可以直接发给同事或老师，离线打开。
 
+把下面这句话连同链接一起发给 Codex，将「我的课题」换成你的题目。
+
+> 从 https://github.com/gyy320603-star/idea-atlas 安装 Idea Atlas skill，然后用它帮我探索「我的课题」。
+
 ## [在线体验 Demo](https://idea-atlas-demo.sturdypalm7.chatgpt.site/zh.html)
 
 **给牛穿的一双跑鞋** · 5 种读法，18 张卡，7 张入围。先看「究竟谁穿这双鞋」，再点开 C01。一个牛蹄印的玩笑怎么变成人穿的分趾跑鞋？两轮质疑把「别人能认出脚印」和「能无痛跑完 10 公里」变成了两个要分别验证的问题。[中文原稿](https://idea-atlas-demo.sturdypalm7.chatgpt.site/cow-shoes/zh.html) · [英文译本](https://idea-atlas-demo.sturdypalm7.chatgpt.site/cow-shoes/en.html)

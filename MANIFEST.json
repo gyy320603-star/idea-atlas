@@ -13,13 +13,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7055,
-      "sha256": "0de0e964f12b87b27b723c69c81f4648fc628c7eb099fc002f7da5e621008ba6"
+      "bytes": 7254,
+      "sha256": "089baf4cc3eb2bf736e744b787e2cf29b2d9f270977641def3e7fd0595e9a1c3"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 6778,
-      "sha256": "62c9959e9acc94adf5349e3f3578a6eb9aa12bf0db101d53a380127932c0bf5c"
+      "bytes": 6997,
+      "sha256": "1ccff595fa8b91a1d690402950040dab1050037a892a6b6d387c80fb61adcd60"
     },
     {
       "path": "companions/idea-to-positioning/CHANGELOG.md",
@@ -178,8 +178,8 @@
     },
     {
       "path": "docs/index.html",
-      "bytes": 3324,
-      "sha256": "59050644a7bc40f431701ed6b25a8b991df1d775dbf434420ee5db508adc326a"
+      "bytes": 4665,
+      "sha256": "ddae797f9ad55a2f043409fe3813a66a0eb5c4ebc4167156e93b7a969eb43bb7"
     },
     {
       "path": "docs/media/atlas.svg",
@@ -198,8 +198,13 @@
     },
     {
       "path": "docs/media/demo.css",
-      "bytes": 3117,
-      "sha256": "c9d7b322a93e41fc3c23e459ab4c85edc6b07de4b3d214bf6a62fa8bb0768581"
+      "bytes": 4928,
+      "sha256": "7421c172fca920761c6ce7d993903f3dab3ad1041997195bd9d3e59c30058d9f"
+    },
+    {
+      "path": "docs/media/demo.js",
+      "bytes": 608,
+      "sha256": "019515c03bc6bba53665dcd6585d4e5501bb6dd7d0cff9ea106895a894704eb5"
     },
     {
       "path": "docs/media/sideboard-en.png",
@@ -210,6 +215,11 @@
       "path": "docs/media/sideboard-zh.png",
       "bytes": 374800,
       "sha256": "31fd02cfec44224b987138e6762937a79f6fee90ecda2da4a7ae91526611fdd4"
+    },
+    {
+      "path": "docs/media/social-preview.png",
+      "bytes": 268441,
+      "sha256": "9263bb4024ae37cc3ef7c12eba0f0b2b9b104e73655aa0db3f35ac6fe9b7d714"
     },
     {
       "path": "docs/sideboard/en.html",
@@ -233,8 +243,8 @@
     },
     {
       "path": "docs/zh.html",
-      "bytes": 3279,
-      "sha256": "6d0ab1b85f16a2e179979a5c0e2c9a5026b853096dee3250cbbb29093dc572ae"
+      "bytes": 4637,
+      "sha256": "375340613ae0050e96087f133bbcd17001227ce7ae82e170cad7e529b4300dc5"
     },
     {
       "path": "idea-atlas/LICENSE",

@@ -5,8 +5,8 @@
 <link rel="icon" href="media/atlas.svg" type="image/svg+xml"><link rel="stylesheet" href="media/demo.css">
 <link rel="alternate" hreflang="en" href="index.html"><link rel="alternate" hreflang="zh-CN" href="zh.html"></head>
 <body><header><div class="bar"><span class="brand"><img src="media/atlas.svg" alt="" width="31" height="31">Idea Atlas</span>
-<nav class="languages" aria-label="Page language"><a lang="en" href="index.html" aria-current="page">English</a><a lang="zh-CN" href="zh.html">中文</a></nav></div></header>
-<main><section class="intro"><h1>Explore the idea maps</h1><p>Pick a brief. Open an idea to see its proposed test, or follow a challenge to the decision it changed.</p></section>
+<div class="header-actions"><a class="github-link" href="https://github.com/gyy320603-star/idea-atlas">GitHub · Star</a><nav class="languages" aria-label="Page language"><a lang="en" href="index.html" aria-current="page">English</a><a lang="zh-CN" href="zh.html">中文</a></nav></div></div></header>
+<main><section class="intro"><h1>Explore the idea maps</h1><p>Pick a brief. Open an idea to see its proposed test, or follow a challenge to the decision it changed.</p><div class="intro-actions"><a class="primary" href="#use-your-brief">Try your own brief</a></div></section>
 <div class="cases"><article class="case">
   <a class="preview" href="cow-shoes/en.html" aria-label="Running shoes for a cow · English edition"><img src="media/cow-shoes-en.png" alt="The cow-shoe map with its five readings and the ideas under each" width="1400" height="880"></a>
   <p class="meta">5 readings · 18 ideas · 7 shortlisted</p><h2>Running shoes for a cow</h2><p class="copy">Who wears the shoes? Follow C01 from a cow-shaped footprint to a split sole for human runners. Two challenges put a pain-free 10 km run on its test plan.</p>
@@ -17,4 +17,12 @@
   <p class="meta">4 readings · 18 ideas · 6 shortlisted</p><h2>A second prep station</h2><p class="copy">What can leave the kitchen? Open A01 to follow three challenges about the breakfast routine, steam and cleanup. Compare D04 to see why a full second kitchen was dropped.</p>
   <div class="actions"><a class="primary" href="sideboard/en.html">Open English edition <span aria-hidden="true">→</span></a><a class="secondary" lang="zh-CN" href="sideboard/zh.html">中文原稿</a></div>
 </article></div>
-<footer><p>Both first runs were generated in Chinese with Hermes and DeepSeek V4.1 Flash 1017. Each English edition is a translation. The map’s English / 中文 control changes interface labels.</p><details><summary>About the source runs</summary><p>Cow shoes used Idea Atlas 0.14.1 in a fresh worker. Its archived, deliverable run removed undeclared lens references and kept the top three handoffs. The sideboard used 0.13.0 in the current chat. Both maps use the 1.0.0 viewer. The tests described in the cards are proposals; neither run supplied external evidence.</p><p><a href="cow-shoes/zh.json">Cow shoes · source JSON</a> · <a href="sideboard/zh.json">Sideboard · source JSON</a></p></details></footer></main></body></html>
+<section class="start" id="use-your-brief" aria-labelledby="start-title" tabindex="-1">
+<h2 id="start-title">Give Codex your brief</h2>
+<p>Copy this message into Codex and replace the bracketed text with your design brief.</p>
+<div class="prompt-box"><textarea id="install-prompt" readonly rows="3" aria-label="Installation prompt for Codex">Install the idea-atlas skill from https://github.com/gyy320603-star/idea-atlas and use it to explore my brief: [your design brief].</textarea>
+<button class="primary copy-prompt" type="button" data-copy="Copy prompt" data-success="Copied" data-failure="Select and copy">Copy prompt</button></div>
+<p class="copy-status" role="status" aria-live="polite" data-success="Paste it into Codex and add your brief." data-failure="Copy the selected text with your keyboard or touch menu."></p>
+<div class="start-links"><a href="https://github.com/gyy320603-star/idea-atlas">GitHub · Star to save for later</a><a href="https://github.com/gyy320603-star/idea-atlas/blob/main/README.md#install-and-run">Installation guide</a></div>
+</section>
+<footer><p>Both first runs were generated in Chinese with Hermes and DeepSeek V4.1 Flash 1017. Each English edition is a translation. The map’s English / 中文 control changes interface labels.</p><details><summary>About the source runs</summary><p>Cow shoes used Idea Atlas 0.14.1 in a fresh worker. Its archived, deliverable run removed undeclared lens references and kept the top three handoffs. The sideboard used 0.13.0 in the current chat. Both maps use the 1.0.0 viewer. The tests described in the cards are proposals; neither run supplied external evidence.</p><p><a href="cow-shoes/zh.json">Cow shoes · source JSON</a> · <a href="sideboard/zh.json">Sideboard · source JSON</a></p></details></footer></main><script src="media/demo.js" defer></script></body></html>

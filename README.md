@@ -4,6 +4,10 @@
 
 Idea Atlas is an agent skill for the early stages of design. Give it a brief and it builds a map of possible directions. Open a card to see who would use the idea, what they do today, why they might switch, and what result would make you drop it. You can send the finished map to a teammate as a single HTML file that opens offline.
 
+Paste this into Codex and replace `[your design brief]` with your topic.
+
+> Install the Idea Atlas skill from https://github.com/gyy320603-star/idea-atlas and use it to explore [your design brief].
+
 ## [Try the demo](https://idea-atlas-demo.sturdypalm7.chatgpt.site/)
 
 **Running shoes for a cow** · 5 ways to read the brief, 18 ideas, 7 shortlisted. Start with “Who wears the shoes?” Open C01 to see how the hoof-print joke turned into a split-sole shoe for a human runner. Its two challenges explain why a recognizable footprint and a pain-free 10 km run became separate tests. [English edition](https://idea-atlas-demo.sturdypalm7.chatgpt.site/cow-shoes/en.html) · [Chinese original](https://idea-atlas-demo.sturdypalm7.chatgpt.site/cow-shoes/zh.html)
