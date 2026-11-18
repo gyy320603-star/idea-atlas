@@ -40,7 +40,13 @@ A topic is enough to start. Add constraints, observations or existing alternativ
 
 ## Install and run
 
-1. Download the [v1.0.0 skill ZIP](https://github.com/gyy320603-star/idea-atlas/releases/download/v1.0.0/idea-atlas-skill-1.0.0.zip) and extract it into your host’s skills directory. If you cloned the repository, copy its [idea-atlas folder](idea-atlas/) instead. Keep the whole folder together.
+1. From your project folder, install Idea Atlas for Codex with the [skills CLI](https://github.com/vercel-labs/skills) (requires Node.js 22.20+):
+
+   ```sh
+   npx skills add gyy320603-star/idea-atlas --skill idea-atlas -a codex
+   ```
+
+   Or download the [v1.0.0 skill ZIP](https://github.com/gyy320603-star/idea-atlas/releases/download/v1.0.0/idea-atlas-skill-1.0.0.zip) and extract it into your host’s skills directory. If you cloned the repository, copy its [idea-atlas folder](idea-atlas/) instead. Keep the whole folder together.
 
    | Host | Installed skill file | Invoke in a new chat |
    | --- | --- | --- |

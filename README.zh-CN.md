@@ -40,7 +40,13 @@ Idea Atlas 是一个用于设计前期探索的 agent skill。给它一个课题
 
 ## 安装并试跑
 
-1. 下载 [v1.0.0 安装包](https://github.com/gyy320603-star/idea-atlas/releases/download/v1.0.0/idea-atlas-skill-1.0.0.zip)，解压到宿主的 skills 目录。如果已经克隆了仓库，可以直接复制其中的 [idea-atlas 文件夹](idea-atlas/)。保留文件夹内的脚本、模板和参考文件。
+1. 在希望使用它的项目文件夹中，通过 [skills CLI](https://github.com/vercel-labs/skills) 安装到 Codex（需要 Node.js 22.20 或以上）：
+
+   ```sh
+   npx skills add gyy320603-star/idea-atlas --skill idea-atlas -a codex
+   ```
+
+   也可以下载 [v1.0.0 安装包](https://github.com/gyy320603-star/idea-atlas/releases/download/v1.0.0/idea-atlas-skill-1.0.0.zip)，解压到宿主的 skills 目录。如果已经克隆了仓库，可以直接复制其中的 [idea-atlas 文件夹](idea-atlas/)。保留文件夹内的脚本、模板和参考文件。
 
    | 宿主 | 安装后应看到的文件 | 在新聊天中调用 |
    | --- | --- | --- |

@@ -13,13 +13,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7254,
-      "sha256": "089baf4cc3eb2bf736e744b787e2cf29b2d9f270977641def3e7fd0595e9a1c3"
+      "bytes": 7493,
+      "sha256": "45af62dbcfb9342dae9be88626d8c1523d0de8f0e690d04c2fc5c0d54858dcf2"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 6997,
-      "sha256": "1ccff595fa8b91a1d690402950040dab1050037a892a6b6d387c80fb61adcd60"
+      "bytes": 7255,
+      "sha256": "0ac6a131d3eb04bb071193dedd5809663c82564215b12c5e78258ce4d3cf25c9"
     },
     {
       "path": "companions/idea-to-positioning/CHANGELOG.md",
