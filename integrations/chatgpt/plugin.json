@@ -47,6 +47,7 @@
         ]
       },
       "publication": {
+        "countries": [],
         "release_notes": "Initial ChatGPT plugin package for Idea Atlas 1.0.0. Bundles the design exploration workflow, supporting references, templates and offline HTML renderer, with English and Chinese interface controls.",
         "translations": {
           "zh-CN": {

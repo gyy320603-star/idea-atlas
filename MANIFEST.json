@@ -453,13 +453,13 @@
     },
     {
       "path": "integrations/chatgpt/listing.md",
-      "bytes": 7427,
-      "sha256": "e4a918040fe9f541865c5e5bbc5a9d38aa1b3154be26e68df910a89ed3ac26d0"
+      "bytes": 7625,
+      "sha256": "d293b12535a4dbf57ed04d910e7ad6e0927aac01c36914995953fdf7be5fbc8a"
     },
     {
       "path": "integrations/chatgpt/plugin.json",
-      "bytes": 5819,
-      "sha256": "8bf3d9dd83e55be50591a2766a94ff401a9422ead3437699e776ec9091afe129"
+      "bytes": 5844,
+      "sha256": "3eca265fcb2d8bf094057fa79ac479164e78f7d14d504d45e9f26d4cc29318d5"
     },
     {
       "path": "integrations/chatgpt/privacy.md",
@@ -468,8 +468,8 @@
     },
     {
       "path": "integrations/chatgpt/submission.md",
-      "bytes": 3826,
-      "sha256": "56e44598f3b539371580aae5801ec3dc41644c23d7930b0b5085abdd68787a84"
+      "bytes": 4375,
+      "sha256": "e24867116afe52e60198022005f347c39875f8d06d867bba9aef48c725efb9b9"
     },
     {
       "path": "integrations/workbuddy/README.md",

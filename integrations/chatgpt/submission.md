@@ -6,7 +6,9 @@ Updated: 18 November 2026
 
 The source package and directory copy are prepared. A private development plugin has been created. No public draft upload, review submission or public publication is recorded.
 
-Public submission still requires the intended verified publisher identity, a confirmed country selection, published listing-policy links and the portal's checks and developer attestations. The private service's account-derived publisher fields must be reconciled with the intended publisher before any further private update or public submission.
+Public submission still requires the intended verified publisher identity and the portal's checks and developer attestations. The author confirmed all available countries and regions on 18 November 2026; `publication.countries` is explicitly `[]`. All four listing URLs were verified publicly accessible with HTTP 200 and the expected page content on that date.
+
+The author confirmed that the current account is intended, but its account-derived display name is not the requested public publisher credit. The intended credit is **yuyang gong（龚雨旸）**. Verify the publisher shown by the portal before public submission; keep the submission as a draft if that credit cannot be resolved. Do not treat the package's author field as proof that the portal will show it.
 
 ## Package checks
 
@@ -42,11 +44,11 @@ Using the saved plugin in ChatGPT Work, run the same brief and verify that the h
 
 ## Listing links
 
-The website and support destinations are in `plugin.json`. The local privacy notice must be published before its URL is considered available. The repository's MIT License supplies the software license terms; it is not a separate publisher-operated service agreement. Confirm any additional policy requirements shown by the submission portal.
+The website, support, privacy and software-license destinations are in `plugin.json`. All four returned HTTP 200 with expected content in an unauthenticated check on 18 November 2026. The privacy notice is published in this repository. The MIT License supplies the software license terms; it is not a separate publisher-operated service agreement. Confirm any additional policy requirements shown by the submission portal.
 
 ## Public review
 
-Skills-only plugins do not require MCP test cases, a demo recording or reviewer credentials. The ZIP includes natural review prompts and initial release notes. Country targeting remains absent until explicitly selected. The base listing is English; a `zh-CN` translation is supplied for supported submission surfaces.
+Skills-only plugins do not require MCP test cases, a demo recording or reviewer credentials. The ZIP includes natural review prompts and initial release notes. Country targeting is explicitly set to all available countries and regions, as selected by the author. The base listing is English; a `zh-CN` translation is supplied for supported submission surfaces.
 
 The developer must complete identity verification and the portal's legal/policy attestations. A saved private plugin does not establish public publishing permission or approval.
 

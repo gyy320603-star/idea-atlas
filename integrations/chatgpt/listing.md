@@ -90,8 +90,8 @@ Initial ChatGPT plugin package for Idea Atlas 1.0.0. Bundles the design explorat
 - This is a skills-only package. It does not require a publisher-operated MCP service or a separate plugin account.
 - Runtime: the host provides model access, file handling and Python 3.8 or newer. The renderer uses Python's standard library. A package render check alone does not establish ChatGPT Work compatibility.
 - Existing Hermes examples must retain their provenance. Use actual ChatGPT Work output for any claim about Work performance.
-- The proposed privacy text is in `privacy.md`. A local file is not a published policy URL. Publish and verify the final privacy and terms pages before marking submission materials complete.
+- The privacy notice is published at the URL in `plugin.json`; that URL and the existing MIT software-license page were verified publicly accessible on 18 November 2026. The MIT License supplies applicable software terms, not a separate hosted-service agreement. Portal acceptance remains unverified.
 - The public listing must not claim official endorsement or include price promotions. An official directory listing, if approved, does not imply a recommended placement.
-- The portal's country targeting and verified publisher identity must match the developer's chosen settings; this draft does not invent those declarations.
+- The author selected all available countries and regions on 18 November 2026. The public publisher credit must be yuyang gong（龚雨旸）; the portal's verified identity still needs to be reconciled with that requirement before submission.
 
 yuyang gong（龚雨旸）
