@@ -26,7 +26,7 @@ def skill_version(directory):
 
 def release_files():
     items = [ROOT / name for name in ("README.md", "README.zh-CN.md", "LICENSE")]
-    for folder in (SKILL, "companions", "docs", "tools"):
+    for folder in (SKILL, "companions", "docs", "tools", "integrations"):
         for path in (ROOT / folder).rglob("*"):
             if any(part.startswith(".") or part == "__pycache__" for part in path.relative_to(ROOT).parts):
                 continue

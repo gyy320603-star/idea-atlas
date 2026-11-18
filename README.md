@@ -61,6 +61,8 @@ A topic is enough to start. Add constraints, observations or existing alternativ
 
 Idea generation uses your host agent’s model. The renderer requires Python 3.8+ and uses the standard library. The Hermes launcher requires a configured Hermes CLI. For another agent or a fresh run of the same brief, see the [host handoff guide](idea-atlas/references/independent-runs.md). The full release also includes [idea-to-positioning](companions/idea-to-positioning/), an optional companion for developing one shortlisted idea into a positioning argument.
 
+Platform packages: [WorkBuddy](integrations/workbuddy/README.md) has been submitted for marketplace review; the [ChatGPT plugin](integrations/chatgpt/README.md) is in preparation and has not been submitted for public review. These are separate from the repository installation above.
+
 ## Rebuild a map
 
 From a clone or the extracted full release, you can render an example directly from its JSON.

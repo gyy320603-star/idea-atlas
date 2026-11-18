@@ -4,7 +4,7 @@
 
 Idea Atlas 是一个用于设计前期探索的 agent skill。给它一个课题，就能得到一张可以点开阅读的想法地图。点开一张卡，就能看到谁会用、现在怎么做、为什么愿意换，以及出现什么结果就该放弃。生成的地图是一个独立的 HTML 文件，可以直接发给同事或老师，离线打开。
 
-把下面这句话连同链接一起发给 Codex，将「我的课题」换成你的题目。
+把下面这句话连同链接一起发给 Codex 或 WorkBuddy，将「我的课题」换成你的题目。WorkBuddy 手机端的链接安装已由作者实测；[WorkBuddy 使用与市场打包说明](integrations/workbuddy/README.md)。
 
 > 从 https://github.com/gyy320603-star/idea-atlas 安装 Idea Atlas skill，然后用它帮我探索「我的课题」。
 
@@ -60,6 +60,8 @@ Idea Atlas 是一个用于设计前期探索的 agent skill。给它一个课题
 3. 打开返回的 `visual/atlas.html`。点开卡片，进入「验证」看已有依据、待做的测试和放弃条件。经过质疑的卡还有「质疑」页签。界面初次打开默认英文，点 **English / 中文** 可切换按钮、筛选项和页签。题目、点子和质疑记录会沿用你提要求时的语言，也可以在提问时指定。
 
 生成内容使用宿主 agent 已有的模型。渲染需要 Python 3.8 或以上，只用标准库。Hermes 入口需要已配置的 Hermes CLI。其他宿主的用法和同题重跑见[运行说明](idea-atlas/references/independent-runs.md)。如果想从地图里挑出一个方向，继续为它论证定位，可以使用完整版附带的 [idea-to-positioning](companions/idea-to-positioning/)。
+
+官方市场适配：[WorkBuddy](integrations/workbuddy/README.md) 已提交市场审核；[ChatGPT 插件](integrations/chatgpt/README.md) 正在准备，尚未提交公开审核。以上状态不影响通过仓库链接安装原始 skill。
 
 ## 从原始数据重新出图
 

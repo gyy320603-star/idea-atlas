@@ -13,13 +13,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7493,
-      "sha256": "45af62dbcfb9342dae9be88626d8c1523d0de8f0e690d04c2fc5c0d54858dcf2"
+      "bytes": 7778,
+      "sha256": "73803058f1b06cc76c249b29ad3a8902143a09e8ca9e9fa580cd5b9f1755031a"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 7255,
-      "sha256": "0ac6a131d3eb04bb071193dedd5809663c82564215b12c5e78258ce4d3cf25c9"
+      "bytes": 7644,
+      "sha256": "e1ad643edf894d995169b6894fa468451f1fc43294440d1656557866dfaeb23f"
     },
     {
       "path": "companions/idea-to-positioning/CHANGELOG.md",
@@ -437,9 +437,84 @@
       "sha256": "b76a88aff0091f252d1d560c47f533f04ace6f71aa6dccd93d477739066525f4"
     },
     {
+      "path": "integrations/chatgpt/README.md",
+      "bytes": 2833,
+      "sha256": "6bd7b296ae89f4dd184198aabdfa237d6f0a46ec1aef2ae8dc084554991b962e"
+    },
+    {
+      "path": "integrations/chatgpt/assets/idea-atlas-icon-512.png",
+      "bytes": 21933,
+      "sha256": "add5c3758c23558b5cdcd53a7d83efb59ed9f318ffe82d10734f411072b5c032"
+    },
+    {
+      "path": "integrations/chatgpt/assets/idea-atlas-icon.svg",
+      "bytes": 746,
+      "sha256": "88e0938b4a8f3a9b6c8df99a691def582e071f9e1ba102f0e1cb40197d9d50c6"
+    },
+    {
+      "path": "integrations/chatgpt/listing.md",
+      "bytes": 7427,
+      "sha256": "e4a918040fe9f541865c5e5bbc5a9d38aa1b3154be26e68df910a89ed3ac26d0"
+    },
+    {
+      "path": "integrations/chatgpt/plugin.json",
+      "bytes": 5819,
+      "sha256": "8bf3d9dd83e55be50591a2766a94ff401a9422ead3437699e776ec9091afe129"
+    },
+    {
+      "path": "integrations/chatgpt/privacy.md",
+      "bytes": 5260,
+      "sha256": "6488bd735d583af45b2e0c5c4c49b3fbece8607b5b4256b7a08624946a088fb7"
+    },
+    {
+      "path": "integrations/chatgpt/submission.md",
+      "bytes": 3826,
+      "sha256": "56e44598f3b539371580aae5801ec3dc41644c23d7930b0b5085abdd68787a84"
+    },
+    {
+      "path": "integrations/workbuddy/README.md",
+      "bytes": 2973,
+      "sha256": "dd72cfd173374d907017a51b91b3b1487fa2eb120ee8efa70e4557ab5f92ef9a"
+    },
+    {
+      "path": "integrations/workbuddy/assets/idea-atlas-icon-512.png",
+      "bytes": 21933,
+      "sha256": "add5c3758c23558b5cdcd53a7d83efb59ed9f318ffe82d10734f411072b5c032"
+    },
+    {
+      "path": "integrations/workbuddy/assets/idea-atlas-icon.svg",
+      "bytes": 746,
+      "sha256": "88e0938b4a8f3a9b6c8df99a691def582e071f9e1ba102f0e1cb40197d9d50c6"
+    },
+    {
+      "path": "integrations/workbuddy/listing.md",
+      "bytes": 10302,
+      "sha256": "48f148b9f2aa595c389d600c25234fa709d9112e9d89d5ac40c770e830257f60"
+    },
+    {
+      "path": "integrations/workbuddy/skill-metadata.json",
+      "bytes": 1635,
+      "sha256": "f894f5a116c12f51f4f6476161e154a27a27557dc3632449bd05274a7d9b843c"
+    },
+    {
+      "path": "integrations/workbuddy/submission.md",
+      "bytes": 2266,
+      "sha256": "7a760b971d06fe79666f1a90872f7f347a45f968f5719927643aceb8a3f30d14"
+    },
+    {
+      "path": "tools/package_chatgpt.py",
+      "bytes": 12735,
+      "sha256": "d794695115c7ef5c0ac24f0c4086cc9c099078a02e23564d237f25b8927d0d08"
+    },
+    {
       "path": "tools/package_release.py",
-      "bytes": 3241,
-      "sha256": "31b9eb65ade753e1edf9fc0cc89fa3847b139154e769932695a90b410f07e1cd"
+      "bytes": 3257,
+      "sha256": "b2bb47c49f997da206f8e4cff1d8c763be5a0d0d635f40c48a644efc5da96a5f"
+    },
+    {
+      "path": "tools/package_workbuddy.py",
+      "bytes": 11721,
+      "sha256": "23263063cf7f4538dafa17b8e260b80cb7d75337c890eb1c5baaa75a564a6d43"
     }
   ]
 }

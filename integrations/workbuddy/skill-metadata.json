@@ -1,0 +1,16 @@
+{
+  "display_name": "点子地图",
+  "display_name_en": "Idea Atlas",
+  "description_zh": "给设计课题生成不同方向、定位卡和质疑记录，并交付可点开、筛选、离线分享的想法地图。",
+  "description_en": "Explore a design brief through distinct directions, positioning cards and recorded challenges, then browse and share an interactive offline HTML map.",
+  "examples_zh": [
+    "用点子地图探索「给牛穿的一双跑鞋」。先比较题目的不同读法，再展开设计方向，记录质疑和筛选理由，生成可点开的想法地图。",
+    "用点子地图探索「小厨房家庭的早餐准备能否移到餐边柜」。比较用户场景、现有替代和清洁代价，推荐值得先验证的方向。",
+    "用点子地图整理我上传的工作坊笔记和草图。归并相近想法，比较不同方向，说明先验证什么、哪些结果会让我们放弃，再生成想法地图。"
+  ],
+  "examples_en": [
+    "Use Idea Atlas to explore “running shoes for a cow.” Compare different readings of the brief, develop design directions, record challenges and screening decisions, and create an interactive idea map.",
+    "Use Idea Atlas to explore whether breakfast preparation could move from a small kitchen to a dining-room sideboard. Compare user situations, existing alternatives and cleaning tradeoffs, then recommend directions to test first.",
+    "Use Idea Atlas to organize my uploaded workshop notes and sketches. Group similar ideas, compare directions, explain what to test first and what results would rule them out, and create an idea map."
+  ]
+}
